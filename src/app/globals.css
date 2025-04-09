@@ -12,6 +12,10 @@
   --font-mono: var(--font-geist-mono);
 
   --color-dark: #1C1C1C;
+  --color-pepper-red: #FF0000;
+  --color-sharp-yellow: #FFBF00;
+  --color-blue: #005DFF;
+  --color-cyan: #0ED6BF;
   --breakpoint-3xl: 1400px;
 }
 
