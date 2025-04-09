@@ -26,8 +26,7 @@ body {
   background: url('../../public/profileImage.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   width: 100%;
-  height: 500px;
-  min-height: 500px;
+  height: 100dvh;
 }
