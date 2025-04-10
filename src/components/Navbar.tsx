@@ -12,26 +12,26 @@ export const Navbar = () => {
           <span>
             <Image src={brandLogo} alt="brand-logo" />
           </span>
-          <div className="flex gap-8 3xl:gap-10 items-center">
-            <Link href="/home">
-              <p>Home</p>
+          <div className="flex gap-8 3xl:gap-14 items-center font-alro-reg">
+            <Link className={`text-white`} href="/home">
+              <p>home</p>
             </Link>
-            <Link href="/about">
-              <p>About</p>
+            <Link className={`text-white/50`} href="/about">
+              <p>about</p>
             </Link>
-            <Link href="/skils">
-              <p>Skills</p>
+            <Link className={`text-white/50`} href="/skils">
+              <p>skills</p>
             </Link>
-            <Link href="/portfolio">
-              <p>Portfolio</p>
+            <Link className={`text-white/50`} href="/portfolio">
+              <p>portfolio</p>
             </Link>
-            <Link href="/articles">
-              <p>Articles</p>
+            <Link className={`text-white/50`} href="/articles">
+              <p>articles</p>
             </Link>
           </div>
         </div>
-        <div className="flex gap-3">
-            <p>Talk to me </p>
+        <div className="flex gap-3 font-alro-reg">
+            <p>talk to me </p>
             <Image src={arrowIcon} alt="arrow" />
             
             
