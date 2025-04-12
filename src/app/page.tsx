@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="landing_bg relative">
         <div className="lg:absolute lg:bottom-20 py-28 lg:py-0 px-14 3xl:px-28 w-full">
           <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0 lg:justify-between lg:items-end w-full">
@@ -51,7 +51,7 @@ export default function Home() {
                 Emem Olushola
               </h2>
               <div className="flex justify-center lg:justify-normal">
-                <p className=" w-full absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-1/2 font-azeret-mono  text-center lg:text-left">
+                <p className=" w-full px-8 lg:px-0 absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-1/2 font-azeret-mono  text-center lg:text-left">
                   Self-taught Frontend Developer and Data Analyst skilled in{" "}
                   <span className="text-pepper-red">React</span>,{" "}
                   <span className="text-blue">Next.js</span>,{" "}
