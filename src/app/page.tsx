@@ -2,6 +2,14 @@ import { Col, Progress, Row } from "antd";
 import { FloatingButton } from "../components/buttons/FloatingButton";
 import { Navbar } from "../components/Navbar";
 import { Button } from "../components/buttons/Button";
+import Image from "next/image";
+import linkedin from "@/public/icons/linkedin-icon.svg";
+import github from "@/public/icons/github-icon.svg";
+import twitter from "@/public/icons/twitter.svg";
+import infarena from "@/public/images/infarena.png";
+import ayocpa from "@/public/images/ayocpa.png";
+import wow from "@/public/images/wow.png";
+import { Contact } from "../components/Contact";
 
 export default function Home() {
   const frontendSkills = [
@@ -32,7 +40,7 @@ export default function Home() {
           <div className="flex justify-between items-end w-full">
             <div>
               <h2 className="text-8xl font-alro-reg">Umoren</h2>
-              <h2 className="text-8xl font-alro-reg">Ememobong</h2>
+              <h2 className="text-8xl font-alro-reg">Emem Olushola</h2>
               <p className="w-1/2 font-azeret-mono">
                 Self-taught Frontend Developer and Data Analyst skilled in{" "}
                 <span className="text-pepper-red">React</span>,{" "}
@@ -142,7 +150,7 @@ export default function Home() {
                       &quot;Data Analytics Team Lead at GDSC&quot;,{"\n"}
                       {"            "}
                       &quot;IEEE SPAC Event Speaker&quot;{"\n"}
-                      {"        "}]{"\n"}
+                      {"        "}<span className="text-white">]</span>{"\n"}
                       {"        "}
                       <span className="text-white">
                         self.frontend_development = [{" "}
@@ -156,7 +164,7 @@ export default function Home() {
                       platform&quot;,{"\n"}
                       {"            "}
                       &quot;Led frontend projects at Reed Tech&quot;{"\n"}
-                      {"        "}]{"\n"}
+                      {"        "}<span className="text-white">]</span>{"\n"}
                       {"    "}
                       <span className="text-[#03A9F4]">def</span>{" "}
                       <span className="text-pepper-red">show_highlights</span>
@@ -221,7 +229,10 @@ export default function Home() {
 
         {/* THIRD SECTION */}
         <div>
-          <h2 className="font-alro-reg mb-8 text-center text-3xl"> Notable <span className="font-bold">Skills</span>{" "}</h2>
+          <h2 className="font-alro-reg mb-8 text-center text-3xl">
+            {" "}
+            Notable <span className="font-bold">Skills</span>{" "}
+          </h2>
           <div className="flex flex-col gap-14">
             <div>
               <p className="font-azeret-mono text-center text-xl">
@@ -276,6 +287,42 @@ export default function Home() {
         </div>
 
         {/* FOURTH SECTION */}
+        <div>
+          <div>
+            <div className="flex gap-8 items-center">
+              <h3 className="text-2xl font-alro-reg">
+                My <span className="font-bold">Portfolio</span>
+              </h3>
+              <div className="flex gap-3 items-center">
+                <span>
+                  <Image src={linkedin} alt="social_links" />
+                </span>
+                <span>
+                  <Image src={github} alt="social_links" />
+                </span>
+                <span>
+                  <Image src={twitter} alt="social_links" />
+                </span>
+              </div>
+            </div>
+            <div className="w-[30%] 3xl:w-[20%] mt-5">
+              <p className="text-[15px] font-azeret-mono ">Feel free to explore my portfolio and reach out ;-)</p>
+            </div>
+          </div>
+          <div className="flex justify-between gap-8 mt-8">
+            <div className="border-8 rounded-4xl w-full h-[300px] bg-[#212121] border-[#212121]">
+              <Image className="object-cover rounded-4xl h-full w-full" src={infarena} alt="infarena" />
+            </div>
+            <div className="border-8 rounded-4xl w-full h-[300px] bg-[#212121] border-[#212121]">
+              <Image className="object-cover rounded-4xl h-full w-full" src={ayocpa} alt="infarena" />
+            </div>
+            <div className="border-8 rounded-4xl w-full h-[300px] bg-[#212121] border-[#212121]">
+              <Image className="object-cover rounded-4xl h-full w-full" src={wow} alt="infarena" />
+            </div>
+
+          </div>
+        </div>
+        <Contact />
       </div>
     </div>
   );
