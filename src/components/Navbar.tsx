@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <div className="flex fixed top-0 justify-center items-center px-14 py-8  3xl:px-28 3xl:py-10 w-full">
+    <div className="flex fixed top-0 z-50 justify-center items-center px-14 py-8  3xl:px-28 3xl:py-10 w-full">
       <div className="flex justify-between items-center w-full">
         <div className="flex gap-14 3xl:gap-16 items-center">
           <span>
