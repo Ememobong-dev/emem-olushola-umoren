@@ -22,7 +22,7 @@ export const Contact = () => {
                 +234 810 469 8415
               </p>
             </div>
-            <div className="mt-20">
+            <div className="mt-14">
               <p className="text-base font-azeret-mono">Follow</p>
               <div className="flex gap-3 items-center mt-8">
                 <span>
@@ -43,12 +43,12 @@ export const Contact = () => {
         </Col>
         <Col lg={16}>
           <div>
-            <h2 className="font-alro-reg text-3xl">
+            <h2 className="font-alro-reg font-bold text-3xl">
               A Project with Emem Olushola?
             </h2>
             <div className="flex flex-col gap-8 mt-5">
               <div>
-                <h3 className="font-azeret-mono font-[12px]">Services</h3>
+                <h3 className="font-azeret-mono">Services</h3>
                 <div className="flex flex-wrap gap-5 mt-3">
                   <TagButton text="API Integration" />
                   <TagButton text="Web Development(UI/UX Implementation" />
@@ -59,41 +59,55 @@ export const Contact = () => {
                 </div>
               </div>
               <div>
-                <h3 className="font-azeret-mono font-[12px]">Budget</h3>
+                <h3 className="font-azeret-mono">Budget</h3>
                 <div className="flex flex-wrap gap-5 mt-3">
                   <TagButton text="100k-250k" />
                   <TagButton text="250k-1m" />
                   <TagButton text="1m+" />
                 </div>
               </div>
-            </div>
-            <div>
-              <Row>
-                <Col lg={12}>
-                  <div>
-                    <label htmlFor="name" className="text-xl">
-                      Your Name
-                    </label>
-                    <input type="text" id="name" className="border w-full" />
-                  </div>
-                </Col>
-                <Col lg={12}>
-                  <div>
-                    <label htmlFor="email" className="text-xl">
-                      Your Email
-                    </label>
-                    <input type="text" id="email" className="border w-full" />
-                  </div>
-                </Col>
-                <Col lg={24}>
-                  <div>
-                    <label htmlFor="project" className="text-xl">
-                      Project Details (Optional)
-                    </label>
-                    <input type="text" id="project" className="border w-full" />
-                  </div>
-                </Col>
-              </Row>
+              <div>
+                <Row gutter={[56, 16]}>
+                  <Col lg={12}>
+                    <div>
+                      <label htmlFor="name" className="font-azeret-mono ">
+                        Your Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
+                      />
+                    </div>
+                  </Col>
+                  <Col lg={12}>
+                    <div>
+                      <label htmlFor="email" className="font-azeret-mono">
+                        Your Email
+                      </label>
+                      <input
+                        type="text"
+                        id="email"
+                        className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
+                      />
+                    </div>
+                  </Col>
+                  <Col lg={24}>
+                    <div>
+                      <label htmlFor="project" className="font-azeret-mono">
+                        Project Details (Optional)
+                      </label>
+                      <textarea
+                        id="project"
+                        className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
+                      />
+                    </div>
+                  </Col>
+                </Row>
+                <div className="mt-8">
+                  <Button variant="bordered" text="Send Message" />
+                </div>
+              </div>
             </div>
           </div>
         </Col>

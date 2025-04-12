@@ -20,7 +20,7 @@ export const FloatingButton = ({
 
   return (
     <button
-      className={`rounded-full font-azeret-mono py-1 px-3 3xl:py-2 3xl:px-8 ${nestedVariantCondition} `}
+      className={`rounded-full cursor-pointer font-azeret-mono py-1 px-3 3xl:py-2 3xl:px-8 ${nestedVariantCondition} `}
     >
       {children}
     </button>

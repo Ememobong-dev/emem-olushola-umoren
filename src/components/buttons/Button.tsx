@@ -9,7 +9,7 @@ interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({text, variant}) => {
-    const baseClasses = "rounded-full font-azeret-mono py-1 px-3 3xl:py-2 3xl:px-8 border";
+    const baseClasses = "rounded-full font-azeret-mono py-1 px-3 3xl:py-2 3xl:px-8 border cursor-pointer";
     const variantClasses =
       variant === "bordered"
         ? "border border-white bg-transparent text-white"
