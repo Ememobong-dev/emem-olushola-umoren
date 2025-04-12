@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export const FloatingButton = ({
   children,
@@ -19,10 +22,20 @@ export const FloatingButton = ({
       : "bg-transparent";
 
   return (
-    <button
-      className={`rounded-full cursor-pointer font-azeret-mono py-1 px-3 3xl:py-2 3xl:px-8 ${nestedVariantCondition} `}
+    <motion.button
+      className={`rounded-full cursor-pointer font-azeret-mono py-1 px-3 3xl:py-2 3xl:px-8 ${nestedVariantCondition}`}
+      animate={{
+        x: [0, 5, -3, 4, -6, 0],
+        y: [0, -4, 3, -2, 5, 0],
+      }}
+      transition={{
+        duration: 8,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "mirror",
+      }}
     >
       {children}
-    </button>
+    </motion.button>
   );
 };
