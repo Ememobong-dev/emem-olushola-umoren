@@ -39,36 +39,42 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="landing_bg relative">
-        <div className="absolute bottom-20 px-14 3xl:px-28 w-full">
-          <div className="flex justify-between items-end w-full">
+        <div className="lg:absolute lg:bottom-20 py-28 lg:py-0 px-14 3xl:px-28 w-full">
+          <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0 lg:justify-between lg:items-end w-full">
             <div>
-              <h2 className="text-8xl font-alro-reg">Umoren</h2>
-              <h2 className="text-8xl font-alro-reg">Emem Olushola</h2>
-              <p className="w-1/2 font-azeret-mono">
-                Self-taught Frontend Developer and Data Analyst skilled in{" "}
-                <span className="text-pepper-red">React</span>,{" "}
-                <span className="text-blue">Next.js</span>,{" "}
-                <span className="text-cyan">TypeScript</span>, and{" "}
-                <span className="text-sharp-yellow">TailwindCSS</span>.
-              </p>
+              <h2 className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg">
+                Umoren
+              </h2>
+              <h2 className="text-4xl w-full  text-center lg:text-left lg:text-8xl font-alro-reg">
+                Emem Olushola
+              </h2>
+              <div className="flex justify-center lg:justify-normal">
+                <p className=" w-full absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-1/2 font-azeret-mono  text-center lg:text-left">
+                  Self-taught Frontend Developer and Data Analyst skilled in{" "}
+                  <span className="text-pepper-red">React</span>,{" "}
+                  <span className="text-blue">Next.js</span>,{" "}
+                  <span className="text-cyan">TypeScript</span>, and{" "}
+                  <span className="text-sharp-yellow">TailwindCSS</span>.
+                </p>
+              </div>
             </div>
-            <div>
-              <button className="rounded-full cursor-pointer border border-white w-32 py-2 px-3">
+            <div className="flex justify-center lg:justify-normal">
+              <button className="rounded-full absolute bottom-[10%] lg:relative cursor-pointer border border-white w-32 py-2 px-3">
                 Scroll down
               </button>
             </div>
           </div>
         </div>
-        <div className="absolute top-[30%] left-[30%]">
+        <div className="absolute hidden lg:flex top-[30%] left-[30%]">
           <FloatingButton variant="cyan">
             <p className="italic">
               Data <span className="font-bold not-italic ">Analyst</span>
             </p>
           </FloatingButton>
         </div>
-        <div className="absolute bottom-[30%] right-[24%]">
+        <div className="absolute hidden lg:flex bottom-[30%] right-[24%]">
           <FloatingButton variant="yellow">
             <p className="italic">
               Frontend <span className="font-bold not-italic ">Developer</span>
@@ -76,14 +82,14 @@ export default function Home() {
           </FloatingButton>
         </div>
       </div>
-      <div className="px-14 3xl:px-28 py-28 flex flex-col gap-56">
+      <div className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}
         <AnimatedSection>
           <div>
-            <Row gutter={56} className="flex items-stretch h-full">
+            <Row gutter={[56, 56]} className="flex items-stretch h-full">
               <Col lg={10}>
                 <div className="h-full flex flex-col justify-between ">
-                  <h3 className="font-alro-reg text-3xl">
+                  <h3 className="font-alro-reg text-2xl lg:text-3xl">
                     Who is <span className="font-bold">Emem Olushola?</span>
                   </h3>
                   <div className="flex flex-col text-justify gap-3 mt-6 font-azeret-mono text-[11px] ">
@@ -267,7 +273,7 @@ export default function Home() {
                 <p className="font-azeret-mono text-center text-xl">
                   <span className="text-deep-blue">Data</span> Analysis
                 </p>
-                <div className=" h-full flex justify-center gap-5 flex-wrap gap-y-2 mt-10">
+                <div className=" h-full flex justify-between  lg:justify-center lg:gap-5 flex-wrap gap-y-2 mt-10">
                   {dataSkills.map(({ skill, percent }) => (
                     <SkillProgress
                       key={skill}
@@ -284,7 +290,7 @@ export default function Home() {
         <AnimatedSection>
           <div>
             <div>
-              <div className="flex gap-8 items-center">
+              <div className="flex gap-8 items-center justify-between lg:justify-normal">
                 <h3 className="text-2xl font-alro-reg">
                   My <span className="font-bold">Portfolio</span>
                 </h3>
@@ -300,13 +306,20 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <div className="w-[30%] 3xl:w-[20%] mt-5">
+              {/* Mobile view */}
+              <div className="hidden lg:flex w-[30%] 3xl:w-[20%]  mt-5">
+                <p className="text-[15px] font-azeret-mono ">
+                  Feel free to explore my portfolio and reach out ;-)
+                </p>
+              </div>
+              {/* laptop view */}
+              <div className="lg:hidden mt-5">
                 <p className="text-[15px] font-azeret-mono ">
                   Feel free to explore my portfolio and reach out ;-)
                 </p>
               </div>
             </div>
-            <div className="flex justify-between gap-8 mt-8">
+            <div className="flex flex-col lg:flex-row lg:justify-between gap-8 mt-8">
               <div className="relative cursor-pointer group overflow-hidden border-8 rounded-4xl w-full h-[400px] bg-[#212121] border-[#212121]">
                 <Image
                   className="object-cover rounded-4xl h-full w-full"

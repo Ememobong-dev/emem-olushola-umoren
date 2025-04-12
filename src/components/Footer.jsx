@@ -5,11 +5,10 @@ import twitter from "@/public/icons/black-twitter.svg";
 import footer_logo from "../../public/icons/footer-logo.svg";
 import Image from "next/image";
 
-
 export const Footer = () => {
   return (
-    <div className="px-14 3xl:px-28 py-10  text-black bg-white flex justify-between items-center">
-      <div className="flex font-alro-reg items-center gap-5">
+    <div className="px-14 3xl:px-28 py-10  text-black bg-white flex flex-col gap-5 lg:flex-row justify-between items-center">
+      <div className="flex flex-wrap justify-center lg:justify-normal font-alro-reg items-center gap-5">
         <span>Terms</span>
         <span>Privacy Policy</span>
         <span>Skills</span>
@@ -27,12 +26,12 @@ export const Footer = () => {
       </div>
       <div>
         <span>
-            <Image src={footer_logo}  alt="logo"/>
+          <Image src={footer_logo} alt="logo" />
         </span>
       </div>
       <div>
-        <p className="font-azeret-mono text-sm">
-        © 2025 Ememobong.  All rights Reserved
+        <p className="font-azeret-mono text-sm text-center lg:text-left">
+          © 2025 Ememobong. All rights Reserved
         </p>
       </div>
     </div>

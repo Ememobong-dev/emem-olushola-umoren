@@ -10,7 +10,7 @@ import { TagButton } from "./buttons/TagButton";
 export const Contact = () => {
   return (
     <div>
-      <Row>
+      <Row gutter={[0, 56]}>
         <Col lg={8}>
           <div>
             <h2 className="font-azeret-mono text-2xl">Contacts</h2>
