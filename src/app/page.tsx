@@ -55,7 +55,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <button className="rounded-full border border-white w-32 py-2 px-3">
+              <button className="rounded-full cursor-pointer border border-white w-32 py-2 px-3">
                 Scroll down
               </button>
             </div>
