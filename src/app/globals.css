@@ -28,6 +28,11 @@
   --color-sharp-yellow: #FFBF00;
   --color-blue: #005DFF;
   --color-cyan: #0ED6BF;
+  --color-grey: #2F2F2F;
+  --color-dark-black: #0D0D0D;
+  --color-deep-blue: #03A9F4;
+  --color-progress-cyan: #0DF0D6;
+  --color-progress-grey: #BADFDA;
 
   /* breakpoint */
   --breakpoint-3xl: 1400px;
@@ -35,7 +40,7 @@
 
 
 body {
-  background: #1C1C1C;
+  background: #0A0A0C;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
 }

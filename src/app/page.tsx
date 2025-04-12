@@ -1,8 +1,29 @@
-import { Col, Row } from "antd";
-import { Button } from "../components/Button";
+import { Col, Progress, Row } from "antd";
+import { FloatingButton } from "../components/buttons/FloatingButton";
 import { Navbar } from "../components/Navbar";
+import { Button } from "../components/buttons/Button";
 
 export default function Home() {
+  const frontendSkills = [
+    { skill: "React", percent: 90 },
+    { skill: "Next.js", percent: 85 },
+    { skill: "Tailwind CSS", percent: 88 },
+    { skill: "Typescript", percent: 80 },
+    { skill: "CSS", percent: 85 },
+    { skill: "JavaScript", percent: 88 },
+  ];
+
+  const dataSkills = [
+    { skill: "Data Cleaning", percent: 90 },
+    { skill: "Data Creation", percent: 85 },
+    { skill: "Data Modelling", percent: 88 },
+    { skill: "Excel", percent: 80 },
+    { skill: "SPSS", percent: 85 },
+    { skill: "SQL", percent: 70 },
+    { skill: "Python", percent: 75 },
+    { skill: "PowerBI", percent: 75 },
+  ];
+
   return (
     <div>
       <Navbar />
@@ -28,30 +49,30 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute top-[30%] left-[30%]">
-          <Button variant="cyan">
+          <FloatingButton variant="cyan">
             <p className="italic">
               Data <span className="font-bold not-italic ">Analyst</span>
             </p>
-          </Button>
+          </FloatingButton>
         </div>
         <div className="absolute bottom-[30%] right-[24%]">
-          <Button variant="yellow">
+          <FloatingButton variant="yellow">
             <p className="italic">
               Frontend <span className="font-bold not-italic ">Developer</span>
             </p>
-          </Button>
+          </FloatingButton>
         </div>
       </div>
-      <div className="px-14 3xl:px-28 py-16 flex flex-col gap-14">
+      <div className="px-14 3xl:px-28 py-28 flex flex-col gap-28">
         {/* Second Section */}
         <div>
-          <Row>
+          <Row gutter={56} className="flex items-stretch h-full">
             <Col lg={10}>
-              <div>
+              <div className="h-full flex flex-col justify-between ">
                 <h3 className="font-alro-reg text-3xl">
                   Who is <span className="font-bold">Ememobong?</span>
                 </h3>
-                <div className="flex flex-col gap-3 mt-6 font-azeret-mono text-[11px] ">
+                <div className="flex flex-col text-justify gap-3 mt-6 font-azeret-mono text-[11px] ">
                   <p>
                     I am a self-taught Frontend Developer and Data Analyst with
                     expertise in React, Next.js, TypeScript, and TailwindCSS. My
@@ -85,10 +106,176 @@ export default function Home() {
                     meaningful projects, and push the boundaries of technology.
                   </p>
                 </div>
+                <div className="flex justify-between items-center mt-8">
+                  <Button variant="bordered" text="View Portfolio" />
+                  <Button variant="fill" text="Go To LinkedIn" />
+                </div>
+              </div>
+            </Col>
+            <Col lg={14}>
+              <div className="bg-dark-black w-full h-full rounded-2xl ">
+                <div className="text-white font-azeret-mono rounded-t-2xl bg-grey py-3 px-6">
+                  My achievements
+                </div>
+                <div className="px-8 py-3">
+                  <pre className="text-white font-azeret-mono text-sm whitespace-pre-wrap break-words leading-relaxed">
+                    <code className="text-cyan font-azeret-mono text-[11px]">
+                      <span className="text-[#03A9F4]">class</span>{" "}
+                      <span className="text-pepper-red">TechCareer</span>:{"\n"}
+                      {"    "}
+                      <span className="text-[#03A9F4]">def</span>{" "}
+                      <span className="text-pepper-red">__init__</span>
+                      <span className="text-white">(self):</span>
+                      {"\n"}
+                      {"        "}
+                      <span className="text-white">
+                        self.data_analysis = [{" "}
+                      </span>{" "}
+                      {"\n"}
+                      {"            "}
+                      &quot;Women Techsters Data Science Bootcamp
+                      Certification&quot;,{"\n"}
+                      {"            "}
+                      &quot;Google Professional Data Analytics
+                      Certificate&quot;,{"\n"}
+                      {"            "}
+                      &quot;Data Analytics Team Lead at GDSC&quot;,{"\n"}
+                      {"            "}
+                      &quot;IEEE SPAC Event Speaker&quot;{"\n"}
+                      {"        "}]{"\n"}
+                      {"        "}
+                      <span className="text-white">
+                        self.frontend_development = [{" "}
+                      </span>{" "}
+                      {"\n"}
+                      {"            "}
+                      &quot;Built user-friendly platforms like Infarena and Ayo
+                      CPA&quot;,{"\n"}
+                      {"            "}
+                      &quot;Developed WOW Gift Card, a secure global
+                      platform&quot;,{"\n"}
+                      {"            "}
+                      &quot;Led frontend projects at Reed Tech&quot;{"\n"}
+                      {"        "}]{"\n"}
+                      {"    "}
+                      <span className="text-[#03A9F4]">def</span>{" "}
+                      <span className="text-pepper-red">show_highlights</span>
+                      <span className="text-white">(self):</span>
+                      {"\n"}
+                      {"        "}
+                      <span className="text-sharp-yellow">print</span>(
+                      <span className="text-yellow-100">
+                        &quot;Data Analysis Achievements:&quot;
+                      </span>
+                      ){"\n"}
+                      {"        "}
+                      <span className="text-[#03A9F4]">for</span>
+                      <span className="text-white"> achievement </span>
+                      <span className="text-[#03A9F4]">in</span>{" "}
+                      <span className="text-white">self.data_analysis:</span>
+                      {"\n"}
+                      {"            "}
+                      <span className="text-sharp-yellow">print</span>(
+                      <span className="text-yellow-100">
+                        f&quot;- &#123;achievement&#125;&quot;
+                      </span>
+                      ){"\n"}
+                      {"        "}
+                      <span className="text-sharp-yellow">print</span>(
+                      <span className="text-yellow-100">
+                        &quot;\nFrontend Development Projects:&quot;
+                      </span>
+                      ){"\n"}
+                      {"        "}
+                      <span className="text-[#03A9F4]">for</span>
+                      <span className="text-white"> project </span>
+                      <span className="text-[#03A9F4]">in</span>{" "}
+                      <span className="text-white">
+                        self.frontend_development:
+                      </span>
+                      {"\n"}
+                      {"            "}
+                      <span className="text-sharp-yellow">print</span>(
+                      <span className="text-yellow-100">
+                        f&quot;- &#123;project&#125;&quot;
+                      </span>
+                      ){"\n"}
+                      <span className="text-[#7F7F7F]">
+                        # Instantiate and display highlights
+                      </span>
+                      {"\n"}
+                      <span className="text-white">
+                        my_career = TechCareer(){" "}
+                      </span>
+                      {"\n"}
+                      <span className="text-white">
+                        my_career.show_highlights(){" "}
+                      </span>
+                    </code>
+                  </pre>
+                </div>
               </div>
             </Col>
           </Row>
         </div>
+
+        {/* THIRD SECTION */}
+        <div>
+          <h2 className="font-alro-reg mb-8 text-center text-3xl"> Notable <span className="font-bold">Skills</span>{" "}</h2>
+          <div className="flex flex-col gap-14">
+            <div>
+              <p className="font-azeret-mono text-center text-xl">
+                <span className="text-deep-blue">Frontend</span> Development
+              </p>
+              <div className=" h-full flex justify-between flex-wrap gap-y-2 mt-10">
+                {frontendSkills.map(({ skill, percent }) => (
+                  <div className="relative" key={skill}>
+                    <div className="transform rotate-180">
+                      <Progress
+                        type="circle"
+                        percent={percent}
+                        strokeColor="#0DF0D6"
+                        trailColor="#505A5B"
+                        showInfo={false}
+                        strokeWidth={10}
+                      />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center text-white text-xs text-center font-mono px-8">
+                      {skill}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="font-azeret-mono text-center text-xl">
+                <span className="text-deep-blue">Data</span> Analysis
+              </p>
+              <div className=" h-full flex justify-center gap-5 flex-wrap gap-y-2 mt-10">
+                {dataSkills.map(({ skill, percent }) => (
+                  <div className="relative" key={skill}>
+                    <div className="transform rotate-180">
+                      <Progress
+                        type="circle"
+                        percent={percent}
+                        strokeColor="#0DF0D6"
+                        trailColor="#505A5B"
+                        showInfo={false}
+                        strokeWidth={10}
+                      />
+                    </div>
+                    <div className="absolute inset-0 flex  items-center justify-center text-white text-xs text-center font-mono px-8">
+                      {skill}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FOURTH SECTION */}
       </div>
     </div>
   );
