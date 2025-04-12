@@ -1,4 +1,4 @@
-import { Col, Progress, Row } from "antd";
+import { Col, Row } from "antd";
 import { FloatingButton } from "../components/buttons/FloatingButton";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
