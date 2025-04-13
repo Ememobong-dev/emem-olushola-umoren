@@ -9,6 +9,7 @@ import { Navbar } from "@/src/components/Navbar";
 import Link from "next/link";
 import { Contact } from "@/src/components/Contact";
 import { Footer } from "@/src/components/Footer";
+import Image from "next/image";
 
 const FrontendSinglePage = () => {
   const params = useParams();
@@ -24,10 +25,11 @@ const FrontendSinglePage = () => {
     <div>
       <Navbar />
       <div className="">
-        <div className="h-dvh flex justify-center items-center">
+        <div className="h-dvh flex flex-col justify-center items-center">
           <h2 className="text-4xl w-full text-white text-center lg:text-[150px] tracking-widest font-azeret-mono">
             {project?.title}
           </h2>
+          <h2 className="text-cyan text-3xl  text-center lg:text-5xl font-azeret-mono">{project?.location} </h2>
         </div>
         <div className="">
           <div className="absolute hidden lg:flex top-[30%] left-[30%]">
@@ -136,20 +138,48 @@ const FrontendSinglePage = () => {
             <h3 className="font-alro-reg text-2xl">Technologies Used:</h3>
             <span className="flex gap-2 mt-5 mb-8">
               {project.technologies.map((item, index) => (
-                <p key={index} className="font-azeret-mono font-light text-sm"> {item}, </p>
+                <p key={index} className="font-azeret-mono font-light text-[12px]">
+                  {" "}
+                  {item},{" "}
+                </p>
               ))}
             </span>
             <h3 className="font-alro-reg text-xl ">
               Live Demo:{" "}
-              <Link className="font-azeret-mono italic text-lg text-deep-blue underline" href={project.liveDemo}> {project.title} Website</Link>{" "}
+              <Link
+                className="font-azeret-mono italic text-base text-deep-blue underline"
+                href={project.liveDemo}
+              >
+                {" "}
+                {project.title} Website
+              </Link>{" "}
             </h3>
           </div>
         </div>
 
         {/* Gallery Section */}
         <div>
-          <h3>Gallery</h3>
-
+          <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
+            Gallery
+          </h3>
+          <div className="flex overflow-x-auto space-x-4 snap-x snap-mandatory scroll-smooth scrollbar-hide">
+            {project.gallery.map((item, index) => (
+              <div
+                key={index}
+                className="snap-start flex-shrink-0 rounded-2xl bg-gray-300 h-[300px] 
+                 w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] 
+                 overflow-hidden"
+              >
+                <Image
+                  src={item}
+                  width={800}
+                  height={300}
+                  alt={`project image ${index + 1}`}
+                  className="object-cover w-full h-full rounded-2xl"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Contact */}

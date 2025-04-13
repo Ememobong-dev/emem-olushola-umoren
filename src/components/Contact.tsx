@@ -11,7 +11,7 @@ export const Contact = () => {
   return (
     <div id="contact">
       <Row gutter={[0, 56]}>
-        <Col lg={8}>
+        <Col xs={24} lg={8}>
           <div>
             <h2 className="font-azeret-mono text-2xl">Contacts</h2>
             <div className="flex flex-col gap-4 mt-5">
@@ -41,7 +41,7 @@ export const Contact = () => {
             </div>
           </div>
         </Col>
-        <Col lg={16}>
+        <Col xs={24} lg={16}>
           <div>
             <h2 className="font-alro-reg font-bold text-3xl">
               A Project with Emem Olushola?
@@ -68,7 +68,7 @@ export const Contact = () => {
               </div>
               <div>
                 <Row gutter={[56, 16]}>
-                  <Col lg={12}>
+                  <Col xs={24} lg={12}>
                     <div>
                       <label htmlFor="name" className="font-azeret-mono ">
                         Your Name
@@ -80,7 +80,7 @@ export const Contact = () => {
                       />
                     </div>
                   </Col>
-                  <Col lg={12}>
+                  <Col xs={24} lg={12}>
                     <div>
                       <label htmlFor="email" className="font-azeret-mono">
                         Your Email
