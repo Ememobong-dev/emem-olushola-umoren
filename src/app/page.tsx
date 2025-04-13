@@ -82,10 +82,10 @@ export default function Home() {
           </FloatingButton>
         </div>
       </div>
-      <div className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56">
+      <div  className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}
         <AnimatedSection>
-          <div>
+          <div  id="about">
             <Row gutter={[56, 56]} className="flex items-stretch h-full">
               <Col lg={10}>
                 <div className="h-full flex flex-col justify-between ">
@@ -248,7 +248,7 @@ export default function Home() {
         </AnimatedSection>
         {/* THIRD SECTION */}
         <AnimatedSection>
-          <div>
+          <div id="skills">
             <h2 className="font-alro-reg mb-8 text-center text-3xl">
               {" "}
               Notable <span className="font-bold">Skills</span>{" "}

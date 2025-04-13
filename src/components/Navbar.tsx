@@ -1,18 +1,57 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import brandLogo from "@/public/icons/brand-logo.svg";
 import arrowIcon from "@/public/icons/arrow-line.svg";
 import Link from "next/link";
 import { MenuOutlined } from "@ant-design/icons";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const pathname = usePathname();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const sections = ["about", "skills"];
+    const observers: IntersectionObserver[] = [];
+
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+      }
+    };
+
+    if (pathname === "/home" || pathname === "/") {
+      window.addEventListener("scroll", handleScroll);
+
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                setActiveSection(id);
+              }
+            },
+            { threshold: 0.5 }
+          );
+          observer.observe(el);
+          observers.push(observer);
+        }
+      });
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, [pathname]);
 
   return (
     <div className=" fixed top-0 z-50 justify-center items-center px-8 lg:px-14 py-8  3xl:px-28 3xl:py-10 w-full">
@@ -35,20 +74,56 @@ export const Navbar = () => {
             <Image src={brandLogo} alt="brand-logo" />
           </span>
           <div className="flex gap-8 3xl:gap-14 items-center font-alro-reg">
-            <Link className={`text-white`} href="/home">
-              <p>home</p>
+            <Link href="/home">
+              <p
+                className={
+                  pathname === "/home" ||
+                  pathname === "/" ||
+                  activeSection === "home"
+                    ? "text-white"
+                    : "text-white/50"
+                }
+              >
+                home
+              </p>
             </Link>
-            <Link className={`text-white/50`} href="/about">
+            <Link
+              className={`cursor-pointer ${
+                activeSection === "about" && pathname === "/"
+                  ? "text-white"
+                  : "text-white/50"
+              }`}
+              href="/#about"
+            >
               <p>about</p>
             </Link>
-            <Link className={`text-white/50`} href="/skils">
+            <Link
+              className={`cursor-pointer ${
+                activeSection === "skills" && pathname === "/"
+                  ? "text-white"
+                  : "text-white/50"
+              }`}
+              href="/#skills"
+            >
               <p>skills</p>
             </Link>
-            <Link className={`text-white/50`} href="/portfolio">
-              <p>portfolio</p>
+            <Link href="/portfolio">
+              <p
+                className={
+                  pathname === "/portfolio" ? "text-white" : "text-white/50"
+                }
+              >
+                portfolio
+              </p>
             </Link>
-            <Link className={`text-white/50`} href="/articles">
-              <p>articles</p>
+            <Link href="/articles">
+              <p
+                className={
+                  pathname === "/articles" ? "text-white" : "text-white/50"
+                }
+              >
+                articles
+              </p>
             </Link>
           </div>
         </div>
@@ -64,12 +139,12 @@ export const Navbar = () => {
           <Link href="/home">
             <p className="hover:text-white/80">home</p>
           </Link>
-          <Link href="/about">
+          <a href="#about">
             <p className="hover:text-white/80">about</p>
-          </Link>
-          <Link href="/skils">
+          </a>
+          <a href="#skills">
             <p className="hover:text-white/80">skills</p>
-          </Link>
+          </a>
           <Link href="/portfolio">
             <p className="hover:text-white/80">portfolio</p>
           </Link>

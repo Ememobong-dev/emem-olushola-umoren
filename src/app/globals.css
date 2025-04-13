@@ -39,6 +39,9 @@
   --breakpoint-3xl: 1400px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: #0A0A0C;
