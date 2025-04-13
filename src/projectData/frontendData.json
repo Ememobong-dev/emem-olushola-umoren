@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "infarena",
+    "title": "Infarena",
+    "location": "Canada",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free. Additionally, the platform supports job postings and property reviews, empowering users to make informed decisions.",
+    "challenge": "The primary challenge was to develop a user-friendly platform that could handle multiple functionalities—such as trading, reviewing, and business listings—while maintaining an engaging and intuitive interface. The goal was to ensure smooth interactions for users posting jobs, reviewing properties, and contributing to discussions, all within a single, cohesive platform.",
+    "solution": "The solution involved creating a sleek, fully responsive platform that prioritized user experience. The design focused on intuitive navigation and seamless functionality, enabling users to easily trade goods, share reviews, list businesses, post jobs, and review properties. The platform was built to be free for small businesses, encouraging broader participation and engagement.",
+    "outcome": "The outcome was a highly effective platform that enhanced user engagement and facilitated seamless navigation. Users could effortlessly interact, trade, and share information, leading to a more connected and informed community. The platform successfully met its goal of providing a user-friendly environment for diverse activities, ultimately empowering users to make better decisions.",
+    "liveDemo": "https://infarena.vercel.app",
+    "gallery": [
+      "/images/projects/infarena/hero.png",
+      "/images/projects/infarena/dashboard.png",
+      "/images/projects/infarena/mobile-view.png"
+    ]
+  },
+  {
+    "slug": "sist",
+    "title": "Infarena",
+    "location": "Canada",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free. Additionally, the platform supports job postings and property reviews, empowering users to make informed decisions.",
+    "challenge": "The primary challenge was to develop a user-friendly platform that could handle multiple functionalities—such as trading, reviewing, and business listings—while maintaining an engaging and intuitive interface. The goal was to ensure smooth interactions for users posting jobs, reviewing properties, and contributing to discussions, all within a single, cohesive platform.",
+    "solution": "The solution involved creating a sleek, fully responsive platform that prioritized user experience. The design focused on intuitive navigation and seamless functionality, enabling users to easily trade goods, share reviews, list businesses, post jobs, and review properties. The platform was built to be free for small businesses, encouraging broader participation and engagement.",
+    "outcome": "The outcome was a highly effective platform that enhanced user engagement and facilitated seamless navigation. Users could effortlessly interact, trade, and share information, leading to a more connected and informed community. The platform successfully met its goal of providing a user-friendly environment for diverse activities, ultimately empowering users to make better decisions.",
+    "liveDemo": "https://infarena.vercel.app",
+    "gallery": [
+      "/images/projects/infarena/hero.png",
+      "/images/projects/infarena/dashboard.png",
+      "/images/projects/infarena/mobile-view.png"
+    ]
+  }
+]

@@ -6,6 +6,7 @@ import { Contact } from "@/src/components/Contact";
 import { Footer } from "@/src/components/Footer";
 import { Navbar } from "@/src/components/Navbar";
 import { Col, Row } from "antd";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Portfolio = () => {
@@ -107,7 +108,10 @@ const Portfolio = () => {
               key={idx}
               className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
             >
-              <h3 className="font-azeret-mono text-center text-4xl lg:text-8xl">{proj.title}</h3>
+                <Link href={'/portfolio/frontend/infarena'}>
+                <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl">{proj.title}</h3>
+                </Link>
+              
               <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
                 {proj.location}
               </h5>
