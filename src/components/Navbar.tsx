@@ -20,16 +20,16 @@ export const Navbar = () => {
   useEffect(() => {
     const sections = ["about", "skills"];
     const observers: IntersectionObserver[] = [];
-
+  
     const handleScroll = () => {
       if (window.scrollY < 100) {
         setActiveSection("home");
       }
     };
-
-    if (pathname === "/home" || pathname === "/") {
+  
+    if (pathname === "/") {
       window.addEventListener("scroll", handleScroll);
-
+  
       sections.forEach((id) => {
         const el = document.getElementById(id);
         if (el) {
@@ -46,12 +46,13 @@ export const Navbar = () => {
         }
       });
     }
-
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
       observers.forEach((observer) => observer.disconnect());
     };
   }, [pathname]);
+  
 
   return (
     <div className=" fixed top-0 z-50 justify-center items-center px-8 lg:px-14 py-8  3xl:px-28 3xl:py-10 w-full">
@@ -74,10 +75,10 @@ export const Navbar = () => {
             <Image src={brandLogo} alt="brand-logo" />
           </span>
           <div className="flex gap-8 3xl:gap-14 items-center font-alro-reg">
-            <Link href="/home">
+            <Link href="/">
               <p
                 className={
-                  pathname === "/home" ||
+                  pathname === "/" ||
                   pathname === "/" ||
                   activeSection === "home"
                     ? "text-white"
