@@ -87,7 +87,7 @@ export default function Home() {
         <AnimatedSection>
           <div  id="about">
             <Row gutter={[56, 56]} className="flex items-stretch h-full">
-              <Col lg={10}>
+              <Col xs={24} lg={10}>
                 <div className="h-full flex flex-col justify-between ">
                   <h3 className="font-alro-reg text-2xl lg:text-3xl">
                     Who is <span className="font-bold">Emem Olushola?</span>
@@ -134,7 +134,7 @@ export default function Home() {
                   </div>
                 </div>
               </Col>
-              <Col lg={14}>
+              <Col xs={24} lg={14}>
                 <div className="bg-dark-black w-full h-full rounded-2xl">
                   <div className="text-white font-azeret-mono rounded-t-2xl bg-grey py-3 px-6">
                     My achievements

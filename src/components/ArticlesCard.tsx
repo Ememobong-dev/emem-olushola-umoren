@@ -17,13 +17,13 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({
   articleDate,
 }) => {
   return (
-    <div className="w-full h-[300px] border bg-[#0A0A0C] p-5 rounded-lg">
+    <div className="w-full h-[200px] border bg-[#0A0A0C] p-5 rounded-lg flex  flex-col justify-between">
       <h3 className="underline text-white font-azeret-mono font-semibold text-lg">
         {" "}
         {articleTitle}{" "}
       </h3>
       <span>
-        <p>{articleDescription}</p>
+        <p className="font-azeret-mono">{articleDescription}</p>
       </span>
       <div className="flex items-center justify-between">
         <div className="flex gap-3">
@@ -31,7 +31,7 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({
           <Button text={articleTagTwo} variant="bordered" />
         </div>
         <div>
-          <p className="articleData ">{articleDate}</p>
+          <p className="articleDate font-azeret-mono font-semibold text-base">{articleDate}</p>
         </div>
       </div>
     </div>
