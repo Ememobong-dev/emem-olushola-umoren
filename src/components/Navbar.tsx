@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import brandLogo from "@/public/icons/brand-logo.svg";
 import arrowIcon from "@/public/icons/arrow-line.svg";
 import Link from "next/link";
-import { MenuOutlined } from "@ant-design/icons";
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
@@ -20,16 +20,16 @@ export const Navbar = () => {
   useEffect(() => {
     const sections = ["about", "skills"];
     const observers: IntersectionObserver[] = [];
-  
+
     const handleScroll = () => {
       if (window.scrollY < 100) {
         setActiveSection("home");
       }
     };
-  
+
     if (pathname === "/") {
       window.addEventListener("scroll", handleScroll);
-  
+
       sections.forEach((id) => {
         const el = document.getElementById(id);
         if (el) {
@@ -39,20 +39,22 @@ export const Navbar = () => {
                 setActiveSection(id);
               }
             },
-            { threshold: 0.5 }
+            {
+              threshold: 0.2,
+              rootMargin: "-10% 0px -40% 0px", // top, right, bottom, left
+            }
           );
           observer.observe(el);
           observers.push(observer);
         }
       });
     }
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       observers.forEach((observer) => observer.disconnect());
     };
   }, [pathname]);
-  
 
   return (
     <div className=" fixed top-0 z-50 justify-center items-center px-8 lg:px-14 py-8  3xl:px-28 3xl:py-10 w-full">
@@ -63,9 +65,9 @@ export const Navbar = () => {
           {/* Hamburger menu (mobile only) */}
           <button
             onClick={toggleDropdown}
-            className="lg:hidden text-white text-2xl"
+            className="lg:hidden text-white cursor-pointer text-2xl"
           >
-            <MenuOutlined />
+            {isOpen ? <CloseOutlined /> : <MenuOutlined />}
           </button>
         </div>
 
@@ -129,7 +131,10 @@ export const Navbar = () => {
           </div>
         </div>
         <div className="gap-3 lg:flex hidden font-alro-reg">
-          <p>talk to me </p>
+          <Link className={`cursor-pointer text-white`} href="#contact">
+            <p>talk to me </p>
+          </Link>
+
           <Image src={arrowIcon} alt="arrow" />
         </div>
       </div>
@@ -137,23 +142,60 @@ export const Navbar = () => {
       {/* Mobile Dropdown */}
       {isOpen && (
         <div className="lg:hidden mt-4 px-4 py-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 text-white font-alro-reg space-y-4">
-          <Link href="/home">
-            <p className="hover:text-white/80">home</p>
+          <Link href="/">
+            <p
+              className={
+                pathname === "/" || pathname === "/" || activeSection === "home"
+                  ? "text-white"
+                  : "text-white/50"
+              }
+            >
+              home
+            </p>
           </Link>
-          <a href="#about">
-            <p className="hover:text-white/80">about</p>
-          </a>
-          <a href="#skills">
-            <p className="hover:text-white/80">skills</p>
-          </a>
+          <Link
+            className={`cursor-pointer ${
+              activeSection === "about" && pathname === "/"
+                ? "text-white"
+                : "text-white/50"
+            }`}
+            href="/#about"
+          >
+            <p>about</p>
+          </Link>
+          <Link
+            className={`cursor-pointer ${
+              activeSection === "skills" && pathname === "/"
+                ? "text-white"
+                : "text-white/50"
+            }`}
+            href="/#skills"
+          >
+            <p>skills</p>
+          </Link>
           <Link href="/portfolio">
-            <p className="hover:text-white/80">portfolio</p>
+            <p
+              className={
+                pathname === "/portfolio" ? "text-white" : "text-white/50"
+              }
+            >
+              portfolio
+            </p>
           </Link>
           <Link href="/articles">
-            <p className="hover:text-white/80">articles</p>
+            <p
+              className={
+                pathname === "/articles" ? "text-white" : "text-white/50"
+              }
+            >
+              articles
+            </p>
           </Link>
+
           <div className="flex gap-3 pt-4 border-t border-white/10 items-center">
-            <p>talk to me</p>
+            <Link className={`cursor-pointer text-white`} href="#contact">
+              <p>talk to me </p>
+            </Link>
             <Image src={arrowIcon} alt="arrow" />
           </div>
         </div>
