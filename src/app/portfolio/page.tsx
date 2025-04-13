@@ -79,7 +79,7 @@ const Portfolio = () => {
       {/* Portfolio Scroll */}
       <div className="max-h-[700px] md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border">
       {/* Tabs */}
-      <div className="flex gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
+      <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
         <p
           className={`cursor-pointer ${
             activeTab === "frontend" ? "text-white border-b border-cyan" : "opacity-25"
@@ -105,14 +105,14 @@ const Portfolio = () => {
           .map((proj, idx) => (
             <div
               key={idx}
-              className="snap-start min-h-[700px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
+              className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
             >
-              <h3 className="font-azeret-mono text-8xl">{proj.title}</h3>
-              <h5 className="font-azeret-mono text-6xl text-cyan">
+              <h3 className="font-azeret-mono text-4xl lg:text-8xl">{proj.title}</h3>
+              <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
                 {proj.location}
               </h5>
-              <div className="flex gap-4 justify-center items-center ">
-                <p className="w-1/2">{proj.description}</p>
+              <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
+                <p className="lg:w-1/2 lg:text-left text-center">{proj.description}</p>
                 <Button variant="bordered" text="Open Project" />
               </div>
             </div>
