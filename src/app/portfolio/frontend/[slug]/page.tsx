@@ -26,48 +26,44 @@ const FrontendSinglePage = () => {
       <Navbar />
       <div className="">
         <div className="h-dvh flex flex-col gap-2 justify-center items-center">
-          <h2 className="text-5xl w-full text-white text-center lg:text-[150px] tracking-widest font-azeret-mono">
+          <h2 className="text-5xl w-full text-white text-center lg:text-[150px]  font-azeret-mono">
             {project?.title}
           </h2>
           <h2 className="text-cyan text-3xl  text-center lg:text-5xl font-azeret-mono">
             {project?.location}{" "}
           </h2>
         </div>
-        <div className="">
-          <div className="absolute hidden lg:flex top-[30%] left-[30%]">
-            <FloatingButton variant="cyan">
-              <p className="italic">
-                Data <span className="font-bold not-italic ">Analyst</span>
-              </p>
-            </FloatingButton>
-          </div>
-          <div className="absolute hidden lg:flex bottom-[30%] right-[24%]">
-            <FloatingButton variant="yellow">
-              <p className="italic">
-                Frontend{" "}
-                <span className="font-bold not-italic ">Developer</span>
-              </p>
-            </FloatingButton>
-          </div>
-          <div className="absolute hidden lg:flex top-[30%] right-[30%]">
-            <FloatingButton variant="cyan">
-              <p className="italic">
-                Data <span className="font-bold not-italic ">Analyst</span>
-              </p>
-            </FloatingButton>
-          </div>
-          <div className="absolute hidden lg:flex bottom-[30%] left-[24%]">
-            <FloatingButton variant="yellow">
-              <p className="italic">
-                Frontend{" "}
-                <span className="font-bold not-italic ">Developer</span>
-              </p>
-            </FloatingButton>
-          </div>
+        {/* Floating Technology Tags */}
+        <div className="relative hidden lg:block w-full h-full">
+          {project?.technologies?.map((tech, index) => {
+            // Optional: map tech to a color variant
+            const techColorMap: Record<string, string> = {
+              TypeScript: "cyan",
+              TailwindCSS: "red",
+              Git: "blue",
+              NextJS: "yellow",
+            };
+
+            const variants = [
+              "top-[30%] left-[30%]",
+              "bottom-[30%] right-[24%]",
+              "top-[30%] right-[30%]",
+              "bottom-[30%] left-[24%]",
+            ];
+            const position = variants[index % variants.length]; // cycle positions if more than 4
+
+            return (
+              <div key={tech} className={`absolute ${position}`}>
+                <FloatingButton variant={techColorMap[tech] || "white"}>
+                  <p className="italic font-bold">{tech}</p>
+                </FloatingButton>
+              </div>
+            );
+          })}
         </div>
       </div>
       {/* OTHER SECTIONS */}
-      <div className="mx-8 lg:px-14 3xl:px-28 py-16 flex flex-col gap-36 lg:gap-56">
+      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}
         <div className="w-full">
           <Row
@@ -82,9 +78,7 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Overview</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                    {
-                      project.overview
-                    }
+                    {project.overview}
                   </p>
                 </div>
               </div>
@@ -94,9 +88,7 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Challenge</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                   {
-                    project.challenge
-                   }
+                    {project.challenge}
                   </p>
                 </div>
               </div>
@@ -106,9 +98,7 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Solution</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                    {
-                      project.solution
-                    }
+                    {project.solution}
                   </p>
                 </div>
               </div>
@@ -118,7 +108,7 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Outcome</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                   {project.outcome}
+                    {project.outcome}
                   </p>
                 </div>
               </div>
