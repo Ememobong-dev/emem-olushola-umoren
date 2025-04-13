@@ -25,11 +25,13 @@ const FrontendSinglePage = () => {
     <div>
       <Navbar />
       <div className="">
-        <div className="h-dvh flex flex-col justify-center items-center">
-          <h2 className="text-4xl w-full text-white text-center lg:text-[150px] tracking-widest font-azeret-mono">
+        <div className="h-dvh flex flex-col gap-2 justify-center items-center">
+          <h2 className="text-5xl w-full text-white text-center lg:text-[150px] tracking-widest font-azeret-mono">
             {project?.title}
           </h2>
-          <h2 className="text-cyan text-3xl  text-center lg:text-5xl font-azeret-mono">{project?.location} </h2>
+          <h2 className="text-cyan text-3xl  text-center lg:text-5xl font-azeret-mono">
+            {project?.location}{" "}
+          </h2>
         </div>
         <div className="">
           <div className="absolute hidden lg:flex top-[30%] left-[30%]">
@@ -65,22 +67,24 @@ const FrontendSinglePage = () => {
         </div>
       </div>
       {/* OTHER SECTIONS */}
-      <div className="px-8 lg:px-14 3xl:px-28 py-16 flex flex-col gap-36 lg:gap-56">
+      <div className="mx-8 lg:px-14 3xl:px-28 py-16 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}
-        <div>
-          <Row gutter={[32, 32]} className="items-strech h-full w-full">
+        <div className="w-full">
+          <Row
+            gutter={[
+              { xs: 8, sm: 16, md: 24, lg: 32 }, // horizontal gutter
+              { xs: 32, sm: 32, md: 32, lg: 32 }, // vertical gutter
+            ]}
+            className="items-strech h-full w-full"
+          >
             <Col xs={24} lg={12}>
               <div className="w-full h-full">
                 <h3 className="font-alro-reg text-2xl mb-8">Overview</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                    Infarena is a Canadian-based platform designed to facilitate
-                    seamless interactions among users. It serves as a hub for
-                    trading goods, sharing reviews, participating in
-                    discussions, and listing small businesses for free.
-                    Additionally, the platform supports job postings and
-                    property reviews, empowering users to make informed
-                    decisions.
+                    {
+                      project.overview
+                    }
                   </p>
                 </div>
               </div>
@@ -90,13 +94,9 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Challenge</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                    The primary challenge was to develop a user-friendly
-                    platform that could handle multiple functionalities—such as
-                    trading, reviewing, and business listings—while maintaining
-                    an engaging and intuitive interface. The goal was to ensure
-                    smooth interactions for users posting jobs, reviewing
-                    properties, and contributing to discussions, all within a
-                    single, cohesive platform.
+                   {
+                    project.challenge
+                   }
                   </p>
                 </div>
               </div>
@@ -106,13 +106,9 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Solution</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                    The solution involved creating a sleek, fully responsive
-                    platform that prioritized user experience. The design
-                    focused on intuitive navigation and seamless functionality,
-                    enabling users to easily trade goods, share reviews, list
-                    businesses, post jobs, and review properties. The platform
-                    was built to be free for small businesses, encouraging
-                    broader participation and engagement.
+                    {
+                      project.solution
+                    }
                   </p>
                 </div>
               </div>
@@ -122,13 +118,7 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Outcome</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                    The outcome was a highly effective platform that enhanced
-                    user engagement and facilitated seamless navigation. Users
-                    could effortlessly interact, trade, and share information,
-                    leading to a more connected and informed community. The
-                    platform successfully met its goal of providing a
-                    user-friendly environment for diverse activities, ultimately
-                    empowering users to make better decisions.
+                   {project.outcome}
                   </p>
                 </div>
               </div>
@@ -138,7 +128,10 @@ const FrontendSinglePage = () => {
             <h3 className="font-alro-reg text-2xl">Technologies Used:</h3>
             <span className="flex gap-2 mt-5 mb-8">
               {project.technologies.map((item, index) => (
-                <p key={index} className="font-azeret-mono font-light text-[12px]">
+                <p
+                  key={index}
+                  className="font-azeret-mono font-light text-[12px]"
+                >
                   {" "}
                   {item},{" "}
                 </p>

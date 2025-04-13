@@ -17,6 +17,7 @@ const Portfolio = () => {
         role: "frontend",
         title: "Infarena",
         location: "Canada",
+        singlePageLink: "/portfolio/frontend/infarena",
         description:
           "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
       },
@@ -24,13 +25,15 @@ const Portfolio = () => {
         role: "frontend",
         title: "Ayo CPA",
         location: "Canada",
+        singlePageLink: "/portfolio/frontend/ayocpa",
         description:
-          "AyoCPA is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+          "AyoCPA is an accounting firm committed to redefining the financial experience. AyoCPA combines personalized services with cutting-edge technology to help clients achieve their financial goals, delivering a customer-focused and family-like experience in Canada.",
       },
       {
         role: "data",
         title: "GDSC",
         location: "Nigeria",
+        singlePageLink: "/portfolio/frontend/infarena",
         description:
           "GDSC is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
       },
@@ -38,20 +41,23 @@ const Portfolio = () => {
         role: "data",
         title: "Infarena Joblisting",
         location: "Canada",
+        singlePageLink: "/portfolio/frontend/infarena",
         description:
           "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
       },
       {
         role: "frontend",
-        title: "Infarena",
-        location: "Canada",
+        title: "Wow",
+        location: "China",
+        singlePageLink: "/portfolio/frontend/wow",
         description:
-          "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+          "Wow Gift Card is a leading gift card exchange platform based in China, offering a secure and efficient system for trading gift cards. With competitive rates, instant payouts, and top-tier customer service, the platform prioritizes user security and satisfaction, serving a global audience.",
       },
       {
         role: "data",
         title: "Pizza Sales Analysis",
         location: "US",
+        singlePageLink: "/portfolio/frontend/infarena",
         description:
           "Pizza Sales is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
       },
@@ -83,7 +89,7 @@ const Portfolio = () => {
       <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
         <p
           className={`cursor-pointer ${
-            activeTab === "frontend" ? "text-white border-b border-cyan" : "lg:opacity-25 opacity-50"
+            activeTab === "frontend" ? "text-white border-b-2 border-cyan" : "lg:opacity-25 opacity-50"
           }`}
           onClick={() => setActiveTab("frontend")}
         >
@@ -91,7 +97,7 @@ const Portfolio = () => {
         </p>
         <p
           className={`cursor-pointer ${
-            activeTab === "data" ? "text-white border-b border-cyan" : "lg:opacity-25 opacity-50"
+            activeTab === "data" ? "text-white border-b-2 border-cyan" : "lg:opacity-25 opacity-50"
           }`}
           onClick={() => setActiveTab("data")}
         >
@@ -108,8 +114,8 @@ const Portfolio = () => {
               key={idx}
               className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
             >
-                <Link href={'/portfolio/frontend/infarena'}>
-                <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl">{proj.title}</h3>
+                <Link href={proj.singlePageLink}>
+                <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">{proj.title}</h3>
                 </Link>
               
               <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
