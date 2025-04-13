@@ -18,7 +18,7 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({
 }) => {
   return (
     <div className="w-full h-[200px] border bg-[#0A0A0C] p-5 rounded-lg flex  flex-col justify-between">
-      <h3 className="underline text-white font-azeret-mono font-semibold text-lg">
+      <h3 className="underline cursor-pointer text-white font-azeret-mono font-semibold text-lg">
         {" "}
         {articleTitle}{" "}
       </h3>

@@ -1,10 +1,61 @@
+"use client";
+
 import { ArticlesCard } from "@/src/components/ArticlesCard";
 import { Button } from "@/src/components/buttons/Button";
+import { Contact } from "@/src/components/Contact";
+import { Footer } from "@/src/components/Footer";
 import { Navbar } from "@/src/components/Navbar";
 import { Col, Row } from "antd";
-import React from "react";
+import React, { useState } from "react";
 
 const Portfolio = () => {
+    const [activeTab, setActiveTab] = useState("frontend");
+
+    const projects = [
+      {
+        role: "frontend",
+        title: "Infarena",
+        location: "Canada",
+        description:
+          "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+      },
+      {
+        role: "frontend",
+        title: "Ayo CPA",
+        location: "Canada",
+        description:
+          "AyoCPA is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+      },
+      {
+        role: "data",
+        title: "Infarena",
+        location: "Canada",
+        description:
+          "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+      },
+      {
+        role: "data",
+        title: "Ayo CPA",
+        location: "Canada",
+        description:
+          "AyoCPA is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+      },
+      {
+        role: "frontend",
+        title: "Infarena",
+        location: "Canada",
+        description:
+          "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+      },
+      {
+        role: "data",
+        title: "Ayo CPA",
+        location: "Canada",
+        description:
+          "AyoCPA is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+      },
+    ];
+  
   return (
     <div>
       <Navbar />
@@ -24,6 +75,88 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+
+      {/* Portfolio Scroll */}
+      <div className="max-h-[700px] md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border">
+      {/* Tabs */}
+      <div className="flex gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
+        <p
+          className={`cursor-pointer ${
+            activeTab === "frontend" ? "text-white border-b border-cyan" : "opacity-25"
+          }`}
+          onClick={() => setActiveTab("frontend")}
+        >
+          Frontend Developer
+        </p>
+        <p
+          className={`cursor-pointer ${
+            activeTab === "data" ? "text-white border-b border-cyan" : "opacity-25"
+          }`}
+          onClick={() => setActiveTab("data")}
+        >
+          Data Analyst
+        </p>
+      </div>
+
+      {/* Scrollable Project Area */}
+      <div className="overflow-y-scroll snap-y snap-mandatory custom-scrollbar">
+        {projects
+          .filter((proj) => proj.role === activeTab)
+          .map((proj, idx) => (
+            <div
+              key={idx}
+              className="snap-start min-h-[700px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
+            >
+              <h3 className="font-azeret-mono text-8xl">{proj.title}</h3>
+              <h5 className="font-azeret-mono text-6xl text-cyan">
+                {proj.location}
+              </h5>
+              <div className="flex gap-4 justify-center items-center ">
+                <p className="w-1/2">{proj.description}</p>
+                <Button variant="bordered" text="Open Project" />
+              </div>
+            </div>
+          ))}
+      </div>
+    </div>
+      {/* <div className="h-dvh flex justify-center py-14 border">
+        <div>
+          <div className="flex gap-28 justify-center items-center">
+            <span>
+              <p className="cursor-pointer">Frontend Developer</p>
+            </span>
+            <span>
+              <p className="opacity-25 cursor-pointer">Data Analyst</p>
+            </span>
+          </div>
+          <div className="flex flex-col gap-8 justify-center items-center pt-64">
+            <h3 className="font-azeret-mono text-8xl">Infarena</h3>
+            <h5 className="font-azeret-mono text-6xl text-cyan">Canada</h5>
+            <div className="flex gap-4 justify-center items-center">
+              <p className="w-1/2">
+                Infarena is a Canadian-based platform designed to facilitate
+                seamless interactions among users. It serves as a hub for
+                trading goods, sharing reviews, participating in discussions,
+                and listing small businesses for free.
+              </p>
+              <Button variant="bordered" text="Open Project" />
+            </div>
+          </div>
+          <div className="flex flex-col gap-8 justify-center items-center pt-64">
+            <h3 className="font-azeret-mono text-8xl">Ayo CPA</h3>
+            <h5 className="font-azeret-mono text-6xl text-cyan">Canada</h5>
+            <div className="flex gap-4 justify-center items-center">
+              <p className="w-1/2">
+                AyoCPA is a Canadian-based platform designed to facilitate
+                seamless interactions among users. It serves as a hub for
+                trading goods, sharing reviews, participating in discussions,
+                and listing small businesses for free.
+              </p>
+              <Button variant="bordered" text="Open Project" />
+            </div>
+          </div>
+        </div>
+      </div> */}
 
       {/* Latest Articles */}
       <div className="px-8 lg:px-14 3xl:px-28 py-28">
@@ -64,7 +197,7 @@ const Portfolio = () => {
               <ArticlesCard
                 articleDate="2025-05-15"
                 articleDescription="A deep dive into React Hooks, focusing on useEffect and useState."
-                 articleTagOne="Data Analysis"
+                articleTagOne="Data Analysis"
                 articleTagTwo="Visualization"
                 articleTitle="Creating Interactive Data Visualizations with D3.js"
               />
@@ -72,6 +205,12 @@ const Portfolio = () => {
           </Row>
         </div>
       </div>
+      {/* Contact */}
+      <div className="px-8 lg:px-14 3xl:px-28 py-28">
+        <Contact />
+      </div>
+
+      <Footer />
     </div>
   );
 };
