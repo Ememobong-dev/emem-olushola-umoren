@@ -28,17 +28,17 @@ const Portfolio = () => {
       },
       {
         role: "data",
-        title: "Infarena",
-        location: "Canada",
+        title: "GDSC",
+        location: "Nigeria",
         description:
-          "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+          "GDSC is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
       },
       {
         role: "data",
-        title: "Ayo CPA",
+        title: "Infarena Joblisting",
         location: "Canada",
         description:
-          "AyoCPA is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+          "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
       },
       {
         role: "frontend",
@@ -49,10 +49,10 @@ const Portfolio = () => {
       },
       {
         role: "data",
-        title: "Ayo CPA",
-        location: "Canada",
+        title: "Pizza Sales Analysis",
+        location: "US",
         description:
-          "AyoCPA is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
+          "Pizza Sales is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
       },
     ];
   
@@ -82,7 +82,7 @@ const Portfolio = () => {
       <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
         <p
           className={`cursor-pointer ${
-            activeTab === "frontend" ? "text-white border-b border-cyan" : "opacity-25"
+            activeTab === "frontend" ? "text-white border-b border-cyan" : "lg:opacity-25 opacity-50"
           }`}
           onClick={() => setActiveTab("frontend")}
         >
@@ -90,7 +90,7 @@ const Portfolio = () => {
         </p>
         <p
           className={`cursor-pointer ${
-            activeTab === "data" ? "text-white border-b border-cyan" : "opacity-25"
+            activeTab === "data" ? "text-white border-b border-cyan" : "lg:opacity-25 opacity-50"
           }`}
           onClick={() => setActiveTab("data")}
         >
@@ -107,7 +107,7 @@ const Portfolio = () => {
               key={idx}
               className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
             >
-              <h3 className="font-azeret-mono text-4xl lg:text-8xl">{proj.title}</h3>
+              <h3 className="font-azeret-mono text-center text-4xl lg:text-8xl">{proj.title}</h3>
               <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
                 {proj.location}
               </h5>
