@@ -10,6 +10,10 @@ import Link from "next/link";
 import { Contact } from "@/src/components/Contact";
 import { Footer } from "@/src/components/Footer";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+
+
 
 const FrontendSinglePage = () => {
   const params = useParams();
@@ -168,6 +172,20 @@ const FrontendSinglePage = () => {
         {/* Contact */}
         <Contact />
       </div>
+      {project.liveDemo && (
+        <motion.a
+          href={project.liveDemo}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6, ease: "easeOut" }}
+          className="fixed bottom-6 right-6 z-[1000px] px-6 py-3 rounded-full bg-dark border border-white text-white font-azeret-mono text-sm hover:bg-white/20 transition-all duration-300"
+        >
+          View Live Website
+        </motion.a>
+      )}
+
       <Footer />
     </div>
   );

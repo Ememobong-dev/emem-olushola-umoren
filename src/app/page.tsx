@@ -56,7 +56,7 @@ export default function Home() {
     <div>
       <Navbar />
       <div className="landing_bg relative">
-        <div className="lg:absolute lg:bottom-20 py-28 lg:py-0 px-14 3xl:px-28 w-full">
+        <div className="lg:absolute lg:bottom-20 py-28 lg:py-0 px-14 w-full">
           <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0 lg:justify-between lg:items-end w-full">
             <div>
               <h2 className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg">
