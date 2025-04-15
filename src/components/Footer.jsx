@@ -9,10 +9,10 @@ export const Footer = () => {
   return (
     <div className="px-14 3xl:px-28 py-10  text-black bg-white flex flex-col gap-5 lg:flex-row justify-between items-center">
       <div className="flex flex-wrap justify-center lg:justify-normal font-alro-reg items-center gap-5">
-        <span>Terms</span>
-        <span>Privacy Policy</span>
-        <span>Skills</span>
-        <div className="flex gap-5 items-center">
+        <p className="">Terms</p>
+        <p>Privacy Policy</p>
+        <p>Skills</p>
+        <div className="flex gap-5 items-center justify-center p-4">
           <span>
             <Image src={linkedin} alt="social_links" />
           </span>
