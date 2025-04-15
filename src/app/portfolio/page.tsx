@@ -2,6 +2,7 @@
 
 import { ArticlesCard } from "@/src/components/ArticlesCard";
 import { Button } from "@/src/components/buttons/Button";
+import { FloatingButton } from "@/src/components/buttons/FloatingButton";
 import { Contact } from "@/src/components/Contact";
 import { Footer } from "@/src/components/Footer";
 import { Navbar } from "@/src/components/Navbar";
@@ -73,7 +74,7 @@ const Portfolio = () => {
   return (
     <div>
       <Navbar />
-      <div className="h-dvh relative flex justify-center items-center">
+      {/* <div className="h-dvh relative flex justify-center items-center">
         <div className="flex justify-center items-center">
           <div>
             <h2 className="font-alro-reg text-8xl text-center">Umoren</h2>
@@ -90,6 +91,38 @@ const Portfolio = () => {
               Scroll down
             </button>
           </div>
+        </div>
+      </div> */}
+
+      <div className="h-dvh relative flex justify-center items-center">
+        {/* Floating Tech Tags */}
+        <div className="absolute top-[15%] left-[10%]">
+          <FloatingButton variant="cyan">TypeScript</FloatingButton>
+        </div>
+        <div className="absolute top-[20%] right-[15%]">
+          <FloatingButton variant="blue">Git</FloatingButton>
+        </div>
+        <div className="absolute bottom-[30%] left-[15%]">
+          <FloatingButton variant="red">TailwindCSS</FloatingButton>
+        </div>
+        <div className="absolute bottom-[20%] right-[20%]">
+          <FloatingButton variant="yellow">NextJS</FloatingButton>
+        </div>
+
+        {/* Name */}
+        <div className="text-center">
+          <h2 className="font-alro-reg text-8xl">Umoren</h2>
+          <h2 className="font-bold font-alro-reg text-8xl">Emem Olushola</h2>
+        </div>
+
+        {/* Scroll Button */}
+        <div className="absolute bottom-[10%]">
+          <button
+            onClick={handleScrollDown}
+            className="rounded-full cursor-pointer border border-white w-32 py-2 px-3"
+          >
+            Scroll down
+          </button>
         </div>
       </div>
 

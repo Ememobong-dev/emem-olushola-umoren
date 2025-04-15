@@ -12,9 +12,6 @@ import { Footer } from "@/src/components/Footer";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-
-
-
 const FrontendSinglePage = () => {
   const params = useParams();
   const slug = params?.slug;
@@ -28,44 +25,43 @@ const FrontendSinglePage = () => {
   return (
     <div>
       <Navbar />
-      <div className="">
-        <div className="h-dvh flex flex-col gap-2 justify-center items-center">
-          <h2 className="text-5xl w-full text-white text-center lg:text-[150px]  font-azeret-mono">
-            {project?.title}
-          </h2>
-          <h2 className="text-cyan text-3xl  text-center lg:text-5xl font-azeret-mono">
-            {project?.location}{" "}
-          </h2>
-        </div>
-        {/* Floating Technology Tags */}
-        <div className="relative hidden lg:block w-full h-full">
-          {project?.technologies?.map((tech, index) => {
-            // Optional: map tech to a color variant
-            const techColorMap: Record<string, string> = {
-              TypeScript: "cyan",
-              TailwindCSS: "red",
-              Git: "blue",
-              NextJS: "yellow",
-            };
+      <div className="h-dvh relative flex flex-col gap-2 justify-center items-center">
+        {/* Floating Buttons Inside This Container */}
+        {project?.technologies?.map((tech, index) => {
+          const techColorMap: Record<string, string> = {
+            TypeScript: "cyan",
+            TailwindCSS: "red",
+            Git: "blue",
+            NextJS: "yellow",
+          };
 
-            const variants = [
-              "top-[30%] left-[30%]",
-              "bottom-[30%] right-[24%]",
-              "top-[30%] right-[30%]",
-              "bottom-[30%] left-[24%]",
-            ];
-            const position = variants[index % variants.length]; // cycle positions if more than 4
+          // Scatter styles — feel free to tweak!
+          const scatterPositions = [
+            "top-[10%] left-[15%]",
+            "top-[25%] right-[20%]",
+            "bottom-[25%] left-[25%]",
+            "bottom-[15%] right-[15%]",
+          ];
+          const position = scatterPositions[index % scatterPositions.length];
 
-            return (
-              <div key={tech} className={`absolute ${position}`}>
-                <FloatingButton variant={techColorMap[tech] || "white"}>
-                  <p className="italic font-bold">{tech}</p>
-                </FloatingButton>
-              </div>
-            );
-          })}
-        </div>
+          return (
+            <div key={tech} className={`absolute ${position}`}>
+              <FloatingButton variant={techColorMap[tech] || "white"}>
+                <p className="italic font-bold">{tech}</p>
+              </FloatingButton>
+            </div>
+          );
+        })}
+
+        {/* Title */}
+        <h2 className="text-5xl w-full text-white text-center lg:text-[150px] font-azeret-mono z-10">
+          {project?.title}
+        </h2>
+        <h2 className="text-cyan text-3xl text-center lg:text-5xl font-azeret-mono z-10">
+          {project?.location}
+        </h2>
       </div>
+
       {/* OTHER SECTIONS */}
       <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}

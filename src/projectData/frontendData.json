@@ -27,8 +27,7 @@
     "technologies": [
       "NextJS",
       "TypeScript",
-      "TailwindCSS",
-      "Git"
+      "TailwindCSS"
     ],
     "overview": "AyoCPA is an accounting firm committed to redefining the financial experience. AyoCPA combines personalized services with cutting-edge technology to help clients achieve their financial goals, delivering a customer-focused and family-like experience in Canada.",
     "challenge": "The primary challenge was to create a website that balanced elegance with functionality—conveying the firm’s professionalism while maintaining an approachable and modern aesthetic. It was also essential to ensure fast load times and intuitive navigation to provide a seamless user experience.",

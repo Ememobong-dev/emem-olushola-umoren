@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [activeSection, setActiveSection] = useState<string>("");
   const [showNavLinks, setShowNavLinks] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
   const pathname = usePathname();
@@ -62,27 +62,19 @@ export const Navbar = () => {
           </span>
           <div className="flex gap-8  3xl:gap-14 items-center font-alro-reg">
             <Link href="/" className="z-[1000px]">
-              <p
-                className={
-                  pathname === "/"
-                    ? "text-white"
-                    : "text-white/50"
-                }
-              >
+              <p className={pathname === "/" ? "text-white" : "text-white/50"}>
                 home
               </p>
             </Link>
             <Link
               className={`cursor-pointer z-[1000px] !text-white/50`}
               href="/#about"
-             
             >
-              <p  onClick={() => setActiveSection("about")}>about</p>
+              <p onClick={() => setActiveSection("about")}>about</p>
             </Link>
             <Link
               className={`cursor-pointer z-[1000px] !text-white/50`}
               href="/#skills"
-              
             >
               <p onClick={() => setActiveSection("skills")}>skills</p>
             </Link>
@@ -137,24 +129,16 @@ export const Navbar = () => {
             </p>
           </Link>
           <Link
-            className={`cursor-pointer ${
-              activeSection === "about" && pathname === "/"
-                ? "text-white"
-                : "text-white/50"
-            }`}
+            className={`cursor-pointer z-[1000px] !text-white/50`}
             href="/#about"
           >
-            <p>about</p>
+            <p onClick={() => setActiveSection("about")}>about</p>
           </Link>
           <Link
-            className={`cursor-pointer ${
-              activeSection === "skills" && pathname === "/"
-                ? "text-white"
-                : "text-white/50"
-            }`}
+            className={`cursor-pointer z-[1000px] !text-white/50`}
             href="/#skills"
           >
-            <p>skills</p>
+            <p onClick={() => setActiveSection("skills")}>skills</p>
           </Link>
           <Link href="/portfolio">
             <p
