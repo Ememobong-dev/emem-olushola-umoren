@@ -6,6 +6,7 @@ import github from "@/public/icons/github-icon.svg";
 import twitter from "@/public/icons/twitter.svg";
 import { Button } from "./buttons/Button";
 import { TagButton } from "./buttons/TagButton";
+import Link from "next/link";
 
 export const Contact = () => {
   return (
@@ -24,20 +25,32 @@ export const Contact = () => {
             </div>
             <div className="mt-14">
               <p className="text-base font-azeret-mono">Follow</p>
-              <div className="flex gap-3 items-center mt-8">
-                <span>
-                  <Image src={linkedin} alt="social_links" />
-                </span>
-                <span>
-                  <Image src={github} alt="social_links" />
-                </span>
-                <span>
-                  <Image src={twitter} alt="social_links" />
-                </span>
+              <div className="flex gap-3 items-start mt-8">
+                <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/">
+                  <Image
+                    src={linkedin}
+                    className="cursor-pointer"
+                    alt="social_links"
+                  />
+                </Link>
+                <Link href="https://github.com/Ememobong-dev">
+                  <Image
+                    src={github}
+                    className="cursor-pointer"
+                    alt="social_links"
+                  />
+                </Link>
+                <Link href="https://x.com/FTechbro">
+                  <Image
+                    src={twitter}
+                    className="cursor-pointer"
+                    alt="social_links"
+                  />
+                </Link>
               </div>
             </div>
             <div className="mt-14">
-              <Button variant="bordered" text="Book a Session" />
+              <Button variant="bordered" target link="https://calendly.com/ememobongumoren2/30min" text="Book a Session" />
             </div>
           </div>
         </Col>

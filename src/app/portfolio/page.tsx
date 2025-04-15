@@ -7,10 +7,17 @@ import { Footer } from "@/src/components/Footer";
 import { Navbar } from "@/src/components/Navbar";
 import { Col, Row } from "antd";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const Portfolio = () => {
     const [activeTab, setActiveTab] = useState("frontend");
+    const scrollRef= useRef<HTMLDivElement | null>(null) ;
+
+    const handleScrollDown = () => {
+      if(scrollRef.current) {
+        scrollRef.current.scrollIntoView({behavior : "smooth"})
+      }
+    }
 
     const projects = [
       {
@@ -76,7 +83,7 @@ const Portfolio = () => {
           </div>
 
           <div className="absolute bottom-[20%]">
-            <button className="rounded-full  lg:relative cursor-pointer border border-white w-32 py-2 px-3">
+            <button onClick={handleScrollDown} className="rounded-full lg:relative cursor-pointer border border-white w-32 py-2 px-3">
               Scroll down
             </button>
           </div>
@@ -84,7 +91,7 @@ const Portfolio = () => {
       </div>
 
       {/* Portfolio Scroll */}
-      <div className="max-h-[700px] md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border">
+      <div   ref={scrollRef} className="max-h-[700px] md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border">
       {/* Tabs */}
       <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
         <p
@@ -123,7 +130,7 @@ const Portfolio = () => {
               </h5>
               <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
                 <p className="lg:w-1/2 lg:text-left text-center">{proj.description}</p>
-                <Button variant="bordered" text="Open Project" />
+                <Button variant="bordered" target link={proj.singlePageLink} text="Open Project" />
               </div>
             </div>
           ))}

@@ -1,3 +1,6 @@
+"use client";
+
+
 import { Col, Row } from "antd";
 import { FloatingButton } from "../components/buttons/FloatingButton";
 import { Navbar } from "../components/Navbar";
@@ -15,8 +18,20 @@ import { SkillProgress } from "../components/SkillProgress";
 import AnimatedSection from "../components/AnimatedSection";
 import arrowIcon from "@/public/icons/arrow-line.svg";
 import line from "@/public/icons/top-line.svg";
+import { useRef } from "react";
+import Link from "next/link";
 
 export default function Home() {
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollDown = () => {
+    if(aboutRef.current){
+      aboutRef.current.scrollIntoView({behavior : "smooth"})
+    }
+  }
+
+
+
   const frontendSkills = [
     { skill: "React", percent: 90 },
     { skill: "Next.js", percent: 85 },
@@ -61,7 +76,10 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-center lg:justify-normal">
-              <button className="rounded-full absolute bottom-[10%] lg:relative cursor-pointer border border-white w-32 py-2 px-3">
+              <button
+                onClick={scrollDown}
+                className="rounded-full absolute bottom-[10%] lg:relative cursor-pointer border border-white w-32 py-2 px-3"
+              >
                 Scroll down
               </button>
             </div>
@@ -82,18 +100,18 @@ export default function Home() {
           </FloatingButton>
         </div>
       </div>
-      <div  className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56">
+      <div className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}
         <AnimatedSection>
-          <div  id="about">
-            <Row gutter={[56, 56]} className="flex items-stretch h-full">
-              <Col xs={24} lg={10}>
-                <div className="h-full flex flex-col justify-between ">
+          <div ref={aboutRef} id="about">
+            <Row gutter={[56, 56]} className="flex items-stretch  h-full">
+              <Col xs={24} lg={10} className="">
+                <div className="h-full">
                   <h3 className="font-alro-reg text-2xl lg:text-3xl">
                     Who is <span className="font-bold">Emem Olushola?</span>
                   </h3>
-                  <div className="flex flex-col text-justify gap-3 mt-6 font-azeret-mono text-[11px] ">
-                    <p>
+                  <div className="flex flex-col text-justify gap-4 mt-6 font-azeret-mono  ">
+                    <p className="tracking-widest">
                       I am a self-taught Frontend Developer and Data Analyst
                       with expertise in React, Next.js, TypeScript, and
                       TailwindCSS. My journey into tech has been fueled by
@@ -105,7 +123,7 @@ export default function Home() {
                       WOW Gift Card, a secure platform for global gift card
                       trading.
                     </p>
-                    <p>
+                    <p className="tracking-widest">
                       Beyond development, I hold certifications from Google and
                       Women Techsters, solidifying my expertise in data
                       analytics and digital problem-solving. I previously served
@@ -113,7 +131,7 @@ export default function Home() {
                       peers, led data-driven projects, and contributed to
                       fostering a community of aspiring analysts and developers.
                     </p>
-                    <p>
+                    <p className="tracking-widest">
                       My passion for learning drives me to stay ahead of
                       industry trends and continuously refine my skills. I
                       actively document my 100DaysOfCode journey on LinkedIn,
@@ -121,20 +139,20 @@ export default function Home() {
                       emerging technologies and innovations in frontend
                       development and data analytics.
                     </p>
-                    <p>
+                    <p className="tracking-widest leading-loose">
                       With a deep appreciation for clean code, and data-driven
                       decision-making, I am always eager to collaborate, build
                       meaningful projects, and push the boundaries of
                       technology.
                     </p>
                   </div>
-                  <div className="flex justify-between items-center mt-8">
-                    <Button variant="bordered" text="View Portfolio" />
-                    <Button variant="fill" text="Go To LinkedIn" />
+                  <div className="flex gap-8 items-center mt-8">
+                    <Button link="/portfolio" variant="bordered" text="View Portfolio" />
+                    <Button link="https://www.linkedin.com/in/ememobong-umoren-olushola/" target variant="fill" text="Go To LinkedIn" />
                   </div>
                 </div>
               </Col>
-              <Col xs={24} lg={14}>
+              <Col xs={24} lg={14} className="">
                 <div className="bg-dark-black w-full h-full rounded-2xl">
                   <div className="text-white font-azeret-mono rounded-t-2xl bg-grey py-3 px-6">
                     My achievements
@@ -258,7 +276,7 @@ export default function Home() {
                 <p className="font-azeret-mono text-center text-xl">
                   <span className="text-deep-blue">Frontend</span> Development
                 </p>
-                <div className=" h-full flex justify-between flex-wrap gap-y-2 mt-10">
+                <div className=" h-full flex justify-center gap-5 flex-wrap gap-y-2 mt-10">
                   {frontendSkills.map(({ skill, percent }) => (
                     <SkillProgress
                       key={skill}
@@ -295,15 +313,15 @@ export default function Home() {
                   My <span className="font-bold">Portfolio</span>
                 </h3>
                 <div className="flex gap-3 items-center">
-                  <span>
-                    <Image src={linkedin} alt="social_links" />
-                  </span>
-                  <span>
-                    <Image src={github} alt="social_links" />
-                  </span>
-                  <span>
-                    <Image src={twitter} alt="social_links" />
-                  </span>
+                  <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/">
+                    <Image src={linkedin} className="cursor-pointer" alt="social_links" />
+                  </Link>
+                  <Link href="https://github.com/Ememobong-dev">
+                    <Image src={github} className="cursor-pointer" alt="social_links" />
+                  </Link>
+                  <Link href="https://x.com/FTechbro">
+                    <Image src={twitter} className="cursor-pointer" alt="social_links" />
+                  </Link>
                 </div>
               </div>
               {/* Mobile view */}
@@ -340,14 +358,14 @@ export default function Home() {
                     <span className="font-semibold">Tools:</span> NextJS,
                     TypeScript, TailwindCSS, Git
                   </p>
-                  <div className="flex justify-between w-full items-center gap-4 mt-10">
+                  <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
                     <a
                       href="#"
                       className="text-blue-400 italic underline text-sm"
                     >
                       Infarena Website
                     </a>
-                    <Button variant="bordered" text="View Case Study" />
+                    <Button link="/portfolio/frontend/infarena" target variant="bordered" text="View Case Study" />
                   </div>
                 </div>
               </div>
@@ -371,14 +389,14 @@ export default function Home() {
                     <span className="font-semibold">Tools:</span> NextJS,
                     TypeScript, TailwindCSS, Git
                   </p>
-                  <div className="flex justify-between w-full items-center gap-4 mt-10">
+                  <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
                     <a
                       href="#"
                       className="text-blue-400 italic underline text-sm"
                     >
                       AyoCPA Website
                     </a>
-                    <Button variant="bordered" text="View Case Study" />
+                    <Button link="/portfolio/frontend/ayocpa" target variant="bordered" text="View Case Study" />
                   </div>
                 </div>
               </div>
@@ -402,14 +420,14 @@ export default function Home() {
                     <span className="font-semibold">Tools:</span> NextJS,
                     TypeScript, TailwindCSS, Git
                   </p>
-                  <div className="flex justify-between w-full items-center gap-4 mt-10">
+                  <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
                     <a
                       href="#"
                       className="text-blue-400 italic underline text-sm"
                     >
-                      WowGiftCard Website
+                      Wow Website
                     </a>
-                    <Button variant="bordered" text="View Case Study" />
+                    <Button variant="bordered" link="/portf targetolio/frontend/wow"  text="View Case Study" />
                   </div>
                 </div>
               </div>
@@ -418,14 +436,14 @@ export default function Home() {
               <span>
                 <Image src={line} alt="line" />
               </span>
-              <div className="flex cursor-pointer gap-3 justify-center items-center group transition-all">
-                <p className="font-azeret-mono font-semibold transform transition-transform duration-300 group-hover:translate-x-2">
+              <Link href={'/portfoio'} className="flex  cursor-pointer gap-3 justify-center items-center group transition-all">
+                <p className="font-azeret-mono font-semibold  text-lg transform transition-transform duration-300 group-hover:translate-x-2">
                   Go to Portfolio
                 </p>
                 <span className="transform transition-transform duration-300 group-hover:translate-x-2">
                   <Image src={arrowIcon} alt="arrow" />
                 </span>
-              </div>
+              </Link>
             </div>
           </div>
         </AnimatedSection>
