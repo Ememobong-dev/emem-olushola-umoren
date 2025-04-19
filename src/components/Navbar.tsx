@@ -116,7 +116,7 @@ export const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="lg:hidden mt-4 px-4 py-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 text-white font-alro-reg space-y-4">
+        <div className="lg:hidden mt-5 px-4 py-6 rounded-xl backdrop-blur-md bg-white/5 border border-white/10 text-white font-alro-reg space-y-4">
           <Link href="/">
             <p
               className={
@@ -143,7 +143,7 @@ export const Navbar = () => {
           <Link href="/portfolio">
             <p
               className={
-                pathname === "/portfolio" ? "text-white" : "text-white/50"
+                pathname === "/portfolio" ? "text-white" : "text-white/50  "
               }
             >
               portfolio

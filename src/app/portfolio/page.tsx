@@ -192,7 +192,7 @@ const Portfolio = () => {
       {/* Latest Articles */}
       <div className="px-8 lg:px-14 3xl:px-28 py-28">
         <div className="flex items-center justify-between mb-8">
-          <p>Latest Article</p>
+          <p className="font-alro-reg text-3xl">Latest Article</p>
           <Button variant="bordered" text="View All" />
         </div>
         <div>

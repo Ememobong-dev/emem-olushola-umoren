@@ -148,7 +148,7 @@ export default function Home() {
                   </div>
                   <div className="flex gap-8 items-center mt-8">
                     <Button link="/portfolio" variant="bordered" text="View Portfolio" />
-                    <Button link="https://www.linkedin.com/in/ememobong-umoren-olushola/" target variant="fill" text="Go To LinkedIn" />
+                    <Button link="https://www.linkedin.com/in/ememobong-umoren-olushola/" target variant="fill" text="Download Resume" />
                   </div>
                 </div>
               </Col>
@@ -309,17 +309,17 @@ export default function Home() {
           <div>
             <div>
               <div className="flex gap-8 items-center justify-between lg:justify-normal">
-                <h3 className="text-2xl font-alro-reg">
+                <h3 className="text-3xl font-alro-reg">
                   My <span className="font-bold">Portfolio</span>
                 </h3>
                 <div className="flex gap-3 items-center">
-                  <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/">
+                  <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/" target="_blank">
                     <Image src={linkedin} className="cursor-pointer" alt="social_links" />
                   </Link>
-                  <Link href="https://github.com/Ememobong-dev">
+                  <Link href="https://github.com/Ememobong-dev" target="_blank" >
                     <Image src={github} className="cursor-pointer" alt="social_links" />
                   </Link>
-                  <Link href="https://x.com/FTechbro">
+                  <Link href="https://x.com/FTechbro" target="_blank">
                     <Image src={twitter} className="cursor-pointer" alt="social_links" />
                   </Link>
                 </div>
