@@ -6,6 +6,8 @@ import { Col, Row } from "antd";
 import React, { useState } from "react";
 import rectangleImg from "@/public/icons/rectangle.svg";
 import articlesData from "@/src/projectData/articlesData.json";
+import { Contact } from "@/src/components/Contact";
+import { Footer } from "@/src/components/Footer";
 
 const options = [
   "React",
@@ -111,7 +113,11 @@ const Articles = () => {
             </Row>
           </div>
         </div>
+        <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
+          <Contact />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

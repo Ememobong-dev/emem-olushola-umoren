@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Contact } from "@/src/components/Contact";
 import { Footer } from "@/src/components/Footer";
 import ShareButton from "@/src/components/buttons/ShareButton";
+import { TagButton } from "@/src/components/buttons/TagButton";
 
 const ArticleSinglePage = () => {
   const params = useParams();
@@ -18,9 +19,9 @@ const ArticleSinglePage = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex justify-center items-center mt-32">
+      <div className="flex justify-center items-center py-16 lg:py-28 px-8 lg:px-14 3xl:px-28">
         <div className="flex flex-col  max-w-[1350px] py-16 lg:py-28 ">
-          <h2 className="text-5xl  text-white text-justify font-azeret-mono z-10">
+          <h2 className=" text-4xl lg:text-5xl text-white lg:text-justify font-azeret-mono z-10">
             {selectedArticle?.title}
           </h2>
           <div className="mt-14 flex flex-col gap-10 text-justify">
@@ -98,16 +99,23 @@ const ArticleSinglePage = () => {
               alt="article image"
             />
           </div>
-          <div className="mt-28">
-            <p className="font-azeret-mono text-lg">
-              {" "}
-              <span className="font-bold font-alro-reg">Author:</span>{" "}
-              {selectedArticle?.author}{" "}
-            </p>
-            <p className="font-azeret-mono text-lg">
-              <span className="font-bold font-alro-reg">Date:</span>{" "}
-              {selectedArticle?.date}{" "}
-            </p>
+          <div className="mt-28 flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center">
+            <div>
+              <p className="font-azeret-mono text-lg">
+                {" "}
+                <span className="font-bold font-alro-reg">Author:</span>{" "}
+                {selectedArticle?.author}{" "}
+              </p>
+              <p className="font-azeret-mono text-lg">
+                <span className="font-bold font-alro-reg">Date:</span>{" "}
+                {selectedArticle?.date}{" "}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              {selectedArticle.tags.map((tag, index) => (
+                <TagButton text={tag} key={index} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
