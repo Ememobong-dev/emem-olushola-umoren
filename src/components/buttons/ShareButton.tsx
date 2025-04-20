@@ -2,31 +2,31 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import shareIcon from "@/public/icons/share-icon.svg";
-
+import copy from "copy-to-clipboard";
 
 
 const ShareButton = ({ title }: { title: string }) => {
-  const handleShare = async () => {
-    const currentUrl = window.location.href;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: title,
-          url: currentUrl,
-        });
-      } catch (error) {
-        console.error("Sharing failed:", error);
-      }
-    } else {
-      try {
-        await navigator.clipboard.writeText(currentUrl);
-        alert("Link copied to clipboard!");
-      } catch (error) {
-        console.error("Copy failed:", error);
-      }
-    }
-  };
+    const handleShare = async () => {
+        const currentUrl = window.location.href;
+    
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title,
+              url: currentUrl,
+            });
+          } catch (error) {
+            console.error("Web Share failed:", error);
+          }
+        } else {
+          const copied = copy(currentUrl);
+          if (copied) {
+            alert("Link copied to clipboard!");
+          } else {
+            alert("Failed to copy link.");
+          }
+        }
+      };
 
   return (
     <motion.button
