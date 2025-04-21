@@ -8,9 +8,10 @@ interface ButtonProps {
   variant: Variant;
   link?: string;
   target?: boolean;
+  download?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ text, variant, link, target }) => {
+export const Button: React.FC<ButtonProps> = ({ text, variant, link, target, download }) => {
   const variantClasses =
     variant === "bordered"
       ? "border border-white bg-transparent text-white"
@@ -20,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({ text, variant, link, target }) =
     <button
       className={` flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8  ${variantClasses} `}
     >
-      {link ? <Link className="hover:!text-progress-cyan hover:font-semibold" target={target ? "_blank" : ""} href={link}> {text} </Link> : <p>{text}</p>}
+      {link ? <Link download={download} className="hover:!text-progress-cyan hover:font-semibold" target={target ? "_blank" : ""} href={link}> {text} </Link> : <p>{text}</p>}
     </button>
   );
 };

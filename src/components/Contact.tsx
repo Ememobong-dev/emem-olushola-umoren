@@ -64,9 +64,9 @@ export const Contact = () => {
                 <h3 className="font-azeret-mono">Services</h3>
                 <div className="flex flex-wrap gap-5 mt-3">
                   <TagButton text="API Integration" />
-                  <TagButton text="Web Development(UI/UX Implementation" />
-                  <TagButton text="Data Dashboards" />
+                  <TagButton text="Web Development(UI/UX Implementation)" />
                   <TagButton text="Frontend Performance Optimization" />
+                  <TagButton text="Data Dashboards" />
                   <TagButton text="Data Analysis" />
                   <TagButton text="Version Control & Collaboration" />
                 </div>

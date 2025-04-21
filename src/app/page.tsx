@@ -1,6 +1,5 @@
 "use client";
 
-
 import { Col, Row } from "antd";
 import { FloatingButton } from "../components/buttons/FloatingButton";
 import { Navbar } from "../components/Navbar";
@@ -20,23 +19,24 @@ import arrowIcon from "@/public/icons/arrow-line.svg";
 import line from "@/public/icons/top-line.svg";
 import { useRef } from "react";
 import Link from "next/link";
+import { TypingText } from "../components/animations/TypingTextAnimation";
+import LeftRevealAnimatedText from "../components/animations/LeftRevealAnimation";
+import RightRevealAnimatedText from "../components/animations/RightRevealAnimation";
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
 
   const scrollDown = () => {
-    if(aboutRef.current){
-      aboutRef.current.scrollIntoView({behavior : "smooth"})
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }
-
-
+  };
 
   const frontendSkills = [
     { skill: "React", percent: 90 },
     { skill: "Next.js", percent: 85 },
     { skill: "Tailwind CSS", percent: 88 },
-    { skill: "Typescript", percent: 80 },
+    { skill: "Typescript", percent: 75 },
     { skill: "CSS", percent: 85 },
     { skill: "JavaScript", percent: 88 },
   ];
@@ -46,9 +46,9 @@ export default function Home() {
     { skill: "Data Creation", percent: 85 },
     { skill: "Data Modelling", percent: 88 },
     { skill: "Excel", percent: 80 },
-    { skill: "SPSS", percent: 85 },
-    { skill: "SQL", percent: 70 },
-    { skill: "Python", percent: 75 },
+    { skill: "SPSS", percent: 70 },
+    { skill: "SQL", percent: 80 },
+    { skill: "Python", percent: 80 },
     { skill: "PowerBI", percent: 75 },
   ];
 
@@ -59,21 +59,31 @@ export default function Home() {
         <div className="lg:absolute lg:bottom-20 py-28 lg:py-0 px-14 w-full">
           <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0 lg:justify-between lg:items-end w-full">
             <div>
-              <h2 className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg">
-                Umoren
-              </h2>
-              <h2 className="text-4xl w-full  text-center lg:text-left lg:text-8xl font-alro-reg">
-                Emem Olushola
-              </h2>
-              <div className="flex justify-center lg:justify-normal">
-                <p className=" w-full px-8 lg:px-0 absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-1/2 font-azeret-mono  text-center lg:text-left">
-                  Self-taught Frontend Developer and Data Analyst skilled in{" "}
-                  <span className="text-pepper-red">React</span>,{" "}
-                  <span className="text-blue">Next.js</span>,{" "}
-                  <span className="text-cyan">TypeScript</span>, and{" "}
-                  <span className="text-sharp-yellow">TailwindCSS</span>.
-                </p>
-              </div>
+              <TypingText
+                text="Umoren"
+                className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg"
+                sound="/sounds/typingSound.mp3"
+              />
+              <TypingText
+                text="Emem Olushola."
+                className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg"
+                sound="/sounds/typingSound.mp3"
+              />
+              <LeftRevealAnimatedText>
+                <div className="flex justify-center lg:justify-normal">
+                  <p className=" w-full px-8 lg:px-0 absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-1/2 font-azeret-mono  text-center lg:text-left">
+                    Self-taught Frontend Developer and Data Analyst skilled in{" "}
+                    <span className="text-pepper-red">React.js</span>,{" "}
+                    <span className="text-cyan">Next.js</span>,{" "}
+                    <span className="text-blue">TypeScript</span>,{" "}
+                    <span className="text-sharp-yellow">TailwindCSS</span>,{" "}
+                    <span className="text-deep-blue">Excel</span>,{" "}
+                    <span className="text-sharp-yellow">SQL</span>,{" "}
+                    <span className="text-progress-cyan">Python</span>, and{" "}
+                    <span className="text-deep-blue">PowerBI</span>.
+                  </p>
+                </div>
+              </LeftRevealAnimatedText>
             </div>
             <div className="flex justify-center lg:justify-normal">
               <button
@@ -102,42 +112,66 @@ export default function Home() {
       </div>
       <div className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}
-        <AnimatedSection>
-          <div ref={aboutRef} id="about">
-            <Row gutter={[56, 56]} className="flex items-stretch  h-full">
-              <Col xs={24} lg={10} className="">
-                <div className="h-full">
+        <div ref={aboutRef} id="about">
+          <Row
+            gutter={[56, 56]}
+            className="flex items-stretch overflow-hidden h-full"
+          >
+            <Col xs={24} lg={10} className="">
+              <LeftRevealAnimatedText>
+                <div className="h-full overflow-hidden">
                   <h3 className="font-alro-reg text-2xl lg:text-3xl">
                     Who is <span className="font-bold">Emem Olushola?</span>
                   </h3>
                   <div className="flex flex-col text-justify gap-4 mt-6 font-azeret-mono  ">
                     <p className="tracking-widest">
                       I am a self-taught Frontend Developer and Data Analyst
-                      with expertise in React, Next.js, TypeScript, and
-                      TailwindCSS. My journey into tech has been fueled by
-                      curiosity, continuous learning, and a passion for
-                      problem-solving. Over the years, I have built
-                      user-friendly, scalable, and impactful digital solutions
-                      for global clients, including Infarena, a trade and review
-                      platform; AyoCPA, a personalized accounting solution; and
-                      WOW Gift Card, a secure platform for global gift card
-                      trading.
+                      with expertise in React, Next.js, TypeScript, TailwindCSS
+                      and Data Analysis skills. My journey into tech has been
+                      fueled by curiosity, continuous learning, and a passion
+                      for problem-solving. With over{" "}
+                      <span className="font-bold text-progress-cyan">
+                        {" "}
+                        four years
+                      </span>{" "}
+                      of experience, I have built user-friendly, scalable, and
+                      impactful digital solutions for global clients, including{" "}
+                      <span className="font-bold text-sharp-yellow">
+                        Infarena
+                      </span>
+                      , a trade and review platform;{" "}
+                      <span className="font-bold text-sharp-yellow">AyoCPA</span>,
+                      a personalized accounting solution; and
+                      <span className="font-bold text-sharp-yellow">
+                        {" "}
+                        WOW Gift Card
+                      </span>
+                      , a secure platform for global gift card trading.
                     </p>
                     <p className="tracking-widest">
-                      Beyond development, I hold certifications from Google and
-                      Women Techsters, solidifying my expertise in data
-                      analytics and digital problem-solving. I previously served
-                      as the Data Analytics Team Lead at GDSC, where I mentored
-                      peers, led data-driven projects, and contributed to
-                      fostering a community of aspiring analysts and developers.
+                      Beyond development, I hold certifications from{" "}
+                      <span className="font-bold text-deep-blue">Google</span>{" "}
+                      and
+                      <span className="font-bold text-deep-blue">
+                        {" "}
+                        Women Techsters
+                      </span>
+                      , solidifying my expertise in data analytics and digital
+                      problem-solving. I previously served as the Data Analytics
+                      Team Lead at GDSC, where I mentored peers, led data-driven
+                      projects, and contributed to fostering a community of
+                      aspiring analysts and developers.
                     </p>
                     <p className="tracking-widest">
                       My passion for learning drives me to stay ahead of
                       industry trends and continuously refine my skills. I
-                      actively document my 100DaysOfCode journey on LinkedIn,
-                      sharing insights, challenges, and progress while exploring
-                      emerging technologies and innovations in frontend
-                      development and data analytics.
+                      actively document my{" "}
+                      <span className="font-bold text-progress-cyan">
+                        100DaysOfCode journey
+                      </span>{" "}
+                      on LinkedIn, sharing insights, challenges, and progress
+                      while exploring emerging technologies and innovations in
+                      frontend development and data analytics.
                     </p>
                     <p className="tracking-widest leading-loose">
                       With a deep appreciation for clean code, and data-driven
@@ -147,13 +181,25 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="flex gap-8 items-center mt-8">
-                    <Button link="/portfolio" variant="bordered" text="View Portfolio" />
-                    <Button link="https://www.linkedin.com/in/ememobong-umoren-olushola/" target variant="fill" text="Download Resume" />
+                    <Button
+                      link="/portfolio"
+                      variant="bordered"
+                      text="View Portfolio"
+                    />
+                    <Button
+                      link="/Ememobong-Umoren-Resume.pdf"
+                      target
+                      variant="fill"
+                      text="Download Resume"
+                      download
+                    />
                   </div>
                 </div>
-              </Col>
-              <Col xs={24} lg={14} className="">
-                <div className="bg-dark-black w-full h-full rounded-2xl">
+              </LeftRevealAnimatedText>
+            </Col>
+            <Col xs={24} lg={14} className="">
+              <RightRevealAnimatedText>
+                <div className="bg-dark-black overflow-hidden w-full h-full rounded-2xl">
                   <div className="text-white font-azeret-mono rounded-t-2xl bg-grey py-3 px-6">
                     My achievements
                   </div>
@@ -260,10 +306,10 @@ export default function Home() {
                     </pre>
                   </div>
                 </div>
-              </Col>
-            </Row>
-          </div>
-        </AnimatedSection>
+              </RightRevealAnimatedText>
+            </Col>
+          </Row>
+        </div>
         {/* THIRD SECTION */}
         <AnimatedSection>
           <div id="skills">
@@ -313,14 +359,29 @@ export default function Home() {
                   My <span className="font-bold">Portfolio</span>
                 </h3>
                 <div className="flex gap-3 items-center">
-                  <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/" target="_blank">
-                    <Image src={linkedin} className="cursor-pointer" alt="social_links" />
+                  <Link
+                    href="https://www.linkedin.com/in/ememobong-umoren-olushola/"
+                    target="_blank"
+                  >
+                    <Image
+                      src={linkedin}
+                      className="cursor-pointer"
+                      alt="social_links"
+                    />
                   </Link>
-                  <Link href="https://github.com/Ememobong-dev" target="_blank" >
-                    <Image src={github} className="cursor-pointer" alt="social_links" />
+                  <Link href="https://github.com/Ememobong-dev" target="_blank">
+                    <Image
+                      src={github}
+                      className="cursor-pointer"
+                      alt="social_links"
+                    />
                   </Link>
                   <Link href="https://x.com/FTechbro" target="_blank">
-                    <Image src={twitter} className="cursor-pointer" alt="social_links" />
+                    <Image
+                      src={twitter}
+                      className="cursor-pointer"
+                      alt="social_links"
+                    />
                   </Link>
                 </div>
               </div>
@@ -365,7 +426,12 @@ export default function Home() {
                     >
                       Infarena Website
                     </a>
-                    <Button link="/portfolio/frontend/infarena" target variant="bordered" text="View Case Study" />
+                    <Button
+                      link="/portfolio/frontend/infarena"
+                      target
+                      variant="bordered"
+                      text="View Case Study"
+                    />
                   </div>
                 </div>
               </div>
@@ -396,7 +462,12 @@ export default function Home() {
                     >
                       AyoCPA Website
                     </a>
-                    <Button link="/portfolio/frontend/ayocpa" target variant="bordered" text="View Case Study" />
+                    <Button
+                      link="/portfolio/frontend/ayocpa"
+                      target
+                      variant="bordered"
+                      text="View Case Study"
+                    />
                   </div>
                 </div>
               </div>
@@ -427,7 +498,11 @@ export default function Home() {
                     >
                       Wow Website
                     </a>
-                    <Button variant="bordered" link="/portf targetolio/frontend/wow"  text="View Case Study" />
+                    <Button
+                      variant="bordered"
+                      link="/portf targetolio/frontend/wow"
+                      text="View Case Study"
+                    />
                   </div>
                 </div>
               </div>
@@ -436,7 +511,10 @@ export default function Home() {
               <span>
                 <Image src={line} alt="line" />
               </span>
-              <Link href={'/portfoio'} className="flex  cursor-pointer gap-3 justify-center items-center group transition-all">
+              <Link
+                href={"/portfoio"}
+                className="flex  cursor-pointer gap-3 justify-center items-center group transition-all"
+              >
                 <p className="font-azeret-mono font-semibold  text-lg transform transition-transform duration-300 group-hover:translate-x-2">
                   Go to Portfolio
                 </p>
