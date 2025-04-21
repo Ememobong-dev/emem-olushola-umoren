@@ -70,6 +70,14 @@ const Portfolio = () => {
       description:
         "Pizza Sales is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
     },
+    {
+      role: "frontend",
+      title: "Photography",
+      location: "Canada",
+      singlePageLink: "/portfolio/frontend/photography",
+      description:
+      "From polished headshots to soulful lifestyle captures, Photography craft images that do more than just “look good”. They speak volumes. Whether for personal branding, professional needs, or intimate memories, every photo session is a curated experience."
+    },
   ];
 
   return (
