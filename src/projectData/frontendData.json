@@ -60,5 +60,26 @@
       "/images/ayocpa.png",
       "/images/wow.png"
     ]
+  },
+  {
+    "slug": "photography",
+    "title": "Photography",
+    "location": "Canada",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "Wow Gift Card is a leading gift card exchange platform based in China, offering a secure and efficient system for trading gift cards. With competitive rates, instant payouts, and top-tier customer service, the platform prioritizes user security and satisfaction, serving a global audience.",
+    "challenge": "The main challenge was to build a platform that could support secure, real-time transactions while remaining user-friendly and visually engaging. Ensuring trust through robust security features and creating a seamless experience across devices were key priorities.",
+    "solution": "A fully responsive and secure platform was developed with a focus on intuitive user flows, encryption-based transaction handling, and a modern UI. The design emphasized ease of use while integrating essential features such as real-time rate updates, identity verification, and multilingual support to accommodate a global user base.",
+    "outcome": "The result was a high-performance platform that streamlined the gift card trading process, enhanced user trust through strong security protocols, and improved overall customer satisfaction. The platform successfully positioned Wow Gift Card as a reliable and competitive player in the digital exchange market.",
+    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "gallery": [
+      "/images/infarena.png",
+      "/images/ayocpa.png",
+      "/images/wow.png"
+    ]
   }
 ]
