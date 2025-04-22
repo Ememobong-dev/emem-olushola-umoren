@@ -16,11 +16,14 @@ export const Contact = () => {
           <div>
             <h2 className="font-azeret-mono text-2xl">Contacts</h2>
             <div className="flex flex-col gap-4 mt-5">
-              <p className="font-azeret-mono text-sm font-light underline">
-                ememobongumoren2@gmail.com
+              <p className="font-azeret-mono text-sm font-light text-white hover:text-white underline">
+                <a  className="font-azeret-mono text-sm font-light !text-white hover:text-white" href="mailto:ememobongumoren2@gmail.com">
+                  {" "}
+                  ememobongumoren2@gmail.com
+                </a>
               </p>
               <p className="font-azeret-mono text-sm font-light">
-                +234 810 469 8415
+                <a href="tel:+234 810 469 8415" className="!text-white hover:text-white">+234 810 469 8415</a>
               </p>
             </div>
             <div className="mt-14">
@@ -50,7 +53,12 @@ export const Contact = () => {
               </div>
             </div>
             <div className="mt-14">
-              <Button variant="bordered" target link="https://calendly.com/ememobongumoren2/30min" text="Book a Session" />
+              <Button
+                variant="bordered"
+                target
+                link="https://calendly.com/ememobongumoren2/30min"
+                text="Book a Session"
+              />
             </div>
           </div>
         </Col>

@@ -102,14 +102,12 @@ const Portfolio = () => {
         {/* Name */}
         <div className="text-center">
           <TypingText
-            text="Umoren"
-            className="font-alro-reg text-8xl"
-            sound="/sounds/typingSound.mp3"
+            text="Emem Olushola"
+            className=" font-alro-reg text-8xl"
           />
-          <TypingText
-            text="Emem Olushola."
+           <TypingText
+            text="Umoren."
             className="font-bold font-alro-reg text-8xl"
-            sound="/sounds/typingSound.mp3"
           />
         </div>
 

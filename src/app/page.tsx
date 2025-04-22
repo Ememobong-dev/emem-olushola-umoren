@@ -60,14 +60,12 @@ export default function Home() {
           <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0 lg:justify-between lg:items-end w-full">
             <div>
               <TypingText
-                text="Umoren"
+                text="Emem Olushola"
                 className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg"
-                sound="/sounds/typingSound.mp3"
               />
-              <TypingText
-                text="Emem Olushola."
-                className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg"
-                sound="/sounds/typingSound.mp3"
+               <TypingText
+                text="Umoren."
+                className="text-4xl w-full font-bold text-center lg:text-left lg:text-8xl font-alro-reg"
               />
               <LeftRevealAnimatedText>
                 <div className="flex justify-center lg:justify-normal">
