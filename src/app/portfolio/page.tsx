@@ -10,6 +10,8 @@ import { Navbar } from "@/src/components/Navbar";
 import { Col, Row } from "antd";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
+import frontendProjects from "@/src/projectData/frontendData.json";
+import dataProjects from "@/src/projectData/analysisData.json";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -21,64 +23,7 @@ const Portfolio = () => {
     }
   };
 
-  const projects = [
-    {
-      role: "frontend",
-      title: "Infarena",
-      location: "Canada",
-      singlePageLink: "/portfolio/frontend/infarena",
-      description:
-        "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
-    },
-    {
-      role: "frontend",
-      title: "Ayo CPA",
-      location: "Canada",
-      singlePageLink: "/portfolio/frontend/ayocpa",
-      description:
-        "AyoCPA is an accounting firm committed to redefining the financial experience. AyoCPA combines personalized services with cutting-edge technology to help clients achieve their financial goals, delivering a customer-focused and family-like experience in Canada.",
-    },
-    {
-      role: "data",
-      title: "GDSC",
-      location: "Nigeria",
-      singlePageLink: "/portfolio/frontend/infarena",
-      description:
-        "GDSC is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
-    },
-    {
-      role: "data",
-      title: "Infarena Joblisting",
-      location: "Canada",
-      singlePageLink: "/portfolio/frontend/infarena",
-      description:
-        "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
-    },
-    {
-      role: "frontend",
-      title: "Wow",
-      location: "China",
-      singlePageLink: "/portfolio/frontend/wow",
-      description:
-        "Wow Gift Card is a leading gift card exchange platform based in China, offering a secure and efficient system for trading gift cards. With competitive rates, instant payouts, and top-tier customer service, the platform prioritizes user security and satisfaction, serving a global audience.",
-    },
-    {
-      role: "data",
-      title: "Pizza Sales Analysis",
-      location: "US",
-      singlePageLink: "/portfolio/frontend/infarena",
-      description:
-        "Pizza Sales is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free.",
-    },
-    {
-      role: "frontend",
-      title: "Photography",
-      location: "Canada",
-      singlePageLink: "/portfolio/frontend/photography",
-      description:
-      "From polished headshots to soulful lifestyle captures, Photography craft images that do more than just “look good”. They speak volumes. Whether for personal branding, professional needs, or intimate memories, every photo session is a curated experience."
-    },
-  ];
+  const projectDynamicList  =  activeTab === "frontend" ? frontendProjects : dataProjects
 
   return (
     <div>
@@ -87,16 +32,16 @@ const Portfolio = () => {
       <div className="h-dvh relative flex justify-center items-center">
         {/* Floating Tech Tags */}
         <div className="absolute top-[15%] left-[10%]">
-          <FloatingButton variant="cyan">TypeScript</FloatingButton>
+          <FloatingButton variant="cyan">Frontend <span className="font-bold">Development</span> </FloatingButton>
         </div>
         <div className="absolute top-[20%] right-[15%]">
-          <FloatingButton variant="blue">Git</FloatingButton>
+          <FloatingButton variant="blue">React <span className="font-bold">Developer</span></FloatingButton>
         </div>
         <div className="absolute bottom-[30%] left-[15%]">
-          <FloatingButton variant="red">TailwindCSS</FloatingButton>
+          <FloatingButton variant="red">Google <span className="font-bold">Bigquery</span> </FloatingButton>
         </div>
         <div className="absolute bottom-[20%] right-[20%]">
-          <FloatingButton variant="yellow">NextJS</FloatingButton>
+          <FloatingButton variant="yellow">Data <span className="font-bold">Analysis</span> </FloatingButton>
         </div>
 
         {/* Name */}
@@ -132,7 +77,7 @@ const Portfolio = () => {
           <p
             className={`cursor-pointer ${
               activeTab === "frontend"
-                ? "text-white border-b-2 border-cyan"
+                ? "text-white border-b-4 border-cyan"
                 : "lg:opacity-25 opacity-50"
             }`}
             onClick={() => setActiveTab("frontend")}
@@ -142,7 +87,7 @@ const Portfolio = () => {
           <p
             className={`cursor-pointer ${
               activeTab === "data"
-                ? "text-white border-b-2 border-cyan"
+                ? "text-white border-b-4 border-cyan"
                 : "lg:opacity-25 opacity-50"
             }`}
             onClick={() => setActiveTab("data")}
@@ -153,14 +98,12 @@ const Portfolio = () => {
 
         {/* Scrollable Project Area */}
         <div className="overflow-y-scroll snap-y snap-mandatory custom-scrollbar">
-          {projects
-            .filter((proj) => proj.role === activeTab)
-            .map((proj, idx) => (
+          {projectDynamicList.map((proj, idx) => (
               <div
                 key={idx}
                 className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
               >
-                <Link href={proj.singlePageLink}>
+                <Link href={`/portfolio/frontend/${proj.slug} `}>
                   <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
                     {proj.title}
                   </h3>
@@ -171,12 +114,12 @@ const Portfolio = () => {
                 </h5>
                 <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
                   <p className="lg:w-1/2 lg:text-left text-center">
-                    {proj.description}
+                    {proj.overview}
                   </p>
                   <Button
                     variant="bordered"
                     target
-                    link={proj.singlePageLink}
+                    link={`/portfolio/frontend/${proj.slug} `}
                     text="Open Project"
                   />
                 </div>
