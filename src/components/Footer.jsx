@@ -12,8 +12,12 @@ export const Footer = () => {
   return (
     <div className="px-14 z-[1] 3xl:px-28 py-10  text-black bg-white flex flex-col gap-5 lg:flex-row justify-between items-center">
       <div className="flex flex-wrap justify-center lg:justify-normal font-alro-reg items-center gap-5">
-        <p className="">Terms</p>
-        <p>Privacy Policy</p>
+        <Link href="/terms">
+          <p>Terms</p>
+        </Link>
+        <Link href="/privacy">
+          <p>Privacy Policy</p>
+        </Link>
         <Link href="/#skills">
           <p>Skills</p>
         </Link>

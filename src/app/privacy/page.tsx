@@ -13,7 +13,7 @@ const Privacy = () => {
             Privacy and Refund Policy
           </h3>
           <div>
-            <h3 className="text-3xl mb-5 font-alro-reg">Data Collection</h3>
+            <h3 className="text-3xl mb-5 font-alro-reg">1.  Data Collection</h3>
             <ul className="list-disc text-justify pl-5 font-azeret-mono">
               <li>
                 I collect only the information necessary to carry out your
@@ -28,7 +28,7 @@ const Privacy = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-3xl mb-5 font-alro-reg">Data Usage</h3>
+            <h3 className="text-3xl mb-5 font-alro-reg">2.  Data Usage</h3>
             <ul className="list-disc text-justify pl-5 font-azeret-mono">
               <li>
                 Any design files, content, or access credentials shared are
@@ -42,7 +42,7 @@ const Privacy = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-3xl mb-5 font-alro-reg">Confidentiality</h3>
+            <h3 className="text-3xl mb-5 font-alro-reg">3.  Confidentiality</h3>
             <ul className="list-disc text-justify pl-5 font-azeret-mono">
               <li>
                 I treat all client data and project content as confidential.
@@ -55,7 +55,7 @@ const Privacy = () => {
           </div>
           <div>
             <h3 className="text-3xl mb-5 font-alro-reg">
-              Refund Policy (Summary)
+              4.  Refund Policy (Summary)
             </h3>
             <ul className="list-disc text-justify pl-5 font-azeret-mono">
               <li>Full refund if no work has started.</li>
