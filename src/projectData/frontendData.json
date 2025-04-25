@@ -50,7 +50,7 @@
       "TailwindCSS",
       "Git"
     ],
-    "overview": "nfarena is a dynamic, multi-purpose web platform developed for users in Canada to connect, explore, and engage with their local communities. Designed as an all-in-one hub, the platform allows users to interact through discussion boards, post and browse real estate listings, upload business profiles, find job opportunities, and explore marketplace offerings—all within their specific location.",
+    "overview": "Infarena is a dynamic, multi-purpose web platform developed for users in Canada to connect, explore, and engage with their local communities. Designed as an all-in-one hub, the platform allows users to interact through discussion boards, post and browse real estate listings, upload business profiles, find job opportunities, and explore marketplace offerings—all within their specific location.",
     "challenge": "The vision behind Infarena was to simplify community integration for newcomers and residents alike. The client needed a scalable, responsive, and interactive frontend that could accommodate multiple functionalities without overwhelming the user. The challenge was creating a seamless user experience across various modules—discussion forums, listings, marketplace, job board, and more—while maintaining clarity and ease of use.",
     "solution": "I collaborated with a teammate to develope the frontend of Infarena using React, TypeScript, and Tailwind CSS, ensuring a clean, modular structure and consistent UI across features. I focused on intuitive navigation and responsive layout that allows users to sign in, participate in community discussions, post listings, and explore services based on their geographic location. Each feature—from real estate to job board—was treated as a focused experience within the larger ecosystem.",
     "outcome": "The result is a modern, community-driven platform that empowers users to stay informed, connected, and engaged within their locality. Infarena successfully combines multiple services under one digital roof, making it a valuable tool for individuals looking to integrate into a new area or stay updated on local opportunities. The frontend delivers a smooth, scalable experience that adapts to the evolving needs of both users and the client.",
@@ -75,6 +75,90 @@
     "challenge": " The main goal was to build a platform that feels trustworthy, responsive, and easy to navigate—while clearly communicating the value of their services.",
     "solution": "I developed the frontend using NextJS, TypeScript, and Tailwind CSS, with a focus on building a refined and efficient user journey. The design emphasizes clarity and accessibility, incorporating interactive components like a live rate calculator. From layout structure to visual cues, every element was crafted to support smooth navigation and prompt action.",
     "outcome": "The final product is a highly functional user interface that enhances trust and encourages engagement. The result is a polished and user-focused experience that aligns perfectly with the client’s mission to simplify gift card exchange.",
+    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "gallery": [
+      "/images/infarena.png",
+      "/images/ayocpa.png",
+      "/images/wow.png"
+    ]
+  },
+  {
+    "slug": "job-listing",
+    "title": "Job Listings",
+    "location": "Frontend Mentor",
+    "technologies": [
+      "Frontend Mentor",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "This project is a responsive job listing interface built to allow users to browse and filter job opportunities based on position, languages, and tools. Inspired by a Frontend Mentor design challenge, the application offers an intuitive experience where users can dynamically refine job results using multi-tag filters.",
+    "challenge": "The core challenge of this project was implementing a robust filtering logic that could handle multiple overlapping criteria, particularly when filtering jobs by technologies listed as arrays (e.g., languages and tools). Achieving real-time filtering responsiveness without compromising performance required careful consideration of the algorithm structure and user interaction flow.",
+    "solution": "I developed the interface using React, TypeScript, and Tailwind CSS, with a strong focus on state management and efficient data handling. To manage the filtering logic, I implemented a custom algorithm that checks whether each job listing matches all selected filter tags using methods like every(). Collaboration played a key role—through pair programming and targeted research, I refined the logic into a clean and maintainable solution.",
+    "outcome": "The final product is a fully functional, visually cohesive job board that demonstrates advanced filtering capabilities and responsive design. This project enhanced my skills in logic structuring, component reusability, and collaborative debugging. It stands as a personal milestone in problem-solving and practical frontend development.",
+    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "gallery": [
+      "/images/infarena.png",
+      "/images/ayocpa.png",
+      "/images/wow.png"
+    ]
+  },
+  {
+    "slug": "todo-app",
+    "title": "Todo Application",
+    "location": "Frontend Mentor",
+    "technologies": [
+      "Frontend Mentor",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "This To-Do App is a productivity-focused task manager designed with simplicity and interactivity in mind. Inspired by a Frontend Mentor challenge, it allows users to manage their daily tasks efficiently—adding, completing, deleting, and filtering tasks based on their status. The app also features a dark/light mode toggle to enhance user comfort across environments.",
+    "challenge": "Building a seamless task management experience involved handling a range of user interactions—from real-time input tracking to managing multiple task states (active, completed, all). Implementing intuitive features like keyboard shortcuts, hover effects, and dynamic filtering required thoughtful state management and user-focused design decisions.",
+    "solution": "Using React, TypeScript, and Tailwind CSS, I developed a lightweight yet fully interactive application. Key features include: A toggle for switching between dark and light themes, Keyboard handling with onKeyDown to enhance form input interactions, Contextual UI feedback using onMouseEnter to reveal controls on hover, Robust state management using useState and functional updates to manage task arrays efficiently, and Filter controls to display All, Active, or Completed tasks.",
+    "outcome": "The result is a responsive and polished task manager that delivers a smooth and intuitive user experience. This project reinforced my understanding of React’s state logic, improved my handling of conditional rendering and events, and expanded my familiarity with accessible user interface design. It’s a great example of how small applications can be powerful learning tools and showcase practical frontend skills.",
+    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "gallery": [
+      "/images/infarena.png",
+      "/images/ayocpa.png",
+      "/images/wow.png"
+    ]
+  },
+  {
+    "slug": "product-list-with-cart",
+    "title": "Product List with Cart",
+    "location": "Frontend Mentor",
+    "technologies": [
+      "Frontend Mentor",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "This project is a simplified e-commerce interface that allows users to interact with a product list by adding items to a cart, adjusting quantities, removing products, and confirming orders. Though built without a backend, it simulates core online shopping functionalities using client-side state and local storage for data persistence.",
+    "challenge": "The goal was to mimic essential e-commerce interactions while managing all state and data within the browser. The key challenge was handling cart updates in a way that felt responsive and realistic—without relying on server-side logic or database calls. Ensuring persistence across page refreshes was also crucial to emulate a user-friendly shopping experience.",
+    "solution": "I built the interface using React, TypeScript, and Tailwind CSS, leveraging localStorage to persist cart data across sessions. The project includes: Dynamic product display and interaction, Real-time cart updates including quantity increase/decrease and item removal, Order confirmation logic to simulate a checkout experience, and State synchronization with localStorage to ensure user data is retained even after reload.",
+    "outcome": "The result is a lightweight, intuitive product listing and cart system that demonstrates foundational e-commerce functionality using only frontend technologies. This project strengthened my understanding of state persistence, array manipulation, and UI feedback loops, while also highlighting the power of localStorage in client-side development.",
+    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "gallery": [
+      "/images/infarena.png",
+      "/images/ayocpa.png",
+      "/images/wow.png"
+    ]
+  },
+  {
+    "slug": "rest-countries-api",
+    "title": "REST Countries API",
+    "location": "Frontend Mentor",
+    "technologies": [
+      "Frontend Mentor",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "This project is a responsive and interactive frontend application that consumes the REST Countries API to display data about countries around the world. It features a clean layout with dark and light mode toggling, a search bar for locating countries by name, and a region-based filter to narrow down results. Users can also click into each country card to view a detailed dynamic page with more information such as population, capital, subregion, languages, currencies, and bordering countries.",
+    "challenge": "While the user interface itself appears straightforward, implementing real-time filtering and routing to dynamically generated pages required careful data handling and navigation logic. Filtering results simultaneously based on user input and region selection was especially tricky, as it involved chaining and reapplying multiple filters in a predictable, user-friendly manner.",
+    "solution": "Built using Next.js, TypeScript, and Tailwind CSS, the application leverages client-side routing to generate dynamic pages for each country using the Next.js app router. For interactivity and responsiveness, it uses search parameters and router hooks like useRouter and useSearchParams to update and access filter states in real-time. Theme toggling was implemented using state management and Tailwind’s dark mode configuration, allowing users to easily switch between light and dark viewing preferences.",
+    "outcome": "The project successfully delivers an educational and smooth user experience, showcasing how data-rich APIs can be paired with modern frontend frameworks to build engaging applications. It deepened my understanding of Next.js routing, search parameter handling, and dynamic page rendering while sharpening my approach to building scalable filter logic and theme switching functionality.",
     "liveDemo": "https://wow-giftcard.vercel.app/",
     "gallery": [
       "/images/infarena.png",

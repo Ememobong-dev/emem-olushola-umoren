@@ -8,13 +8,15 @@ import { Footer } from "@/src/components/Footer";
 import { Navbar } from "@/src/components/Navbar";
 import { Col, Row } from "antd";
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import frontendProjects from "@/src/projectData/frontendData.json";
 import dataProjects from "@/src/projectData/analysisData.json";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("frontend");
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const projectRefs = useRef<(HTMLElement | null)[]>([]);
 
   const handleScrollDown = () => {
     if (scrollRef.current) {
@@ -24,6 +26,37 @@ const Portfolio = () => {
 
   const projectDynamicList =
     activeTab === "frontend" ? frontendProjects : dataProjects;
+
+  const totalProjects = projectDynamicList.length;
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+  
+    projectRefs.current.forEach((ref, idx) => {
+      if (!ref) return;
+  
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setCurrentIndex(idx + 1);
+            }
+          });
+        },
+        {
+          root: scrollRef.current,
+          threshold: 0.6, // At least 60% in view to count as "active"
+        }
+      );
+  
+      observer.observe(ref);
+      observers.push(observer);
+    });
+  
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, [projectDynamicList]);
 
   return (
     <div>
@@ -56,7 +89,7 @@ const Portfolio = () => {
         <div className="text-center">
           <h2 className=" font-alro-reg text-8xl">Emem Olushola</h2>
           <h2 className="font-bold font-alro-reg text-8xl">Umoren.</h2>
-        </div> 
+        </div>
 
         {/* Scroll Button */}
         <div className="absolute bottom-[10%]">
@@ -72,7 +105,7 @@ const Portfolio = () => {
       {/* Portfolio Scroll */}
       <div
         ref={scrollRef}
-        className="max-h-[700px] md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border"
+        className="max-h-[700px] relative md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border"
       >
         {/* Tabs */}
         <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
@@ -103,6 +136,9 @@ const Portfolio = () => {
           {projectDynamicList.map((proj, idx) => (
             <div
               key={idx}
+              ref={(el) => {
+                projectRefs.current[idx] = el;
+              }}
               className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
             >
               <Link href={`/portfolio/frontend/${proj.slug} `}>
@@ -127,6 +163,9 @@ const Portfolio = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="absolute top-2 right-4 z-20 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm">
+          {currentIndex}/{totalProjects}
         </div>
       </div>
 
