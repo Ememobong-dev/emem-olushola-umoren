@@ -1,6 +1,5 @@
 "use client";
 
-import { TypingText } from "@/src/components/animations/TypingTextAnimation";
 import { ArticlesCard } from "@/src/components/ArticlesCard";
 import { Button } from "@/src/components/buttons/Button";
 import { FloatingButton } from "@/src/components/buttons/FloatingButton";
@@ -23,7 +22,8 @@ const Portfolio = () => {
     }
   };
 
-  const projectDynamicList  =  activeTab === "frontend" ? frontendProjects : dataProjects
+  const projectDynamicList =
+    activeTab === "frontend" ? frontendProjects : dataProjects;
 
   return (
     <div>
@@ -32,29 +32,31 @@ const Portfolio = () => {
       <div className="h-dvh relative flex justify-center items-center">
         {/* Floating Tech Tags */}
         <div className="absolute top-[15%] left-[10%]">
-          <FloatingButton variant="cyan">Frontend <span className="font-bold">Development</span> </FloatingButton>
+          <FloatingButton variant="cyan">
+            Frontend <span className="font-bold">Development</span>{" "}
+          </FloatingButton>
         </div>
         <div className="absolute top-[20%] right-[15%]">
-          <FloatingButton variant="blue">React <span className="font-bold">Developer</span></FloatingButton>
+          <FloatingButton variant="blue">
+            React <span className="font-bold">Developer</span>
+          </FloatingButton>
         </div>
         <div className="absolute bottom-[30%] left-[15%]">
-          <FloatingButton variant="red">Google <span className="font-bold">Bigquery</span> </FloatingButton>
+          <FloatingButton variant="red">
+            Google <span className="font-bold">Bigquery</span>{" "}
+          </FloatingButton>
         </div>
         <div className="absolute bottom-[20%] right-[20%]">
-          <FloatingButton variant="yellow">Data <span className="font-bold">Analysis</span> </FloatingButton>
+          <FloatingButton variant="yellow">
+            Data <span className="font-bold">Analysis</span>{" "}
+          </FloatingButton>
         </div>
 
         {/* Name */}
         <div className="text-center">
-          <TypingText
-            text="Emem Olushola"
-            className=" font-alro-reg text-8xl"
-          />
-           <TypingText
-            text="Umoren."
-            className="font-bold font-alro-reg text-8xl"
-          />
-        </div>
+          <h2 className=" font-alro-reg text-8xl">Emem Olushola</h2>
+          <h2 className="font-bold font-alro-reg text-8xl">Umoren.</h2>
+        </div> 
 
         {/* Scroll Button */}
         <div className="absolute bottom-[10%]">
@@ -99,32 +101,32 @@ const Portfolio = () => {
         {/* Scrollable Project Area */}
         <div className="overflow-y-scroll snap-y snap-mandatory custom-scrollbar">
           {projectDynamicList.map((proj, idx) => (
-              <div
-                key={idx}
-                className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
-              >
-                <Link href={`/portfolio/frontend/${proj.slug} `}>
-                  <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
-                    {proj.title}
-                  </h3>
-                </Link>
+            <div
+              key={idx}
+              className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
+            >
+              <Link href={`/portfolio/frontend/${proj.slug} `}>
+                <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
+                  {proj.title}
+                </h3>
+              </Link>
 
-                <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
-                  {proj.location}
-                </h5>
-                <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
-                  <p className="lg:w-1/2 lg:text-left text-center">
-                    {proj.overview}
-                  </p>
-                  <Button
-                    variant="bordered"
-                    target
-                    link={`/portfolio/frontend/${proj.slug} `}
-                    text="Open Project"
-                  />
-                </div>
+              <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
+                {proj.location}
+              </h5>
+              <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
+                <p className="lg:w-1/2 lg:text-left text-center">
+                  {proj.overview}
+                </p>
+                <Button
+                  variant="bordered"
+                  target
+                  link={`/portfolio/frontend/${proj.slug} `}
+                  text="Open Project"
+                />
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
 

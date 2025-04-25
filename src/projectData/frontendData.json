@@ -7,13 +7,33 @@
       "NextJS",
       "TypeScript",
       "TailwindCSS",
-      "Git"
+      "Framer-Motion"
     ],
-    "overview": "Wow Gift Card is a leading gift card exchange platform based in China, offering a secure and efficient system for trading gift cards. With competitive rates, instant payouts, and top-tier customer service, the platform prioritizes user security and satisfaction, serving a global audience.",
-    "challenge": "The main challenge was to build a platform that could support secure, real-time transactions while remaining user-friendly and visually engaging. Ensuring trust through robust security features and creating a seamless experience across devices were key priorities.",
-    "solution": "A fully responsive and secure platform was developed with a focus on intuitive user flows, encryption-based transaction handling, and a modern UI. The design emphasized ease of use while integrating essential features such as real-time rate updates, identity verification, and multilingual support to accommodate a global user base.",
-    "outcome": "The result was a high-performance platform that streamlined the gift card trading process, enhanced user trust through strong security protocols, and improved overall customer satisfaction. The platform successfully positioned Wow Gift Card as a reliable and competitive player in the digital exchange market.",
+    "overview": "ShotByPortable is a photography portfolio website designed to showcase the work of a professional photographer specializing in headshots, lifestyle, and branding photography. The site offers a seamless experience for visitors to explore galleries, review pricing and packages, and book personalized sessions. It also includes a robust admin dashboard for the client to manage content dynamically.",
+    "challenge": "The client needed a sleek, responsive platform that not only highlights their visual artistry but also simplifies the booking process and offers easy content management. They wanted the site to reflect their unique storytelling approach through visuals, while being intuitive for both visitors and administrators.",
+    "solution": "I developed a modern, responsive web application that brings the photographer's creative vision to life. The main website is optimized for performance and visual storytelling, while the admin frontend gives a structure that allows the client to effortlessly update galleries, modify pricing packages, and manage bookings. The design is aligned with their brand identity, providing an immersive and professional experience for users.",
+    "outcome": "The final product is a visually striking, fully functional portfolio website that empowers the client to maintain their content independently. Visitors now enjoy a smooth browsing and booking experience, and the client has received positive feedback from users for the site's aesthetic and usability. The website has become a central tool in elevating the photographer’s brand presence online.",
     "liveDemo": "https://photography-seven-ecru.vercel.app/",
+    "gallery": [
+      "/images/infarena.png",
+      "/images/ayocpa.png",
+      "/images/wow.png"
+    ]
+  },
+  {
+    "slug": "ayocpa",
+    "title": "AyoCPA",
+    "location": "Canada",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS"
+    ],
+    "overview": "AyoCPA is a Canadian-based accounting firm offering a full suite of financial services including accounting, bookkeeping, payroll, taxation, business advisory, and estate planning. The website was designed to reflect the firm's client-focused philosophy and commitment to modern, tech-driven solutions. It features informative sections such as About, Services, Blog, and Resources, along with essential user interactions like document submission, appointment booking, and a client portal.",
+    "challenge": "The client needed a clean, professional, and responsive website that could clearly communicate their wide range of services while enabling user engagement through online document submission and multi-branch appointment scheduling. Additionally, they required intuitive navigation and accessibility for both new and returning clients, with seamless integration of key tools like a client portal.",
+    "solution": "As the frontend developer, I translated the provided design into a fully responsive, user-friendly web interface using NextJS, TypeScript, AntD and Tailwind CSS. Special attention was given to accessibility, responsiveness across devices, and maintaining a professional yet approachable aesthetic. I implemented dynamic UI components to support document uploads, branch-based appointment booking, and seamless navigation through the company’s services and blog content.",
+    "outcome": "The final frontend build provided AyoCPA with a polished and engaging digital presence that aligns with their mission to deliver personalized accounting services. The client now has a professional platform that facilitates customer interactions and strengthens trust with potential clients. The site has improved their online visibility and has streamlined key business operations like client onboarding and scheduling.",
+    "liveDemo": "https://www.ayocpa.ca/",
     "gallery": [
       "/images/infarena.png",
       "/images/ayocpa.png",
@@ -30,31 +50,11 @@
       "TailwindCSS",
       "Git"
     ],
-    "overview": "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free. Additionally, the platform supports job postings and property reviews, empowering users to make informed decisions.",
-    "challenge": "The primary challenge was to develop a user-friendly platform that could handle multiple functionalities—such as trading, reviewing, and business listings—while maintaining an engaging and intuitive interface. The goal was to ensure smooth interactions for users posting jobs, reviewing properties, and contributing to discussions, all within a single, cohesive platform.",
-    "solution": "The solution involved creating a sleek, fully responsive platform that prioritized user experience. The design focused on intuitive navigation and seamless functionality, enabling users to easily trade goods, share reviews, list businesses, post jobs, and review properties. The platform was built to be free for small businesses, encouraging broader participation and engagement.",
-    "outcome": "The outcome was a highly effective platform that enhanced user engagement and facilitated seamless navigation. Users could effortlessly interact, trade, and share information, leading to a more connected and informed community. The platform successfully met its goal of providing a user-friendly environment for diverse activities, ultimately empowering users to make better decisions.",
-    "liveDemo": "https://infarena.vercel.app",
-    "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
-    ]
-  },
-  {
-    "slug": "ayocpa",
-    "title": "AyoCPA",
-    "location": "Canada",
-    "technologies": [
-      "NextJS",
-      "TypeScript",
-      "TailwindCSS"
-    ],
-    "overview": "AyoCPA is an accounting firm committed to redefining the financial experience. AyoCPA combines personalized services with cutting-edge technology to help clients achieve their financial goals, delivering a customer-focused and family-like experience in Canada.",
-    "challenge": "The primary challenge was to create a website that balanced elegance with functionality—conveying the firm’s professionalism while maintaining an approachable and modern aesthetic. It was also essential to ensure fast load times and intuitive navigation to provide a seamless user experience.",
-    "solution": "The solution involved designing and developing a polished, responsive website that clearly communicated AyoCPA’s mission and service offerings. Emphasis was placed on clean design, intuitive structure, and performance optimization. The user interface was tailored to reflect the firm's personal touch and innovative approach, while backend enhancements ensured speed and reliability.",
-    "outcome": "The final product was a visually appealing, user-friendly website that strengthened AyoCPA’s digital presence. It effectively highlighted their services and values, resulting in improved client engagement, smoother navigation, and a professional brand image aligned with their customer-first philosophy.",
-    "liveDemo": "https://www.ayocpa.ca/",
+    "overview": "nfarena is a dynamic, multi-purpose web platform developed for users in Canada to connect, explore, and engage with their local communities. Designed as an all-in-one hub, the platform allows users to interact through discussion boards, post and browse real estate listings, upload business profiles, find job opportunities, and explore marketplace offerings—all within their specific location.",
+    "challenge": "The vision behind Infarena was to simplify community integration for newcomers and residents alike. The client needed a scalable, responsive, and interactive frontend that could accommodate multiple functionalities without overwhelming the user. The challenge was creating a seamless user experience across various modules—discussion forums, listings, marketplace, job board, and more—while maintaining clarity and ease of use.",
+    "solution": "I collaborated with a teammate to develope the frontend of Infarena using React, TypeScript, and Tailwind CSS, ensuring a clean, modular structure and consistent UI across features. I focused on intuitive navigation and responsive layout that allows users to sign in, participate in community discussions, post listings, and explore services based on their geographic location. Each feature—from real estate to job board—was treated as a focused experience within the larger ecosystem.",
+    "outcome": "The result is a modern, community-driven platform that empowers users to stay informed, connected, and engaged within their locality. Infarena successfully combines multiple services under one digital roof, making it a valuable tool for individuals looking to integrate into a new area or stay updated on local opportunities. The frontend delivers a smooth, scalable experience that adapts to the evolving needs of both users and the client.",
+    "liveDemo": "https://infarena.com/",
     "gallery": [
       "/images/infarena.png",
       "/images/ayocpa.png",
@@ -71,10 +71,10 @@
       "TailwindCSS",
       "Git"
     ],
-    "overview": "Wow Gift Card is a leading gift card exchange platform based in China, offering a secure and efficient system for trading gift cards. With competitive rates, instant payouts, and top-tier customer service, the platform prioritizes user security and satisfaction, serving a global audience.",
-    "challenge": "The main challenge was to build a platform that could support secure, real-time transactions while remaining user-friendly and visually engaging. Ensuring trust through robust security features and creating a seamless experience across devices were key priorities.",
-    "solution": "A fully responsive and secure platform was developed with a focus on intuitive user flows, encryption-based transaction handling, and a modern UI. The design emphasized ease of use while integrating essential features such as real-time rate updates, identity verification, and multilingual support to accommodate a global user base.",
-    "outcome": "The result was a high-performance platform that streamlined the gift card trading process, enhanced user trust through strong security protocols, and improved overall customer satisfaction. The platform successfully positioned Wow Gift Card as a reliable and competitive player in the digital exchange market.",
+    "overview": "WowGiftCard is a secure and user-centric web platform built to simplify the process of exchanging gift cards for cash. The platform offers real-time rate calculations, instant payouts, and supports a wide range of popular gift card brands including Amazon, iTunes, Google Play, and Walmart. With a focus on user trust and transaction speed, the platform ensures a seamless experience from card submission to cash payout.",
+    "challenge": " The main goal was to build a platform that feels trustworthy, responsive, and easy to navigate—while clearly communicating the value of their services.",
+    "solution": "I developed the frontend using NextJS, TypeScript, and Tailwind CSS, with a focus on building a refined and efficient user journey. The design emphasizes clarity and accessibility, incorporating interactive components like a live rate calculator. From layout structure to visual cues, every element was crafted to support smooth navigation and prompt action.",
+    "outcome": "The final product is a highly functional user interface that enhances trust and encourages engagement. The result is a polished and user-focused experience that aligns perfectly with the client’s mission to simplify gift card exchange.",
     "liveDemo": "https://wow-giftcard.vercel.app/",
     "gallery": [
       "/images/infarena.png",
