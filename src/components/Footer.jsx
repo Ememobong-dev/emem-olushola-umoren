@@ -1,9 +1,12 @@
 import React from "react";
-import linkedin from "@/public/icons/black-linkedin.svg";
-import github from "@/public/icons/black-github.svg";
-import twitter from "@/public/icons/black-twitter.svg";
 import footer_logo from "../../public/icons/footer-logo.svg";
 import Image from "next/image";
+import {
+  GithubFilled,
+  LinkedinFilled,
+  TwitterCircleFilled,
+} from "@ant-design/icons";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -11,19 +14,22 @@ export const Footer = () => {
       <div className="flex flex-wrap justify-center lg:justify-normal font-alro-reg items-center gap-5">
         <p className="">Terms</p>
         <p>Privacy Policy</p>
-        <p>Skills</p>
+        <Link href="/#skills">
+          <p>Skills</p>
+        </Link>
         <div className="flex gap-5 items-center justify-center p-4">
-          <span>
-            <Image src={linkedin} alt="social_links" />
-          </span>
-          <span>
-            <Image src={github} alt="social_links" />
-          </span>
-          <span>
-            <Image src={twitter} alt="social_links" />
-          </span>
+          <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/">
+            <LinkedinFilled />
+          </Link>
+          <Link href="https://github.com/Ememobong-dev">
+            <GithubFilled />
+          </Link>
+          <Link href="https://x.com/FTechbro">
+            <TwitterCircleFilled />
+          </Link>
         </div>
       </div>
+
       <div>
         <span>
           <Image src={footer_logo} alt="logo" />

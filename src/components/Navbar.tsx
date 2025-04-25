@@ -40,7 +40,9 @@ export const Navbar = () => {
       <div className="flex justify-between items-center w-full">
         {/* MOBILE */}
         <div className="lg:hidden flex items-center justify-between w-full">
-          <Image src={brandLogo} alt="brand-logo" />
+          <Link href={"/"}>
+            <Image src={brandLogo} alt="brand-logo" />
+          </Link>
           <button
             onClick={toggleDropdown}
             className="lg:hidden text-white cursor-pointer text-2xl"
@@ -57,9 +59,9 @@ export const Navbar = () => {
               : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
         >
-          <span>
+          <Link href={"/"}>
             <Image src={brandLogo} alt="brand-logo" />
-          </span>
+          </Link>
           <div className="flex gap-8  3xl:gap-14 items-center font-alro-reg">
             <Link href="/" className="z-[1000px]">
               <p className={pathname === "/" ? "text-white" : "text-white/50"}>

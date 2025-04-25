@@ -15,9 +15,9 @@
     "outcome": "The final product is a visually striking, fully functional portfolio website that empowers the client to maintain their content independently. Visitors now enjoy a smooth browsing and booking experience, and the client has received positive feedback from users for the site's aesthetic and usability. The website has become a central tool in elevating the photographer’s brand presence online.",
     "liveDemo": "https://photography-seven-ecru.vercel.app/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/photography/photography1.png",
+      "/images/photography/photography2.png",
+      "/images/photography/photography3.png"
     ]
   },
   {
@@ -35,9 +35,9 @@
     "outcome": "The final frontend build provided AyoCPA with a polished and engaging digital presence that aligns with their mission to deliver personalized accounting services. The client now has a professional platform that facilitates customer interactions and strengthens trust with potential clients. The site has improved their online visibility and has streamlined key business operations like client onboarding and scheduling.",
     "liveDemo": "https://www.ayocpa.ca/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/ayocpa/ayocpa1.png",
+      "/images/ayocpa/ayocpa2.png",
+      "/images/ayocpa/ayocpa3.png"
     ]
   },
   {
@@ -56,9 +56,9 @@
     "outcome": "The result is a modern, community-driven platform that empowers users to stay informed, connected, and engaged within their locality. Infarena successfully combines multiple services under one digital roof, making it a valuable tool for individuals looking to integrate into a new area or stay updated on local opportunities. The frontend delivers a smooth, scalable experience that adapts to the evolving needs of both users and the client.",
     "liveDemo": "https://infarena.com/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/infarena/infarena1.png",
+      "/images/infarena/infarena2.png",
+      "/images/infarena/infarena3.png"
     ]
   },
   {
@@ -77,9 +77,9 @@
     "outcome": "The final product is a highly functional user interface that enhances trust and encourages engagement. The result is a polished and user-focused experience that aligns perfectly with the client’s mission to simplify gift card exchange.",
     "liveDemo": "https://wow-giftcard.vercel.app/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/wowGiftcard/wowGiftcard1.png",
+      "/images/wowGiftcard/wowGiftcard2.png",
+      "/images/wowGiftcard/wowGiftcard3.png"
     ]
   },
   {
@@ -98,9 +98,9 @@
     "outcome": "The final product is a fully functional, visually cohesive job board that demonstrates advanced filtering capabilities and responsive design. This project enhanced my skills in logic structuring, component reusability, and collaborative debugging. It stands as a personal milestone in problem-solving and practical frontend development.",
     "liveDemo": "https://wow-giftcard.vercel.app/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/jobListing/jobListing1.png",
+      "/images/jobListing/jobListing2.png",
+      "/images/jobListing/jobListing3.png"
     ]
   },
   {
@@ -108,7 +108,7 @@
     "title": "Todo Application",
     "location": "Frontend Mentor",
     "technologies": [
-      "Frontend Mentor",
+      "NextJS",
       "TypeScript",
       "TailwindCSS",
       "Git"
@@ -119,9 +119,9 @@
     "outcome": "The result is a responsive and polished task manager that delivers a smooth and intuitive user experience. This project reinforced my understanding of React’s state logic, improved my handling of conditional rendering and events, and expanded my familiarity with accessible user interface design. It’s a great example of how small applications can be powerful learning tools and showcase practical frontend skills.",
     "liveDemo": "https://wow-giftcard.vercel.app/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/todoApp/todoApp1.png",
+      "/images/todoApp/todoApp2.png",
+      "/images/todoApp/todoApp3.png"
     ]
   },
   {
@@ -129,7 +129,7 @@
     "title": "Product List with Cart",
     "location": "Frontend Mentor",
     "technologies": [
-      "Frontend Mentor",
+      "NextJS",
       "TypeScript",
       "TailwindCSS",
       "Git"
@@ -140,9 +140,9 @@
     "outcome": "The result is a lightweight, intuitive product listing and cart system that demonstrates foundational e-commerce functionality using only frontend technologies. This project strengthened my understanding of state persistence, array manipulation, and UI feedback loops, while also highlighting the power of localStorage in client-side development.",
     "liveDemo": "https://wow-giftcard.vercel.app/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/productCart/productCart1.png",
+      "/images/productCart/productCart2.png",
+      "/images/productCart/productCart3.png"
     ]
   },
   {
@@ -150,7 +150,7 @@
     "title": "REST Countries API",
     "location": "Frontend Mentor",
     "technologies": [
-      "Frontend Mentor",
+      "NextJS",
       "TypeScript",
       "TailwindCSS",
       "Git"
@@ -161,9 +161,9 @@
     "outcome": "The project successfully delivers an educational and smooth user experience, showcasing how data-rich APIs can be paired with modern frontend frameworks to build engaging applications. It deepened my understanding of Next.js routing, search parameter handling, and dynamic page rendering while sharpening my approach to building scalable filter logic and theme switching functionality.",
     "liveDemo": "https://wow-giftcard.vercel.app/",
     "gallery": [
-      "/images/infarena.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
+      "/images/restCountries/restCountries1.png",
+      "/images/restCountries/restCountries2.png",
+      "/images/restCountries/restCountries3.png"
     ]
   }
 ]

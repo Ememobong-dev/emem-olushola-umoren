@@ -34,7 +34,7 @@ const FrontendSinglePage = () => {
             Git: "blue",
             FramerMotion: "blue",
             NextJS: "yellow",
-            FrontendMentor: "yellow",
+            antd: "yellow",
           };
 
           // Scatter styles — feel free to tweak!
@@ -151,7 +151,7 @@ const FrontendSinglePage = () => {
             {project.gallery.map((item, index) => (
               <div
                 key={index}
-                className="snap-start flex-shrink-0 rounded-2xl bg-gray-300 h-[300px] 
+                className="snap-start flex-shrink-0 rounded-2xl bg-gray-300 h-[350px] 
                  w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] 
                  overflow-hidden"
               >
@@ -161,6 +161,8 @@ const FrontendSinglePage = () => {
                   height={300}
                   alt={`project image ${index + 1}`}
                   className="object-cover w-full h-full rounded-2xl"
+                  quality={90}
+                  priority
                 />
               </div>
             ))}
