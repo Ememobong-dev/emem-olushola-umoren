@@ -32,7 +32,9 @@ const FrontendSinglePage = () => {
             TypeScript: "cyan",
             TailwindCSS: "red",
             Git: "blue",
+            FramerMotion: "blue",
             NextJS: "yellow",
+            FrontendMentor: "yellow",
           };
 
           // Scatter styles — feel free to tweak!

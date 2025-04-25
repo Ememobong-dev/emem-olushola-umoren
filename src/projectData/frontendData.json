@@ -7,7 +7,7 @@
       "NextJS",
       "TypeScript",
       "TailwindCSS",
-      "Framer-Motion"
+      "FramerMotion"
     ],
     "overview": "ShotByPortable is a photography portfolio website designed to showcase the work of a professional photographer specializing in headshots, lifestyle, and branding photography. The site offers a seamless experience for visitors to explore galleries, review pricing and packages, and book personalized sessions. It also includes a robust admin dashboard for the client to manage content dynamically.",
     "challenge": "The client needed a sleek, responsive platform that not only highlights their visual artistry but also simplifies the booking process and offers easy content management. They wanted the site to reflect their unique storytelling approach through visuals, while being intuitive for both visitors and administrators.",
@@ -87,7 +87,7 @@
     "title": "Job Listings",
     "location": "Frontend Mentor",
     "technologies": [
-      "Frontend Mentor",
+      "FrontendMentor",
       "TypeScript",
       "TailwindCSS",
       "Git"
