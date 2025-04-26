@@ -1,19 +1,128 @@
 [
-    {
-      "slug": "",
-      "title": "",
-      "location": "",
-      "technologies": ["NextJS", "TypeScript", "TailwindCSS", "Git"],
-      "overview": "",
-      "challenge": "",
-      "solution": "",
-      "outcome": "",
-      "liveDemo": "https://infarena.vercel.app",
-      "gallery": [
-        "/images/projects/infarena/hero.png",
-        "/images/projects/infarena/dashboard.png",
-        "/images/projects/infarena/mobile-view.png"
-      ]
-    }
-  ]
-  
+  {
+    "slug": "call-center-analysis",
+    "title": "Call-Center Analysis",
+    "location": "",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "This project explores a dataset from a telecommunications call center to uncover key operational insights. It focuses on identifying call volume trends, evaluating agent performance, and understanding the drivers of customer satisfaction, with the ultimate goal of improving service efficiency and user experience.",
+    "challenge": "",
+    "solution": "",
+    "outcome": "",
+    "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
+    "gallery": [
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png"
+    ]
+  },
+  {
+    "slug": "pizzasales-analysis",
+    "title": "PizzaSales Analysis",
+    "location": "",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "outcome": "",
+    "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
+    "gallery": [
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png"
+    ]
+  },
+  {
+    "slug": "messy-data-cleaning",
+    "title": "Messy Data Cleaning",
+    "location": "",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "outcome": "",
+    "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
+    "gallery": [
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png"
+    ]
+  },
+  {
+    "slug": "fifa21-data-cleaning",
+    "title": "FIFA'21 Data Cleaning",
+    "location": "",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "outcome": "",
+    "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
+    "gallery": [
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png"
+    ]
+  },
+  {
+    "slug": "bikestores-analysis",
+    "title": "Bikestores Analysis",
+    "location": "",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "outcome": "",
+    "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
+    "gallery": [
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png"
+    ]
+  },
+  {
+    "slug": "olist-business-data-cleaning",
+    "title": "Olist Business Data Cleaning",
+    "location": "",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Git"
+    ],
+    "overview": "",
+    "challenge": "",
+    "solution": "",
+    "outcome": "",
+    "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
+    "gallery": [
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png",
+      "/images/projects/infarena/infarena.png"
+    ]
+  }
+]

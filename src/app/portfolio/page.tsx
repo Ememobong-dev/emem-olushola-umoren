@@ -141,7 +141,7 @@ const Portfolio = () => {
               }}
               className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
             >
-              <Link href={`/portfolio/frontend/${proj.slug} `}>
+              <Link href={`/portfolio/${activeTab}/${proj.slug} `}>
                 <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
                   {proj.title}
                 </h3>

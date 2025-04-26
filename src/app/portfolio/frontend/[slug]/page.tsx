@@ -16,8 +16,6 @@ const FrontendSinglePage = () => {
   const params = useParams();
   const slug = params?.slug;
 
-  console.log("I am slug", slug);
-
   const project = frontendProjects.find((p) => p.slug === slug);
 
   if (!project) return notFound();
