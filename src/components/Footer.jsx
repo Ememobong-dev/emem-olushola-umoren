@@ -35,9 +35,9 @@ export const Footer = () => {
       </div>
 
       <div>
-        <span>
+        <Link href={'/'}>
           <Image src={footer_logo} alt="logo" />
-        </span>
+        </Link>
       </div>
       <div>
         <p className="font-azeret-mono text-sm text-center lg:text-left">

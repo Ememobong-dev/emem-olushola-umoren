@@ -117,15 +117,11 @@ const FrontendSinglePage = () => {
           <div className="mt-28">
             <h3 className="font-alro-reg text-2xl">Technologies Used:</h3>
             <span className="flex gap-2 mt-5 mb-8">
-              {project.technologies.map((item, index) => (
-                <p
-                  key={index}
-                  className="font-azeret-mono font-light text-[12px]"
-                >
-                  {" "}
-                  {item},{" "}
-                </p>
-              ))}
+              <p className="font-azeret-mono font-light text-[12px]">
+                {
+                  project.technologies.join(", ") + "."
+                }
+              </p>
             </span>
             <h3 className="font-alro-reg text-xl ">
               Live Demo:{" "}

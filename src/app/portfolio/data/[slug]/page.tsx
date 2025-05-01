@@ -81,7 +81,7 @@ const DataSinglePage = () => {
                 </div>
               </div>
             </Col>
-         
+
             <Col xs={24} lg={12}>
               <div className="w-full h-full">
                 <h3 className="font-alro-reg text-2xl mb-8">3. Key Findings</h3>
@@ -94,12 +94,17 @@ const DataSinglePage = () => {
             </Col>
             <Col xs={24} lg={12}>
               <div className="w-full h-full">
-                <h3 className="font-alro-reg text-2xl mb-8">2. Tasks/Questions</h3>
+                <h3 className="font-alro-reg text-2xl mb-8">
+                  2. Tasks/Questions
+                </h3>
                 <div className="flex flex-col gap-2">
                   {project.tasks_or_questions.map((task, index) => (
                     <div key={index} className="flex gap-2 items-center">
                       <span className="w-3 h-3 max-w-2 max-h-2 bg-sharp-yellow rounded-full"></span>
-                      <p className="text-justify font-azeret-mono font-light"> {task} </p>
+                      <p className="text-justify font-azeret-mono font-light">
+                        {" "}
+                        {task}{" "}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -119,15 +124,9 @@ const DataSinglePage = () => {
           <div className="mt-28">
             <h3 className="font-alro-reg text-2xl">Technologies Used:</h3>
             <span className="flex gap-2 mt-5 mb-8">
-              {project.technologies.map((item, index) => (
-                <p
-                  key={index}
-                  className="font-azeret-mono font-light text-[12px]"
-                >
-                  {" "}
-                  {item},{" "}
-                </p>
-              ))}
+              <p className="font-azeret-mono font-light text-[12px]">
+                {project.technologies.join(", ") + "."}
+              </p>
             </span>
             <h3 className="font-alro-reg text-xl ">
               Live Demo:{" "}
