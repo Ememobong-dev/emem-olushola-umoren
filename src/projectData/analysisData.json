@@ -2,6 +2,7 @@
   {
     "slug": "call-center-analysis",
     "title": "Call-Center Analysis",
+    "location": "",
     "technologies": [
       "MS Excel",
       "MS Word",
@@ -10,7 +11,12 @@
     ],
     "overview": "This project explores a dataset from a telecommunications call center to uncover key operational insights. It focuses on identifying call volume trends, evaluating agent performance, and understanding the drivers of customer satisfaction, with the ultimate goal of improving service efficiency and user experience.",
     "objective": "In a high-volume call center, knowing when customers call, what they call about, and how well their issues are handled is crucial. Over the course of two focused evenings, I analyzed this dataset—sourced from a data challenge group—to simulate the role of a call center manager seeking ways to optimize daily operations. My goal was to highlight key trends and recommend actionable improvements based on data-driven findings.",
-    "tasks_or_questions": ["When are call volumes highest (by time, day, and month)?", "What topics are most frequently discussed?", "What topics are most frequently discussed?", "How do agents compare in terms of response speed and customer ratings?"],
+    "tasks_or_questions": [
+      "When are call volumes highest (by time, day, and month)?",
+      "What topics are most frequently discussed?",
+      "What topics are most frequently discussed?",
+      "How do agents compare in terms of response speed and customer ratings?"
+    ],
     "key_findings_or_process": "The data revealed that January had the highest number of incoming calls, with noticeable daily peaks at 1 PM, and to a lesser extent, at 11 AM, 4 PM, and 5 PM. Customers primarily reached out for help with streaming issues, technical support, and payment concerns. Among the agents, Diane consistently answered calls the fastest, while Joe had the slowest response times and fewer top-tier satisfaction ratings. Interestingly, the analysis showed that faster responses did not always equate to happier customers—highlighting the importance of communication, empathy, and effective problem-solving.",
     "conclusion": "To improve performance, the company should consider increasing agent coverage during peak hours to reduce wait times. Given the frequency of streaming and technical support inquiries, additional resources or focused training in these areas could enhance issue resolution. While response speed is important, it’s clear that true customer satisfaction depends on a combination of efficiency and service quality. Investing in soft-skill development for agents and implementing balanced performance metrics can help elevate overall customer experience.",
     "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
@@ -23,6 +29,7 @@
   {
     "slug": "pizzasales-analysis",
     "title": "PizzaSales Analysis",
+    "location": "",
     "technologies": [
       "MS Excel",
       "EDA",
@@ -32,7 +39,10 @@
     "overview": "This project focuses on uncovering sales and customer behavior insights from a pizza company's dataset. Using Excel PivotTables and charts, I explored order trends, revenue drivers, and product performance to support smarter decision-making in inventory, marketing, and operations.",
     "objective": "The dataset, sourced from Kaggle, provides sales records for a pizza business. My goal was to analyze customer behavior patterns—such as peak order times and preferred pizza sizes—and evaluate product performance across different categories. This analysis aimed to answer key questions about demand trends, customer preferences, and how they impact revenue and operations. By identifying fast- and slow-moving items, the company can reduce stockouts and optimize warehouse efficiency.",
     "tasks_or_questions": [
-     " Identify peak customer activity by day and time", "Evaluate the most and least ordered pizzas and their revenue impact", "Analyze popular pizza sizes and categories, Understand topping/style preferences", "Determine growth metrics and product upsell opportunities"
+      " Identify peak customer activity by day and time",
+      "Evaluate the most and least ordered pizzas and their revenue impact",
+      "Analyze popular pizza sizes and categories, Understand topping/style preferences",
+      "Determine growth metrics and product upsell opportunities"
     ],
     "key_findings_or_process": "The company experiences peak customer traffic during Fridays and Saturdays, especially in the evenings, followed by the afternoon. Large pizzas are the most ordered size and contribute the most to total revenue. The Classic Deluxe Pizza is the most frequently ordered but only ranks fourth in revenue, whereas the Thai Pizza ranks fifth in orders but tops revenue due to strong evening sales. The Classic category dominates orders at 30%, followed by Veggie and Supreme, each around 24%, and Chicken at 22%. However, in terms of revenue, Classic still leads, followed by Supreme, Chicken, and Veggie in that order. Interestingly, XL and XXL sizes were only ordered from the Classic category, pointing to size-category dependencies. Brie Carre Pizza emerged as both the least ordered and least profitable item, while July marked the highest revenue month. Overall, both Order Growth and Revenue Growth were recorded at 8%.",
     "conclusion": "Customer demand peaks on weekends and evenings, especially for large and classic pizzas. Although some products generate frequent sales, their pricing or size may limit their revenue impact, while others like the Thai Pizza demonstrate high profitability despite lower order volume.",
@@ -46,6 +56,7 @@
   {
     "slug": "messy-data-cleaning",
     "title": "Messy Data Cleaning",
+    "location": "",
     "technologies": [
       "MS SQL",
       "Data Cleaning",
@@ -54,7 +65,15 @@
     ],
     "overview": "This project highlights the importance of data cleaning as a foundational step in the data analysis pipeline. Using Microsoft SQL Server, I worked on a synthetic dataset generated by ChatGPT, focusing on cleaning inconsistencies and preparing it for analysis.",
     "objective": "As data generation tools evolve, so do the ways we prepare and work with data. I asked ChatGPT to create a messy dataset mimicking real-world inconsistencies. Although limited to 35 rows due to platform constraints, the dataset included missing values, formatting issues, and outliers — perfect for showcasing core SQL cleaning techniques. The objective was to simulate a typical raw-data cleaning process and ensure the dataset was accurate, complete, and ready for meaningful analysis.",
-    "tasks_or_questions": ["Created and populated a new table in an existing SQL database", "Identified missing values across age, email, and phone fields", "Detected and handled outliers in the age column", "Replaced missing values in the age field with the mean", "Cleaned email addresses and standardized formats", "Deleted invalid or empty email rows", "Cleaned the phone number column by removing special characters" ],
+    "tasks_or_questions": [
+      "Created and populated a new table in an existing SQL database",
+      "Identified missing values across age, email, and phone fields",
+      "Detected and handled outliers in the age column",
+      "Replaced missing values in the age field with the mean",
+      "Cleaned email addresses and standardized formats",
+      "Deleted invalid or empty email rows",
+      "Cleaned the phone number column by removing special characters"
+    ],
     "key_findings_or_process": "Through this process, I applied fundamental SQL operations such as UPDATE, DELETE, REPLACE, and conditional filtering to clean and transform the data. I used functions like ISNULL, AVG, and pattern matching to isolate issues and resolve them systematically.",
     "conclusion": "This project demonstrates how powerful SQL can be for preparing data before analysis begins. While the dataset was small, it represented common data quality issues faced in real-world scenarios. The exercise also highlighted the potential of AI tools like ChatGPT to simulate diverse data scenarios for learning and testing purposes.",
     "liveDemo": "https://github.com/Emem-Data/MessyData2",
@@ -67,6 +86,7 @@
   {
     "slug": "fifa21-data-cleaning",
     "title": "FIFA'21 Data Cleaning",
+    "location": "",
     "technologies": [
       "Google Sheet",
       "Data Assessment",
@@ -75,7 +95,15 @@
     ],
     "overview": "In this project, I worked with the FIFA 2021 dataset—an extensive dataset featuring over 18,000 players and 77 attributes—to showcase my data cleaning expertise. Using Google Sheets, I prepared the raw data for analysis by addressing inconsistencies, correcting data types, and improving overall quality to support future modeling and insights.",
     "objective": "Football remains the world’s most popular sport, and FIFA’s annual video game franchise captures detailed data on players and teams. However, the dataset—like most real-world data—was far from analysis-ready. The goal of this project was to clean and structure the FIFA '21 dataset to enable accurate, meaningful player performance analysis and support potential applications such as scouting, in-game player modeling, and game development improvements.",
-    "tasks_or_questions": ["Renamed ambiguous or incorrect column titles", "Removed extra rows and placeholders", "Replaced missing values appropriately (e.g., with mean or 'N/A')", "Converted columns like Value, Wage, and Height into proper numeric formats", "Removed unnecessary special characters (like stars used for ratings)", "Standardized data formatting for percentage and categorical columns", "Validated outliers rather than removing them, ensuring data integrity"],
+    "tasks_or_questions": [
+      "Renamed ambiguous or incorrect column titles",
+      "Removed extra rows and placeholders",
+      "Replaced missing values appropriately (e.g., with mean or 'N/A')",
+      "Converted columns like Value, Wage, and Height into proper numeric formats",
+      "Removed unnecessary special characters (like stars used for ratings)",
+      "Standardized data formatting for percentage and categorical columns",
+      "Validated outliers rather than removing them, ensuring data integrity"
+    ],
     "key_findings_or_process": "The FIFA 2021 dataset, with 18,980 rows and 77 columns, contained issues typical of real-world data: unclear column labels, missing values in key fields like Loan Date End and Hits, and inconsistent data types in financial and physical attributes. While no duplicate rows were found, some players appeared multiple times due to different contracts or clubs. Outliers in age were validated as accurate, and formatting inconsistencies—especially in percentage fields and name spellings—were corrected. Overall, the cleaning process ensured the dataset was reliable, consistent, and ready for analysis.",
     "conclusion": "This data cleaning project highlighted the vital role of preparing datasets before analysis. By systematically addressing missing values, incorrect formats, and inconsistencies, I was able to transform the FIFA '21 dataset into a reliable and accurate foundation for further modeling and insights. With a well-documented cleaning process, this dataset is now ready for player performance analysis, scouting research, or game development insights.",
     "liveDemo": "https://github.com/Emem-Data/Fifa21_dataCleaning",
@@ -88,6 +116,7 @@
   {
     "slug": "bikestores-analysis",
     "title": "Bikestores Analysis",
+    "location": "",
     "technologies": [
       "MySql",
       "MS Excel",
@@ -97,7 +126,12 @@
     "overview": "An analytical deep dive into retail bike store data, where SQL and Excel were combined to clean, process, and visualize key business metrics.",
     "objective": "This project focuses on sales and customer data from a bike store, with the goal of uncovering trends that can guide inventory planning, customer engagement strategies, and revenue growth. Following a YouTube tutorial as a learning resource, I implemented the full data pipeline—from loading and cleaning the dataset in MySQL to building an interactive dashboard in Excel.",
     "tasks_or_questions": [
-      "Loaded raw data into MySQL for structured querying and transformation.", "Checked for missing values and handled nulls where applicable.", "Verified and enforced foreign key relationships across tables (e.g., customers, orders, products).", "Standardized data formats for consistency (e.g., date, currency, and text cases).", "Normalized data where needed to reduce redundancy and improve query efficiency.", "Connected cleaned tables to Microsoft Excel for analysis and dashboard development."
+      "Loaded raw data into MySQL for structured querying and transformation.",
+      "Checked for missing values and handled nulls where applicable.",
+      "Verified and enforced foreign key relationships across tables (e.g., customers, orders, products).",
+      "Standardized data formats for consistency (e.g., date, currency, and text cases).",
+      "Normalized data where needed to reduce redundancy and improve query efficiency.",
+      "Connected cleaned tables to Microsoft Excel for analysis and dashboard development."
     ],
     "key_findings_or_process": "The analysis highlighted customer buying patterns across different regions and product categories. Sales performance varied across locations, with certain product types driving a higher percentage of revenue. Customer segmentation based on order frequency and spend also revealed key demographics worth targeting for upselling or loyalty programs.",
     "conclusion": "This project demonstrated the importance of a clean and well-structured database for reliable business insights. By integrating SQL and Excel, I created a dynamic dashboard that gives store managers a clear view of sales trends, top-performing products, and customer behavior. It's recommended that the store continue tracking key metrics through similar dashboards and explore automated reporting for real-time decision-making.",
@@ -111,6 +145,7 @@
   {
     "slug": "olist-business-data-cleaning",
     "title": "Olist Business Data Cleaning",
+    "location": "",
     "technologies": [
       "MS SQL",
       "Azure Data Studio",
@@ -120,7 +155,13 @@
     "overview": "A structured data-cleaning project for Olist, a leading Brazilian e-commerce platform, aimed at preparing raw transactional and operational data for reliable analysis and future business intelligence tasks.",
     "objective": "This project focused on the foundational step of preparing the Olist e-commerce dataset—comprising 9 interlinked tables covering customers, sellers, products, reviews, and more. The dataset spans orders from January 2017 to August 2018 and required extensive cleaning to align the data for advanced analytics. Using Azure Data Studio, I imported and cleaned the data, ensuring consistency, accuracy, and readiness for analysis and modelling.",
     "tasks_or_questions": [
-      "Imported all nine relational tables into a new SQL Server database via Azure Data Studio.", "Cleaned the Customer table by handling duplicate entries and correcting inconsistent city/state naming.", "Standardized entries in the Geolocation table, including removal of special characters and expansion of abbreviations.", "Cleaned Product and Seller tables by normalizing text fields and addressing missing values.", "Processed the Review table by dropping low-value columns (e.g., review_title) and keeping relevant feedback for sentiment analysis.", "Used helper functions like GetFullCountryName and RemoveAccent to enhance uniformity in location-based data.","Ensured referential integrity across all foreign keys for seamless joins during future queries."
+      "Imported all nine relational tables into a new SQL Server database via Azure Data Studio.",
+      "Cleaned the Customer table by handling duplicate entries and correcting inconsistent city/state naming.",
+      "Standardized entries in the Geolocation table, including removal of special characters and expansion of abbreviations.",
+      "Cleaned Product and Seller tables by normalizing text fields and addressing missing values.",
+      "Processed the Review table by dropping low-value columns (e.g., review_title) and keeping relevant feedback for sentiment analysis.",
+      "Used helper functions like GetFullCountryName and RemoveAccent to enhance uniformity in location-based data.",
+      "Ensured referential integrity across all foreign keys for seamless joins during future queries."
     ],
     "key_findings_or_process": "The data-cleaning process revealed several structural and quality issues across the Olist dataset. Location-based fields, such as cities and states, were inconsistently formatted or abbreviated, making regional analysis difficult until standardized. The review data contained numerous non-essential or empty fields that, if left untreated, could compromise the integrity of future sentiment analysis. Additionally, missing values were concentrated in product and customer-related fields, requiring deliberate strategies for handling. By applying uniform transformation functions and maintaining referential integrity across tables, the dataset was reshaped into a consistent and scalable format suitable for reliable business analysis.",
     "conclusion": "Through a rigorous cleaning process, the Olist dataset was transformed into a well-structured, analysis-ready format. Redundant data was minimized, inconsistencies were resolved, and missing values were appropriately handled. This refined dataset now provides a solid foundation for performing customer behavior analysis, product performance evaluation, and sentiment mining. For future work, I recommend integrating updated datasets from Olist and incorporating temporal tracking to monitor data quality over time.",

@@ -159,9 +159,12 @@ const Portfolio = () => {
                 </h3>
               </Link>
 
-              <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
-                {proj.location}
-              </h5>
+              {activeTab === "frontend" && (
+                <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
+                  {proj.location}
+                </h5>
+              )}
+
               <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
                 <p className="lg:w-1/2 lg:text-left text-center">
                   {proj.overview}
