@@ -13,7 +13,7 @@
     "challenge": "The client needed a sleek, responsive platform that not only highlights their visual artistry but also simplifies the booking process and offers easy content management. They wanted the site to reflect their unique storytelling approach through visuals, while being intuitive for both visitors and administrators.",
     "solution": "I developed a modern, responsive web application that brings the photographer's creative vision to life. The main website is optimized for performance and visual storytelling, while the admin frontend gives a structure that allows the client to effortlessly update galleries, modify pricing packages, and manage bookings. The design is aligned with their brand identity, providing an immersive and professional experience for users.",
     "outcome": "The final product is a visually striking, fully functional portfolio website that empowers the client to maintain their content independently. Visitors now enjoy a smooth browsing and booking experience, and the client has received positive feedback from users for the site's aesthetic and usability. The website has become a central tool in elevating the photographer’s brand presence online.",
-    "liveDemo": "https://photography-seven-ecru.vercel.app/",
+    "liveDemo": "https://www.shotbyportable.com/",
     "gallery": [
       "/images/photography/photography1.png",
       "/images/photography/photography2.png",
@@ -75,7 +75,7 @@
     "challenge": " The main goal was to build a platform that feels trustworthy, responsive, and easy to navigate—while clearly communicating the value of their services.",
     "solution": "I developed the frontend using NextJS, TypeScript, and Tailwind CSS, with a focus on building a refined and efficient user journey. The design emphasizes clarity and accessibility, incorporating interactive components like a live rate calculator. From layout structure to visual cues, every element was crafted to support smooth navigation and prompt action.",
     "outcome": "The final product is a highly functional user interface that enhances trust and encourages engagement. The result is a polished and user-focused experience that aligns perfectly with the client’s mission to simplify gift card exchange.",
-    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "liveDemo": "https://www.wowgiftcard.net/",
     "gallery": [
       "/images/wowGiftcard/wowGiftcard1.png",
       "/images/wowGiftcard/wowGiftcard2.png",

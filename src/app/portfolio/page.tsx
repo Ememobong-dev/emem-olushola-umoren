@@ -31,10 +31,10 @@ const Portfolio = () => {
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
-  
+
     projectRefs.current.forEach((ref, idx) => {
       if (!ref) return;
-  
+
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -45,18 +45,27 @@ const Portfolio = () => {
         },
         {
           root: scrollRef.current,
-          threshold: 0.6, // At least 60% in view to count as "active"
+          threshold: 0.6,
         }
       );
-  
+
       observer.observe(ref);
       observers.push(observer);
     });
-  
+
     return () => {
       observers.forEach((observer) => observer.disconnect());
     };
   }, [projectDynamicList]);
+
+  // 🔁 Reset scroll position and index on tab change
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (scrollContainer) {
+      scrollContainer.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setCurrentIndex(1);
+  }, [activeTab]);
 
   return (
     <div>
@@ -105,7 +114,7 @@ const Portfolio = () => {
       {/* Portfolio Scroll */}
       <div
         ref={scrollRef}
-        className="max-h-[700px] relative md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border"
+        className="max-h-[700px] relative md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border overflow-y-scroll snap-y snap-mandatory custom-scrollbar scroll-smooth"
       >
         {/* Tabs */}
         <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
@@ -132,7 +141,7 @@ const Portfolio = () => {
         </div>
 
         {/* Scrollable Project Area */}
-        <div className="overflow-y-scroll snap-y snap-mandatory custom-scrollbar">
+        <div>
           {projectDynamicList.map((proj, idx) => (
             <div
               key={idx}
@@ -141,8 +150,11 @@ const Portfolio = () => {
               }}
               className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
             >
-              <Link href={`/portfolio/${activeTab}/${proj.slug} `}>
-                <h3 className="font-azeret-mono cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
+              <Link
+                className=" w-full flex items-center justify-center"
+                href={`/portfolio/${activeTab}/${proj.slug} `}
+              >
+                <h3 className="font-azeret-mono w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
                   {proj.title}
                 </h3>
               </Link>
@@ -157,7 +169,7 @@ const Portfolio = () => {
                 <Button
                   variant="bordered"
                   target
-                  link={`/portfolio/frontend/${proj.slug} `}
+                  link={`/portfolio/${activeTab}/${proj.slug} `}
                   text="Open Project"
                 />
               </div>
@@ -216,6 +228,7 @@ const Portfolio = () => {
           </Row>
         </div>
       </div>
+
       {/* Contact */}
       <div className="px-8 lg:px-14 3xl:px-28 py-28">
         <Contact />
