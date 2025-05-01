@@ -77,7 +77,7 @@
     "outcome": "The final product is a highly functional user interface that enhances trust and encourages engagement. The result is a polished and user-focused experience that aligns perfectly with the client’s mission to simplify gift card exchange.",
     "liveDemo": "https://www.wowgiftcard.net/",
     "gallery": [
-      "/images/wowGiftcard/wowGiftcard1.png",
+      "/images/wowGiftcard/wowGiftcard1.png", 
       "/images/wowGiftcard/wowGiftcard2.png",
       "/images/wowGiftcard/wowGiftcard3.png"
     ]
@@ -96,7 +96,7 @@
     "challenge": "The core challenge of this project was implementing a robust filtering logic that could handle multiple overlapping criteria, particularly when filtering jobs by technologies listed as arrays (e.g., languages and tools). Achieving real-time filtering responsiveness without compromising performance required careful consideration of the algorithm structure and user interaction flow.",
     "solution": "I developed the interface using React, TypeScript, and Tailwind CSS, with a strong focus on state management and efficient data handling. To manage the filtering logic, I implemented a custom algorithm that checks whether each job listing matches all selected filter tags using methods like every(). Collaboration played a key role—through pair programming and targeted research, I refined the logic into a clean and maintainable solution.",
     "outcome": "The final product is a fully functional, visually cohesive job board that demonstrates advanced filtering capabilities and responsive design. This project enhanced my skills in logic structuring, component reusability, and collaborative debugging. It stands as a personal milestone in problem-solving and practical frontend development.",
-    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "liveDemo": "https://fe-job-listing-filtering.vercel.app/",
     "gallery": [
       "/images/jobListing/jobListing1.png",
       "/images/jobListing/jobListing2.png",
@@ -117,7 +117,7 @@
     "challenge": "Building a seamless task management experience involved handling a range of user interactions—from real-time input tracking to managing multiple task states (active, completed, all). Implementing intuitive features like keyboard shortcuts, hover effects, and dynamic filtering required thoughtful state management and user-focused design decisions.",
     "solution": "Using React, TypeScript, and Tailwind CSS, I developed a lightweight yet fully interactive application. Key features include: A toggle for switching between dark and light themes, Keyboard handling with onKeyDown to enhance form input interactions, Contextual UI feedback using onMouseEnter to reveal controls on hover, Robust state management using useState and functional updates to manage task arrays efficiently, and Filter controls to display All, Active, or Completed tasks.",
     "outcome": "The result is a responsive and polished task manager that delivers a smooth and intuitive user experience. This project reinforced my understanding of React’s state logic, improved my handling of conditional rendering and events, and expanded my familiarity with accessible user interface design. It’s a great example of how small applications can be powerful learning tools and showcase practical frontend skills.",
-    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "liveDemo": "https://fe-todo-app.vercel.app/",
     "gallery": [
       "/images/todoApp/todoApp1.png",
       "/images/todoApp/todoApp2.png",
@@ -138,7 +138,7 @@
     "challenge": "The goal was to mimic essential e-commerce interactions while managing all state and data within the browser. The key challenge was handling cart updates in a way that felt responsive and realistic—without relying on server-side logic or database calls. Ensuring persistence across page refreshes was also crucial to emulate a user-friendly shopping experience.",
     "solution": "I built the interface using React, TypeScript, and Tailwind CSS, leveraging localStorage to persist cart data across sessions. The project includes: Dynamic product display and interaction, Real-time cart updates including quantity increase/decrease and item removal, Order confirmation logic to simulate a checkout experience, and State synchronization with localStorage to ensure user data is retained even after reload.",
     "outcome": "The result is a lightweight, intuitive product listing and cart system that demonstrates foundational e-commerce functionality using only frontend technologies. This project strengthened my understanding of state persistence, array manipulation, and UI feedback loops, while also highlighting the power of localStorage in client-side development.",
-    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "liveDemo": "https://product-list-cart-sigma.vercel.app/",
     "gallery": [
       "/images/productCart/productCart1.png",
       "/images/productCart/productCart2.png",
@@ -159,7 +159,7 @@
     "challenge": "While the user interface itself appears straightforward, implementing real-time filtering and routing to dynamically generated pages required careful data handling and navigation logic. Filtering results simultaneously based on user input and region selection was especially tricky, as it involved chaining and reapplying multiple filters in a predictable, user-friendly manner.",
     "solution": "Built using Next.js, TypeScript, and Tailwind CSS, the application leverages client-side routing to generate dynamic pages for each country using the Next.js app router. For interactivity and responsiveness, it uses search parameters and router hooks like useRouter and useSearchParams to update and access filter states in real-time. Theme toggling was implemented using state management and Tailwind’s dark mode configuration, allowing users to easily switch between light and dark viewing preferences.",
     "outcome": "The project successfully delivers an educational and smooth user experience, showcasing how data-rich APIs can be paired with modern frontend frameworks to build engaging applications. It deepened my understanding of Next.js routing, search parameter handling, and dynamic page rendering while sharpening my approach to building scalable filter logic and theme switching functionality.",
-    "liveDemo": "https://wow-giftcard.vercel.app/",
+    "liveDemo": "",
     "gallery": [
       "/images/restCountries/restCountries1.png",
       "/images/restCountries/restCountries2.png",

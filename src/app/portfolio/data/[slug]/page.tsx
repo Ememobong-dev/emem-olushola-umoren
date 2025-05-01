@@ -28,12 +28,21 @@ const DataSinglePage = () => {
         {/* Floating Buttons Inside This Container */}
         {project?.technologies?.map((tech, index) => {
           const techColorMap: Record<string, string> = {
-            TypeScript: "cyan",
-            TailwindCSS: "red",
-            Git: "blue",
-            FramerMotion: "blue",
-            NextJS: "yellow",
-            antd: "yellow",
+            MSExcel: "cyan",
+            MSWord: "red",
+            EDA: "red",
+            Dashboard: "blue",
+            Powerpoint: "yellow",
+            MSSQL: "yellow",
+            MySql: "yellow",
+            DataCleaning: "cyan",
+            Git: "red",
+            GoogleSheet: "red",
+            DataAssessment: "blue",
+            JupyterNotebook: "sharp-yellow",
+            AzureDataStudio: "deepBlue",
+
+
           };
 
           // Scatter styles — feel free to tweak!

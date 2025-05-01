@@ -11,6 +11,55 @@ import Link from "next/link";
 export const Contact = () => {
   const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    project:""
+  })
+  const [errors, setErrors] = useState({ name: "", email: "" });
+
+
+
+  const handleSend = () => {
+    const { name, email, project } = form;
+  
+    const newErrors = { name: "", email: "" };
+  
+    if (!name.trim()) newErrors.name = "Name is Required";
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email))
+      newErrors.email = "Valid email is required";
+  
+    setErrors(newErrors);
+  
+    if (!newErrors.name && !newErrors.email) {
+      const subject = encodeURIComponent("NEW PROJECT INQUIRY(FROM PORTFOLIO)");
+  
+      const body = [
+        `Name: ${name}`,
+        "",
+        `Email: ${email}`,
+        "",
+        `Services: ${selectedServices.join(", ")}`,
+        "",
+        `Budget: ${selectedBudget}`,
+        "",
+        "Project Details:",
+        project,
+      ]
+        .map(encodeURIComponent)
+        .join("%0D%0A");
+  
+      window.location.href = `mailto:ememobongumoren2@gmail.com?subject=${subject}&body=${body}`;
+  
+      // Clear form after sending
+      setForm({ name: "", email: "", project: "" });
+      setSelectedBudget(null);
+      setSelectedServices([]);
+      setErrors({ name: "", email: "" });
+    }
+  }
+
+
 
   const serviceOptions = [
     "API Integration",
@@ -139,8 +188,15 @@ export const Contact = () => {
                       <input
                         type="text"
                         id="name"
+                        value={form.name}
+                        onChange={e =>
+                          setForm({ ...form, name: e.target.value })
+                        }
                         className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
                       />
+                      {errors.name && (
+                        <p className="text-pepper-red text-sm">{errors.name}</p>
+                      )}
                     </div>
                   </Col>
                   <Col xs={24} lg={12}>
@@ -151,8 +207,15 @@ export const Contact = () => {
                       <input
                         type="text"
                         id="email"
+                        value={form.email}
+                        onChange={e =>
+                          setForm({ ...form, email: e.target.value })
+                        }
                         className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
                       />
+                       {errors.email && (
+                        <p className="text-pepper-red text-sm">{errors.email}</p>
+                      )}
                     </div>
                   </Col>
                   <Col lg={24}>
@@ -162,13 +225,17 @@ export const Contact = () => {
                       </label>
                       <textarea
                         id="project"
+                        value={form.project}
+                        onChange={e =>
+                          setForm({ ...form, project: e.target.value })
+                        }
                         className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
                       />
                     </div>
                   </Col>
                 </Row>
                 <div className="mt-8">
-                  <Button variant="bordered" text="Send Message" />
+                  <Button variant="bordered" text="Send Message"  onClick={handleSend} />
                 </div>
               </div>
             </div>

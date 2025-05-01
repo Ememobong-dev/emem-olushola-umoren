@@ -118,9 +118,7 @@ const FrontendSinglePage = () => {
             <h3 className="font-alro-reg text-2xl">Technologies Used:</h3>
             <span className="flex gap-2 mt-5 mb-8">
               <p className="font-azeret-mono font-light text-[12px]">
-                {
-                  project.technologies.join(", ") + "."
-                }
+                {project.technologies.join(", ") + "."}
               </p>
             </span>
             <h3 className="font-alro-reg text-xl ">
@@ -135,7 +133,8 @@ const FrontendSinglePage = () => {
             </h3>
           </div>
         </div>
-
+      </div>
+      <div className="ml-8 lg:pl-14 3xl:pl-28 py-16 lg:py-28">
         {/* Gallery Section */}
         <div>
           <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
@@ -162,10 +161,12 @@ const FrontendSinglePage = () => {
             ))}
           </div>
         </div>
-
-        {/* Contact */}
-        <Contact />
+      </div> 
+      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28">
+         {/* Contact */}
+         <Contact />
       </div>
+
       {project.liveDemo && (
         <motion.a
           href={project.liveDemo}

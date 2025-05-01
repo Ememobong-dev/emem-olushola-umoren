@@ -19,7 +19,9 @@ export const FloatingButton = ({
       ? "bg-blue text-white"
       : variant === "cyan"
       ? "bg-cyan text-black"
-      : "bg-transparent";
+      : variant === "deepBlue"
+      ? "bg-deep-blue text-white"
+      : "bg-red-400";
 
   return (
     <motion.button
