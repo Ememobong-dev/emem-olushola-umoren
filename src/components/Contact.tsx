@@ -1,6 +1,6 @@
 import { Col, Row } from "antd";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import linkedin from "@/public/icons/linkedin-icon.svg";
 import github from "@/public/icons/github-icon.svg";
 import twitter from "@/public/icons/twitter.svg";
@@ -9,6 +9,29 @@ import { TagButton } from "./buttons/TagButton";
 import Link from "next/link";
 
 export const Contact = () => {
+  const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  const serviceOptions = [
+    "API Integration",
+    "Web Development(UI/UX Implementation)",
+    "Frontend Performance Optimization",
+    "Data Dashboards",
+    "Data Analysis",
+    "Version Control & Collaboration",
+  ];
+
+
+  const toggleService = (text: string) => {
+    setSelectedServices(prev =>
+      prev.includes(text) 
+        ? prev.filter(item => item !== text)
+        : [...prev, text]
+    );
+  }
+
+  const budgetOptions = ["100k-250k", "250k-1m", "1m+"];
+
   return (
     <div id="contact">
       <Row gutter={[0, 56]}>
@@ -17,13 +40,21 @@ export const Contact = () => {
             <h2 className="font-azeret-mono text-2xl">Contacts</h2>
             <div className="flex flex-col gap-4 mt-5">
               <p className="font-azeret-mono text-sm font-light text-white hover:text-white underline">
-                <a  className="font-azeret-mono text-sm font-light !text-white hover:text-white" href="mailto:ememobongumoren2@gmail.com">
+                <a
+                  className="font-azeret-mono text-sm font-light !text-white hover:text-white"
+                  href="mailto:ememobongumoren2@gmail.com"
+                >
                   {" "}
                   ememobongumoren2@gmail.com
                 </a>
               </p>
               <p className="font-azeret-mono text-sm font-light">
-                <a href="tel:+234 810 469 8415" className="!text-white hover:text-white">+234 810 469 8415</a>
+                <a
+                  href="tel:+234 810 469 8415"
+                  className="!text-white hover:text-white"
+                >
+                  +234 810 469 8415
+                </a>
               </p>
             </div>
             <div className="mt-14">
@@ -71,20 +102,31 @@ export const Contact = () => {
               <div>
                 <h3 className="font-azeret-mono">Services</h3>
                 <div className="flex flex-wrap gap-5 mt-3">
-                  <TagButton text="API Integration" />
-                  <TagButton text="Web Development(UI/UX Implementation)" />
-                  <TagButton text="Frontend Performance Optimization" />
-                  <TagButton text="Data Dashboards" />
-                  <TagButton text="Data Analysis" />
-                  <TagButton text="Version Control & Collaboration" />
+                  {serviceOptions.map((text) => (
+                    <TagButton
+                      key={text}
+                      text={text}
+                      isActive={selectedServices.includes(text)}
+                      onClick={() => toggleService(text)}
+                    />
+                  ))}
                 </div>
               </div>
               <div>
                 <h3 className="font-azeret-mono">Budget</h3>
                 <div className="flex flex-wrap gap-5 mt-3">
-                  <TagButton text="100k-250k" />
-                  <TagButton text="250k-1m" />
-                  <TagButton text="1m+" />
+                  {budgetOptions.map((text) => (
+                    <TagButton
+                      key={text}
+                      text={text}
+                      isActive={selectedBudget === text}
+                      onClick={() =>
+                        setSelectedBudget((prev) =>
+                          prev === text ? null : text
+                        )
+                      }
+                    />
+                  ))}
                 </div>
               </div>
               <div>
