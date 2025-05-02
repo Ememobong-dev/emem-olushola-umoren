@@ -184,19 +184,19 @@ const DataSinglePage = () => {
           <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
             Certifications
           </h3>
-          <div className="flex justify-center items-end gap-4 w-full">
+          <div className="flex items-end gap-4 w-full">
             <span>
               <Image src={cert1} className="w-full" alt="" />
             </span>
             <span>
-              <Image src={cert2} className="w-full " alt="" />
+              <Image src={cert2} className="w-full" alt="" />
             </span>
           </div>
         </div>
 
         {/* Contact */}
         <Contact />
-      </div>x
+      </div>
       {project.liveDemo && (
         <motion.a
           href={project.liveDemo}
