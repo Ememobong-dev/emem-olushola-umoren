@@ -137,7 +137,7 @@ const FrontendSinglePage = () => {
       <div className="ml-8 lg:pl-14 3xl:pl-28 py-16 lg:py-28">
         {/* Gallery Section */}
         <div>
-          <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
+          <h3 className="font-alro-reg text-3xl text-white font-bold mb-6">
             Gallery
           </h3>
           <div className="flex overflow-x-auto space-x-4 snap-x snap-mandatory scroll-smooth scrollbar-hide">

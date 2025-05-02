@@ -159,7 +159,7 @@
     "challenge": "While the user interface itself appears straightforward, implementing real-time filtering and routing to dynamically generated pages required careful data handling and navigation logic. Filtering results simultaneously based on user input and region selection was especially tricky, as it involved chaining and reapplying multiple filters in a predictable, user-friendly manner.",
     "solution": "Built using Next.js, TypeScript, and Tailwind CSS, the application leverages client-side routing to generate dynamic pages for each country using the Next.js app router. For interactivity and responsiveness, it uses search parameters and router hooks like useRouter and useSearchParams to update and access filter states in real-time. Theme toggling was implemented using state management and Tailwind’s dark mode configuration, allowing users to easily switch between light and dark viewing preferences.",
     "outcome": "The project successfully delivers an educational and smooth user experience, showcasing how data-rich APIs can be paired with modern frontend frameworks to build engaging applications. It deepened my understanding of Next.js routing, search parameter handling, and dynamic page rendering while sharpening my approach to building scalable filter logic and theme switching functionality.",
-    "liveDemo": "",
+    "liveDemo": "https://rest-countries-api-nu-two.vercel.app/",
     "gallery": [
       "/images/restCountries/restCountries1.png",
       "/images/restCountries/restCountries2.png",

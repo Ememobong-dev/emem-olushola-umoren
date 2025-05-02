@@ -9,7 +9,7 @@ import Image from "next/image";
 import linkedin from "@/public/icons/linkedin-icon.svg";
 import github from "@/public/icons/github-icon.svg";
 import twitter from "@/public/icons/twitter.svg";
-import infarena from "@/public/images/infarena.png";
+import shotsByPortable from "@/public/images/photography/photography1.png";
 import ayocpa from "@/public/images/ayocpa.png";
 import wow from "@/public/images/wow.png";
 import { Contact } from "../components/Contact";
@@ -400,32 +400,30 @@ export default function Home() {
               <div className="relative cursor-pointer group overflow-hidden border-8 rounded-4xl w-full h-[400px] bg-[#212121] border-[#212121]">
                 <Image
                   className="object-cover rounded-4xl h-full w-full"
-                  src={infarena}
-                  alt="infarena"
+                  src={shotsByPortable}
+                  alt="shotsByPortable"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 w-full bg-black bg-opacity-70 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-start p-6 text-white rounded-4xl">
                   <h2 className="text-xl font-semibold font-alro-reg">
-                    Infarena, Canada
+                  ShotByPortable, Canada
                   </h2>
                   <p className="text-[12px] mt-2 font-azeret-mono leading-relaxed">
-                    Infarena is a Canada-based platform for trading goods,
-                    sharing reviews, discussions, job postings, and free small
-                    business listings, empowering users with informed choices.
+                  ShotByPortable is a photography portfolio website designed to showcase the work of a professional photographer specializing in headshots, lifestyle, and branding photography. The site offers a seamless experience for visitors to explore galleries, review pricing and packages, and book personalized sessions. It also includes a robust admin dashboard for the client to manage content dynamically.
                   </p>
                   <p className="text-sm mt-2">
                     <span className="font-semibold">Tools:</span> NextJS,
                     TypeScript, TailwindCSS, Git
                   </p>
                   <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
-                    <a
-                      href="#"
+                    <Link
+                      href="https://www.shotbyportable.com/"
                       className="text-blue-400 italic underline text-sm"
                     >
-                      Infarena Website
-                    </a>
+                      ShotByPortable Website
+                    </Link>
                     <Button
-                      link="/portfolio/frontend/infarena"
+                      link="/portfolio/frontend/shot-by-portable"
                       target
                       variant="bordered"
                       text="View Case Study"
@@ -454,12 +452,12 @@ export default function Home() {
                     TypeScript, TailwindCSS, Git
                   </p>
                   <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
-                    <a
-                      href="#"
+                    <Link
+                      href="https://www.ayocpa.ca/"
                       className="text-blue-400 italic underline text-sm"
                     >
                       AyoCPA Website
-                    </a>
+                    </Link>
                     <Button
                       link="/portfolio/frontend/ayocpa"
                       target
@@ -490,15 +488,15 @@ export default function Home() {
                     TypeScript, TailwindCSS, Git
                   </p>
                   <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
-                    <a
-                      href="#"
+                    <Link
+                      href="https://www.wowgiftcard.net/"
                       className="text-blue-400 italic underline text-sm"
                     >
                       Wow Website
-                    </a>
+                    </Link>
                     <Button
                       variant="bordered"
-                      link="/portf targetolio/frontend/wow"
+                      link="/portfolio/frontend/wow"
                       text="View Case Study"
                     />
                   </div>

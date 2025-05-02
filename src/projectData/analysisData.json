@@ -21,9 +21,9 @@
     "conclusion": "To improve performance, the company should consider increasing agent coverage during peak hours to reduce wait times. Given the frequency of streaming and technical support inquiries, additional resources or focused training in these areas could enhance issue resolution. While response speed is important, it’s clear that true customer satisfaction depends on a combination of efficiency and service quality. Investing in soft-skill development for agents and implementing balanced performance metrics can help elevate overall customer experience.",
     "liveDemo": "https://github.com/Emem-Data/Call-Center-Analysis",
     "gallery": [
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png"
+      "/images/CallAnalysis/Dash1.jpg",
+      "/images/CallAnalysis/Dash2.png",
+      "/images/CallAnalysis/Dash3.png"
     ]
   },
   {
@@ -48,9 +48,9 @@
     "conclusion": "Customer demand peaks on weekends and evenings, especially for large and classic pizzas. Although some products generate frequent sales, their pricing or size may limit their revenue impact, while others like the Thai Pizza demonstrate high profitability despite lower order volume.",
     "liveDemo": "https://github.com/Emem-Data/PizzaSales_Analysis",
     "gallery": [
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png"
+      "/images/pizzaSales/Dash1.png",
+      "/images/pizzaSales/Dash2.png",
+      "/images/pizzaSales/Dash3.png"
     ]
   },
   {
@@ -78,9 +78,6 @@
     "conclusion": "This project demonstrates how powerful SQL can be for preparing data before analysis begins. While the dataset was small, it represented common data quality issues faced in real-world scenarios. The exercise also highlighted the potential of AI tools like ChatGPT to simulate diverse data scenarios for learning and testing purposes.",
     "liveDemo": "https://github.com/Emem-Data/MessyData2",
     "gallery": [
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png"
     ]
   },
   {
@@ -108,9 +105,6 @@
     "conclusion": "This data cleaning project highlighted the vital role of preparing datasets before analysis. By systematically addressing missing values, incorrect formats, and inconsistencies, I was able to transform the FIFA '21 dataset into a reliable and accurate foundation for further modeling and insights. With a well-documented cleaning process, this dataset is now ready for player performance analysis, scouting research, or game development insights.",
     "liveDemo": "https://github.com/Emem-Data/Fifa21_dataCleaning",
     "gallery": [
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png"
     ]
   },
   {
@@ -137,9 +131,9 @@
     "conclusion": "This project demonstrated the importance of a clean and well-structured database for reliable business insights. By integrating SQL and Excel, I created a dynamic dashboard that gives store managers a clear view of sales trends, top-performing products, and customer behavior. It's recommended that the store continue tracking key metrics through similar dashboards and explore automated reporting for real-time decision-making.",
     "liveDemo": "https://github.com/Emem-Data/Bikestores-Analysis",
     "gallery": [
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png"
+      "/images/bikestores/Dash1.png",
+      "/images/bikestores/Dash2.png",
+      "/images/bikestores/Dash3.png"
     ]
   },
   {
@@ -167,9 +161,6 @@
     "conclusion": "Through a rigorous cleaning process, the Olist dataset was transformed into a well-structured, analysis-ready format. Redundant data was minimized, inconsistencies were resolved, and missing values were appropriately handled. This refined dataset now provides a solid foundation for performing customer behavior analysis, product performance evaluation, and sentiment mining. For future work, I recommend integrating updated datasets from Olist and incorporating temporal tracking to monitor data quality over time.",
     "liveDemo": "https://github.com/Emem-Data/Olist_Business",
     "gallery": [
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png",
-      "/images/projects/infarena/infarena.png"
     ]
   }
 ]

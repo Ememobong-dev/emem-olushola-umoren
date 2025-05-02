@@ -9,29 +9,48 @@ interface TypingTextProps {
   sound?: string;
 }
 
-export const TypingText = ({ text, className, delay = 100, sound }: TypingTextProps) => {
+export const TypingText = ({
+  text,
+  className,
+  delay = 100,
+  sound,
+}: TypingTextProps) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Load sound once
   useEffect(() => {
     if (sound) {
       audioRef.current = new Audio(sound);
       audioRef.current.volume = 0.5;
     }
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
   }, [sound]);
 
+  // Typing effect
   useEffect(() => {
     let currentIndex = 0;
+    let isCancelled = false;
+
+    // Reset state when text changes
+    setDisplayedText('');
+    setIsTypingDone(false);
 
     const typeNextChar = () => {
-      if (currentIndex >= text.length) {
+      if (isCancelled || currentIndex >= text.length) {
         setIsTypingDone(true);
         return;
       }
 
       const nextChar = text[currentIndex];
-      setDisplayedText(prev => prev + nextChar);
+      setDisplayedText((prev) => prev + nextChar);
 
       if (audioRef.current && nextChar !== ' ') {
         audioRef.current.currentTime = 0;
@@ -45,10 +64,7 @@ export const TypingText = ({ text, className, delay = 100, sound }: TypingTextPr
     typeNextChar();
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+      isCancelled = true;
     };
   }, [text, delay]);
 

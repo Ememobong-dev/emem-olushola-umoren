@@ -11,6 +11,8 @@ import { Footer } from "@/src/components/Footer";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import cert1 from "@/public/images/cert1.png";
+import cert2 from "@/public/images/cert2.png";
 
 const DataSinglePage = () => {
   const params = useParams();
@@ -41,8 +43,6 @@ const DataSinglePage = () => {
             DataAssessment: "blue",
             JupyterNotebook: "sharp-yellow",
             AzureDataStudio: "deepBlue",
-
-
           };
 
           // Scatter styles — feel free to tweak!
@@ -151,35 +151,52 @@ const DataSinglePage = () => {
         </div>
 
         {/* Gallery Section */}
+        {project.gallery.length > 0 ? (
+          <div>
+            <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
+              Gallery
+            </h3>
+            <div className="flex overflow-x-auto space-x-4 snap-x snap-mandatory scroll-smooth scrollbar-hide">
+              {project.gallery.map((item, index) => (
+                <div
+                  key={index}
+                  className="snap-start flex-shrink-0 rounded-2xl bg-gray-300 h-[350px] 
+                    w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] 
+                    overflow-hidden"
+                >
+                  <Image
+                    src={item}
+                    width={800}
+                    height={300}
+                    alt={`project image ${index + 1}`}
+                    className="object-cover w-full h-full rounded-2xl"
+                    quality={90}
+                    priority
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
         <div>
           <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
-            Gallery
+            Certifications
           </h3>
-          <div className="flex overflow-x-auto space-x-4 snap-x snap-mandatory scroll-smooth scrollbar-hide">
-            {project.gallery.map((item, index) => (
-              <div
-                key={index}
-                className="snap-start flex-shrink-0 rounded-2xl bg-gray-300 h-[350px] 
-                 w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] 
-                 overflow-hidden"
-              >
-                <Image
-                  src={item}
-                  width={800}
-                  height={300}
-                  alt={`project image ${index + 1}`}
-                  className="object-cover w-full h-full rounded-2xl"
-                  quality={90}
-                  priority
-                />
-              </div>
-            ))}
+          <div className="flex justify-center items-end gap-4 w-full">
+            <span>
+              <Image src={cert1} className="w-full" alt="" />
+            </span>
+            <span>
+              <Image src={cert2} className="w-full " alt="" />
+            </span>
           </div>
         </div>
 
         {/* Contact */}
         <Contact />
-      </div>
+      </div>x
       {project.liveDemo && (
         <motion.a
           href={project.liveDemo}

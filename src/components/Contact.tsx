@@ -1,3 +1,6 @@
+"use client";
+
+
 import { Col, Row } from "antd";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -14,26 +17,24 @@ export const Contact = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
-    project:""
-  })
+    project: "",
+  });
   const [errors, setErrors] = useState({ name: "", email: "" });
-
-
 
   const handleSend = () => {
     const { name, email, project } = form;
-  
+
     const newErrors = { name: "", email: "" };
-  
+
     if (!name.trim()) newErrors.name = "Name is Required";
     if (!email.trim() || !/\S+@\S+\.\S+/.test(email))
       newErrors.email = "Valid email is required";
-  
+
     setErrors(newErrors);
-  
+
     if (!newErrors.name && !newErrors.email) {
       const subject = encodeURIComponent("NEW PROJECT INQUIRY(FROM PORTFOLIO)");
-  
+
       const body = [
         `Name: ${name}`,
         "",
@@ -48,18 +49,16 @@ export const Contact = () => {
       ]
         .map(encodeURIComponent)
         .join("%0D%0A");
-  
+
       window.location.href = `mailto:ememobongumoren2@gmail.com?subject=${subject}&body=${body}`;
-  
+
       // Clear form after sending
       setForm({ name: "", email: "", project: "" });
       setSelectedBudget(null);
       setSelectedServices([]);
       setErrors({ name: "", email: "" });
     }
-  }
-
-
+  };
 
   const serviceOptions = [
     "API Integration",
@@ -70,14 +69,13 @@ export const Contact = () => {
     "Version Control & Collaboration",
   ];
 
-
   const toggleService = (text: string) => {
-    setSelectedServices(prev =>
-      prev.includes(text) 
-        ? prev.filter(item => item !== text)
+    setSelectedServices((prev) =>
+      prev.includes(text)
+        ? prev.filter((item) => item !== text)
         : [...prev, text]
     );
-  }
+  };
 
   const budgetOptions = ["100k-250k", "250k-1m", "1m+"];
 
@@ -132,12 +130,21 @@ export const Contact = () => {
                 </Link>
               </div>
             </div>
-            <div className="mt-14">
+            <div className="mt-14 ">
               <Button
                 variant="bordered"
                 target
                 link="https://calendly.com/ememobongumoren2/30min"
                 text="Book a Session"
+              />
+            </div>
+            <div className="mt-6">
+              <Button
+                link="/Ememobong-Umoren-Resume.pdf"
+                target
+                variant="fill"
+                text="Download Resume"
+                download
               />
             </div>
           </div>
@@ -189,7 +196,7 @@ export const Contact = () => {
                         type="text"
                         id="name"
                         value={form.name}
-                        onChange={e =>
+                        onChange={(e) =>
                           setForm({ ...form, name: e.target.value })
                         }
                         className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
@@ -208,13 +215,15 @@ export const Contact = () => {
                         type="text"
                         id="email"
                         value={form.email}
-                        onChange={e =>
+                        onChange={(e) =>
                           setForm({ ...form, email: e.target.value })
                         }
                         className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
                       />
-                       {errors.email && (
-                        <p className="text-pepper-red text-sm">{errors.email}</p>
+                      {errors.email && (
+                        <p className="text-pepper-red text-sm">
+                          {errors.email}
+                        </p>
                       )}
                     </div>
                   </Col>
@@ -226,7 +235,7 @@ export const Contact = () => {
                       <textarea
                         id="project"
                         value={form.project}
-                        onChange={e =>
+                        onChange={(e) =>
                           setForm({ ...form, project: e.target.value })
                         }
                         className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
@@ -235,7 +244,11 @@ export const Contact = () => {
                   </Col>
                 </Row>
                 <div className="mt-8">
-                  <Button variant="bordered" text="Send Message"  onClick={handleSend} />
+                  <Button
+                    variant="bordered"
+                    text="Send Message"
+                    onClick={handleSend}
+                  />
                 </div>
               </div>
             </div>

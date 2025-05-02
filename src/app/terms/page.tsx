@@ -54,7 +54,7 @@ const Terms = () => {
             <h3 className="text-3xl mb-5 font-alro-reg">5.  Payment Terms</h3>
             <ul className="list-disc text-justify pl-5 font-azeret-mono">
               <li>
-                A deposit (typically 30–50%) is required before development
+                A deposit (typically 50%) is required before development
                 begins.
               </li>
               <li>
