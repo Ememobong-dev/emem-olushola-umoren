@@ -116,6 +116,10 @@ const Portfolio = () => {
         ref={scrollRef}
         className="max-h-[700px] relative md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border overflow-y-scroll snap-y snap-mandatory custom-scrollbar scroll-smooth"
       >
+        {/* Sticky Counter */}
+        <div className="sticky top-2 z-20 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm w-fit ml-auto mr-4">
+          {currentIndex}/{totalProjects}
+        </div>
         {/* Tabs */}
         <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
           <p
@@ -179,9 +183,7 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-        <div className="absolute top-2 right-4 z-20 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm">
-          {currentIndex}/{totalProjects}
-        </div>
+        {/*  */}
       </div>
 
       {/* Latest Articles */}
