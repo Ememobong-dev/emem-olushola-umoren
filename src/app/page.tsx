@@ -508,7 +508,7 @@ export default function Home() {
                 <Image src={line} alt="line" />
               </span>
               <Link
-                href={"/portfoio"}
+                href={"/portfolio"}
                 className="flex  cursor-pointer gap-3 justify-center items-center group transition-all"
               >
                 <p className="font-azeret-mono font-semibold  text-lg transform transition-transform duration-300 group-hover:translate-x-2">
