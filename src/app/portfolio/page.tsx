@@ -96,8 +96,8 @@ const Portfolio = () => {
 
         {/* Name */}
         <div className="text-center">
-          <h2 className=" font-alro-reg text-8xl">Emem Olushola</h2>
-          <h2 className="font-bold font-alro-reg text-8xl">Umoren.</h2>
+          <h2 className=" font-alro-reg text-4xl lg:text-8xl">Emem Olushola</h2>
+          <h2 className="font-bold font-alro-reg text-4xl lg:text-8xl">Umoren.</h2>
         </div>
 
         {/* Scroll Button */}
