@@ -70,7 +70,7 @@ export default function Home() {
               <LeftRevealAnimatedText>
                 <div className="flex justify-center lg:justify-normal">
                   <p className=" w-full px-8 lg:px-0 absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-1/2 font-azeret-mono  text-center lg:text-left">
-                    Self-taught Frontend Developer and Data Analyst skilled in{" "}
+                    A Frontend Developer and Data Analyst skilled in{" "}
                     <span className="text-pepper-red">React.js</span>,{" "}
                     <span className="text-cyan">Next.js</span>,{" "}
                     <span className="text-blue">TypeScript</span>,{" "}
@@ -100,7 +100,7 @@ export default function Home() {
             </p>
           </FloatingButton>
         </div>
-        <div className="absolute hidden lg:flex bottom-[30%] right-[24%]">
+        <div className="absolute hidden lg:flex bottom-[18%] right-[24%]">
           <FloatingButton variant="yellow">
             <p className="italic">
               Frontend <span className="font-bold not-italic ">Developer</span>
@@ -115,22 +115,22 @@ export default function Home() {
             gutter={[56, 56]}
             className="flex items-stretch overflow-hidden h-full"
           >
-            <Col xs={24} lg={10} className="">
+            <Col xs={24} lg={14} className="">
               <LeftRevealAnimatedText>
                 <div className="h-full overflow-hidden">
-                  <h3 className="font-alro-reg text-2xl lg:text-3xl">
+                  <h3 className="font-alro-reg text-center sm:text-left text-2xl lg:text-3xl">
                     Who is <span className="font-bold">Emem Olushola?</span>
                   </h3>
-                  <div className="flex flex-col text-justify gap-4 mt-6 font-azeret-mono  ">
-                    <p className="tracking-widest">
-                      I am a self-taught Frontend Developer and Data Analyst
+                  <div className="flex flex-col text-center sm:text-justify gap-4 mt-6 font-azeret-mono">
+                    <p className="sm:tracking-widest">
+                      I am a Frontend Developer and a Data Analyst
                       with expertise in React, Next.js, TypeScript, TailwindCSS
                       and Data Analysis skills. My journey into tech has been
                       fueled by curiosity, continuous learning, and a passion
                       for problem-solving. With over{" "}
                       <span className="font-bold text-progress-cyan">
                         {" "}
-                        four years
+                        three years
                       </span>{" "}
                       of experience, I have built user-friendly, scalable, and
                       impactful digital solutions for global clients, including{" "}
@@ -146,7 +146,7 @@ export default function Home() {
                       </span>
                       , a secure platform for global gift card trading.
                     </p>
-                    <p className="tracking-widest">
+                    <p className="sm:tracking-widest">
                       Beyond development, I hold certifications from{" "}
                       <span className="font-bold text-deep-blue">Google</span>{" "}
                       and
@@ -156,22 +156,17 @@ export default function Home() {
                       </span>
                       , solidifying my expertise in data analytics and digital
                       problem-solving. I previously served as the Data Analytics
-                      Team Lead at GDSC, where I mentored peers, led data-driven
+                      Team Lead at GDSC at the University of Ibadan, where I mentored peers, led data-driven
                       projects, and contributed to fostering a community of
-                      aspiring analysts and developers.
+                      aspiring analysts.
                     </p>
-                    <p className="tracking-widest">
-                      My passion for learning drives me to stay ahead of
-                      industry trends and continuously refine my skills. I
-                      actively document my{" "}
+                    <p className="sm:tracking-widest">
+                      Driven by a passion for learning, I stay ahead of industry trends and continuously refine my skills. During my {" "}
                       <span className="font-bold text-progress-cyan">
                         100DaysOfCode journey
-                      </span>{" "}
-                      on LinkedIn, sharing insights, challenges, and progress
-                      while exploring emerging technologies and innovations in
-                      frontend development and data analytics.
+                      </span>{" "}, I actively documented my progress on LinkedIn, sharing insights, challenges, and discoveries while exploring emerging technologies in frontend development.
                     </p>
-                    <p className="tracking-widest leading-loose">
+                    <p className="sm:tracking-widest sm:leading-loose">
                       With a deep appreciation for clean code, and data-driven
                       decision-making, I am always eager to collaborate, build
                       meaningful projects, and push the boundaries of
@@ -195,7 +190,7 @@ export default function Home() {
                 </div>
               </LeftRevealAnimatedText>
             </Col>
-            <Col xs={24} lg={14} className="">
+            <Col xs={24} lg={10} className="">
               <RightRevealAnimatedText>
                 <div className="bg-dark-black overflow-hidden w-full h-full rounded-2xl">
                   <div className="text-white font-azeret-mono rounded-t-2xl bg-grey py-3 px-6">

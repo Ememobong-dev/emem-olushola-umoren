@@ -96,8 +96,8 @@ const Portfolio = () => {
 
         {/* Name */}
         <div className="text-center">
-          <h2 className=" font-alro-reg text-4xl lg:text-8xl">Emem Olushola</h2>
-          <h2 className="font-bold font-alro-reg text-4xl lg:text-8xl">Umoren.</h2>
+          <h2 className=" font-alro-reg text-5xl lg:text-8xl">Emem Olushola</h2>
+          <h2 className="font-bold font-alro-reg text-5xl lg:text-8xl">Umoren.</h2>
         </div>
 
         {/* Scroll Button */}
@@ -114,10 +114,10 @@ const Portfolio = () => {
       {/* Portfolio Scroll */}
       <div
         ref={scrollRef}
-        className="max-h-[700px] relative md:max-h-[80vh] flex flex-col mx-8 lg:mx-14 3xl:mx-28 border overflow-y-scroll snap-y snap-mandatory custom-scrollbar scroll-smooth"
+        className="max-h-[700px] relative md:max-h-[80vh] flex flex-col mx-4 lg:mx-14 3xl:mx-28 border overflow-y-scroll snap-y snap-mandatory custom-scrollbar scroll-smooth"
       >
         {/* Sticky Counter */}
-        <div className="sticky top-2 z-20 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm w-fit ml-auto mr-4">
+        <div className="sticky right-0 top-2 z-20 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm w-fit ml-auto md:mr-4">
           {currentIndex}/{totalProjects}
         </div>
         {/* Tabs */}
@@ -152,13 +152,13 @@ const Portfolio = () => {
               ref={(el) => {
                 projectRefs.current[idx] = el;
               }}
-              className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-8 justify-center items-center"
+              className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-3 md:gap-8 justify-center items-center"
             >
               <Link
                 className=" w-full flex items-center justify-center"
                 href={`/portfolio/${activeTab}/${proj.slug} `}
               >
-                <h3 className="font-azeret-mono w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
+                <h3 className="font-azeret-mono lg:w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
                   {proj.title}
                 </h3>
               </Link>
@@ -169,7 +169,7 @@ const Portfolio = () => {
                 </h5>
               )}
 
-              <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
+              <div className="flex flex-col mx-5 sm:mx-0 lg:flex-row gap-8 md:gap-4 justify-center items-center ">
                 <p className="lg:w-1/2 lg:text-left text-center">
                   {proj.overview}
                 </p>
