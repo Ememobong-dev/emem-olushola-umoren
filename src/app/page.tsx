@@ -22,10 +22,13 @@ import Link from "next/link";
 import { TypingText } from "../components/animations/TypingTextAnimation";
 import LeftRevealAnimatedText from "../components/animations/LeftRevealAnimation";
 import RightRevealAnimatedText from "../components/animations/RightRevealAnimation";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
+  const { theme } = useTheme();
 
+  
   const scrollDown = () => {
     if (aboutRef.current) {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -55,7 +58,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="landing_bg relative">
+      <div className={`landing_bg ${theme}-theme relative`}>
         <div className="lg:absolute lg:bottom-20 py-28 lg:py-0 px-14 w-full">
           <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0 lg:justify-between lg:items-end w-full">
             <div>
@@ -63,7 +66,7 @@ export default function Home() {
                 text="Emem Olushola"
                 className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg"
               />
-               <TypingText
+              <TypingText
                 text="Umoren."
                 className="text-4xl w-full font-bold text-center lg:text-left lg:text-8xl font-alro-reg"
               />
@@ -86,7 +89,7 @@ export default function Home() {
             <div className="flex justify-center lg:justify-normal">
               <button
                 onClick={scrollDown}
-                className="rounded-full absolute bottom-[10%] lg:relative cursor-pointer border border-white w-32 py-2 px-3"
+                className={` ${theme === "light" ? "border-black" : "border-white"} rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg py-2 px-3`}
               >
                 Scroll down
               </button>
@@ -401,10 +404,10 @@ export default function Home() {
                 {/* Overlay */}
                 <div className="absolute inset-0 w-full bg-black bg-opacity-70 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-start p-6 text-white rounded-4xl">
                   <h2 className="text-xl font-semibold font-alro-reg">
-                  ShotByPortable, Canada
+                    ShotByPortable, Canada
                   </h2>
                   <p className="text-[12px] mt-2 font-azeret-mono leading-relaxed">
-                  ShotByPortable is a photography portfolio website designed to showcase the work of a professional photographer specializing in headshots, lifestyle, and branding photography. The site offers a seamless experience for visitors to explore galleries, review pricing and packages, and book personalized sessions. It also includes a robust admin dashboard for the client to manage content dynamically.
+                    ShotByPortable is a photography portfolio website designed to showcase the work of a professional photographer specializing in headshots, lifestyle, and branding photography. The site offers a seamless experience for visitors to explore galleries, review pricing and packages, and book personalized sessions. It also includes a robust admin dashboard for the client to manage content dynamically.
                   </p>
                   <p className="text-sm mt-2">
                     <span className="font-semibold">Tools:</span> NextJS,
