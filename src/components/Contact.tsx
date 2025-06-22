@@ -10,8 +10,10 @@ import twitter from "@/public/icons/twitter.svg";
 import { Button } from "./buttons/Button";
 import { TagButton } from "./buttons/TagButton";
 import Link from "next/link";
+import { useTheme } from "../context/ThemeContext";
 
 export const Contact = () => {
+    const { theme } = useTheme();
   const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [form, setForm] = useState({
@@ -86,9 +88,9 @@ export const Contact = () => {
           <div>
             <h2 className="font-azeret-mono text-2xl">Contacts</h2>
             <div className="flex flex-col gap-4 mt-5">
-              <p className="font-azeret-mono text-sm font-light text-white hover:text-white underline">
+              <p className="font-azeret-mono text-sm font-light text-white hover:text-white underline ">
                 <a
-                  className="font-azeret-mono text-sm font-light !text-white hover:text-white"
+                  className={`font-azeret-mono text-sm font-light ${theme === "dark" ? "!text-white hover:text-white" : "!text-black hover:text-black"} `}
                   href="mailto:ememobongumoren2@gmail.com"
                 >
                   {" "}
@@ -98,7 +100,7 @@ export const Contact = () => {
               <p className="font-azeret-mono text-sm font-light">
                 <a
                   href="tel:+234 810 469 8415"
-                  className="!text-white hover:text-white"
+                  className={theme === "dark" ? "!text-white hover:text-white" : "!text-black hover:text-black"}
                 >
                   +234 810 469 8415
                 </a>
@@ -110,21 +112,21 @@ export const Contact = () => {
                 <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/">
                   <Image
                     src={linkedin}
-                    className="cursor-pointer"
+                    className={`cursor-pointer ${theme === "light" ? "filter invert" : ""}`}
                     alt="social_links"
                   />
                 </Link>
                 <Link href="https://github.com/Ememobong-dev">
                   <Image
                     src={github}
-                    className="cursor-pointer"
+                    className={`cursor-pointer ${theme === "light" ? "filter invert" : ""}`}
                     alt="social_links"
                   />
                 </Link>
                 <Link href="https://x.com/FTechbro">
                   <Image
                     src={twitter}
-                    className="cursor-pointer"
+                    className={`cursor-pointer ${theme === "light" ? "filter invert" : ""}`}
                     alt="social_links"
                   />
                 </Link>
@@ -199,7 +201,7 @@ export const Contact = () => {
                         onChange={(e) =>
                           setForm({ ...form, name: e.target.value })
                         }
-                        className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
+                        className={` ${theme === "dark" ? "border-white/60" : "border-black/60"} border-b font-azeret-mono py-3 focus:outline-0  w-full`}
                       />
                       {errors.name && (
                         <p className="text-pepper-red text-sm">{errors.name}</p>
@@ -218,7 +220,7 @@ export const Contact = () => {
                         onChange={(e) =>
                           setForm({ ...form, email: e.target.value })
                         }
-                        className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
+                        className={` ${theme === "dark" ? "border-white/60" : "border-black/60"} border-b font-azeret-mono py-3 focus:outline-0  w-full`}
                       />
                       {errors.email && (
                         <p className="text-pepper-red text-sm">
@@ -238,7 +240,7 @@ export const Contact = () => {
                         onChange={(e) =>
                           setForm({ ...form, project: e.target.value })
                         }
-                        className="border-b font-azeret-mono py-3 focus:outline-0 border-white/60 w-full"
+                        className={` ${theme === "dark" ? "border-white/60" : "border-black/60"} border-b font-azeret-mono py-3 focus:outline-0  w-full`}
                       />
                     </div>
                   </Col>

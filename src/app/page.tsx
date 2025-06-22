@@ -28,7 +28,7 @@ export default function Home() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const { theme } = useTheme();
 
-  
+
   const scrollDown = () => {
     if (aboutRef.current) {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -361,21 +361,21 @@ export default function Home() {
                   >
                     <Image
                       src={linkedin}
-                      className="cursor-pointer"
                       alt="social_links"
+                      className={`cursor-pointer ${theme === "light" ? "filter invert" : ""}`}
                     />
                   </Link>
                   <Link href="https://github.com/Ememobong-dev" target="_blank">
                     <Image
                       src={github}
-                      className="cursor-pointer"
+                      className={`cursor-pointer ${theme === "light" ? "filter invert" : ""}`}
                       alt="social_links"
                     />
                   </Link>
                   <Link href="https://x.com/FTechbro" target="_blank">
                     <Image
                       src={twitter}
-                      className="cursor-pointer"
+                      className={`cursor-pointer ${theme === "light" ? "filter invert" : ""}`}
                       alt="social_links"
                     />
                   </Link>
@@ -503,7 +503,10 @@ export default function Home() {
             </div>
             <div className=" mt-8 flex flex-col gap-2 items-center justify-center ">
               <span>
-                <Image src={line} alt="line" />
+                <Image 
+                src={line} 
+                alt="line" 
+                className={theme === "light" ? "filter invert" : ""} />
               </span>
               <Link
                 href={"/portfolio"}
@@ -513,7 +516,8 @@ export default function Home() {
                   Go to Portfolio
                 </p>
                 <span className="transform transition-transform duration-300 group-hover:translate-x-2">
-                  <Image src={arrowIcon} alt="arrow" />
+                  <Image src={arrowIcon} alt="arrow" className={theme === "light" ? "filter invert" : ""}
+                  />
                 </span>
               </Link>
             </div>

@@ -3,6 +3,7 @@
 import { Progress } from "antd";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { useTheme } from "../context/ThemeContext";
 
 export const SkillProgress = ({
   skill,
@@ -13,6 +14,8 @@ export const SkillProgress = ({
 }) => {
   const { ref, inView } = useInView({ triggerOnce: true });
   const [currentPercent, setCurrentPercent] = useState(0);
+    const { theme } = useTheme();
+  
 
   useEffect(() => {
     if (inView) {
@@ -34,13 +37,13 @@ export const SkillProgress = ({
         <Progress
           type="circle"
           percent={currentPercent}
-          strokeColor="#0DF0D6"
+          strokeColor={theme === "dark" ? "#0DF0D6" : "#0DF0D688"}
           trailColor="#505A5B"
           showInfo={false}
           strokeWidth={10}
         />
       </div>
-      <div className="absolute inset-0 flex items-center justify-center text-white text-xs text-center font-mono px-8">
+      <div className={` ${theme === "light" ? "!text-black" : "text-white"} absolute inset-0 flex items-center justify-center text-xs text-center font-mono px-8`}>
         {skill}
       </div>
     </div>
