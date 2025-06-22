@@ -21,7 +21,7 @@ const ArticleSinglePage = () => {
       <Navbar />
       <div className="flex justify-center items-center py-16 lg:py-28 px-8 lg:px-14 3xl:px-28">
         <div className="flex flex-col  max-w-[1350px] py-16 lg:py-28 ">
-          <h2 className=" text-4xl lg:text-5xl text-white lg:text-justify font-azeret-mono z-10">
+          <h2 className=" text-4xl lg:text-5xl lg:text-justify font-azeret-mono z-10">
             {selectedArticle?.title}
           </h2>
           <div className="mt-14 flex flex-col gap-10 text-justify">
