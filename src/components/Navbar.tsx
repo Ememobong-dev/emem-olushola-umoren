@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
 import brandLogo from "@/public/icons/brand-logo.svg";
+import brandLogoDark from "@/public/icons/footer-logo.svg";
 import arrowIcon from "@/public/icons/arrow-line.svg";
 import Link from "next/link";
 import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
@@ -72,7 +73,7 @@ export const Navbar = () => {
             }`}
         >
           <Link href={"/"}>
-            <Image src={brandLogo} alt="brand-logo" />
+            <Image className="w-[20px] h-[18px]" src={theme === "dark" ? brandLogo : brandLogoDark} alt="brand-logo" />
           </Link>
           <div className="flex gap-8 3xl:gap-14 items-center font-alro-reg">
             <Link href="/" className="z-[1000px]">

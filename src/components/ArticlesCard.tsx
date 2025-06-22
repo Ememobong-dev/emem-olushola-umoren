@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./buttons/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "../context/ThemeContext";
 
 interface ArticleCardProps {
   articleTitle: string;
@@ -22,8 +23,11 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({
   imageSrc,
   articleSlug,
 }) => {
+    const { theme } = useTheme();
+  
+
   return (
-    <div className="w-full h-full border border-white/50 bg-[#0A0A0C] p-5 rounded-lg flex flex-col gap-4 3xl:gap-8 justify-between">
+    <div className={`w-full h-full border ${theme === "light" ? "border-black/50 bg-white/25 text-black" : "border-white/50 bg-[#0A0A0C] text-white"}    p-5 rounded-lg flex flex-col gap-4 3xl:gap-8 justify-between`}>
       {imageSrc && (
         <Image
           src={imageSrc}

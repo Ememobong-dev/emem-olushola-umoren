@@ -11,12 +11,14 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import frontendProjects from "@/src/projectData/frontendData.json";
 import dataProjects from "@/src/projectData/analysisData.json";
+import { useTheme } from "@/src/context/ThemeContext";
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("frontend");
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
   const projectRefs = useRef<(HTMLElement | null)[]>([]);
+  const { theme } = useTheme();
 
   const handleScrollDown = () => {
     if (scrollRef.current) {
@@ -104,7 +106,8 @@ const Portfolio = () => {
         <div className="absolute bottom-[10%]">
           <button
             onClick={handleScrollDown}
-            className="rounded-full cursor-pointer border border-white w-32 py-2 px-3"
+            // className="rounded-full cursor-pointer border border-white py-2 px-3"
+            className={` ${theme === "light" ? "border-black" : "border-white"} rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg py-2 px-3`}
           >
             Scroll down
           </button>
@@ -121,23 +124,25 @@ const Portfolio = () => {
           {currentIndex}/{totalProjects}
         </div>
         {/* Tabs */}
-        <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0 bg-[#0A0A0C] z-10">
+        <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0  z-10">
           <p
-            className={`cursor-pointer ${
-              activeTab === "frontend"
-                ? "text-white border-b-4 border-cyan"
-                : "lg:opacity-25 opacity-50"
-            }`}
+            className={`cursor-pointer
+            ${theme === "light" ? "!text-black" : "text-white"}
+             ${activeTab === "frontend"
+              ? "border-b-4 border-cyan"
+              : "lg:opacity-25 opacity-50"
+              }`}
             onClick={() => setActiveTab("frontend")}
           >
             Frontend Developer
           </p>
           <p
-            className={`cursor-pointer ${
-              activeTab === "data"
-                ? "text-white border-b-4 border-cyan"
-                : "lg:opacity-25 opacity-50"
-            }`}
+            className={`cursor-pointer
+              ${theme === "light" ? "!text-black" : "text-white"}
+               ${activeTab === "data"
+              ? "border-b-4 border-cyan"
+              : "lg:opacity-25 opacity-50"
+              }`}
             onClick={() => setActiveTab("data")}
           >
             Data Analyst
@@ -158,7 +163,7 @@ const Portfolio = () => {
                 className=" w-full flex items-center justify-center"
                 href={`/portfolio/${activeTab}/${proj.slug} `}
               >
-                <h3 className="font-azeret-mono lg:w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl hover:text-sharp-yellow">
+                <h3 className="font-azeret-mono lg:w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl">
                   {proj.title}
                 </h3>
               </Link>
@@ -190,7 +195,7 @@ const Portfolio = () => {
       <div className="px-8 lg:px-14 3xl:px-28 py-28">
         <div className="flex items-center justify-between mb-8">
           <p className="font-alro-reg text-3xl">Latest Article</p>
-          <Button variant="bordered" text="View All" />
+          <Button variant="bordered" link="/articles" text="View All" />
         </div>
         <div>
           <Row gutter={[56, 56]}>
