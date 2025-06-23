@@ -148,3 +148,23 @@ a {
   background-color: black !important;
   border: none !important;
 }
+
+/* INFINITE_SCROLL */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  animation: infinite-scroll 40s linear infinite;
+  width: max-content;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}

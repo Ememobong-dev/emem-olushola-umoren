@@ -77,7 +77,7 @@ export const Navbar = () => {
           </Link>
           <div className="flex gap-8 3xl:gap-14 items-center font-alro-reg">
             <Link href="/" className="z-[1000px]">
-              <p className={getTextColorClass(pathname === "/")}>home</p>
+              <p className={getTextColorClass(pathname.startsWith("/"))}>home</p>
             </Link>
             <Link className="cursor-pointer z-[1000px]" href="/#about">
               <p
@@ -96,12 +96,12 @@ export const Navbar = () => {
               </p>
             </Link>
             <Link href="/portfolio">
-              <p className={getTextColorClass(pathname === "/portfolio")}>
+              <p className={getTextColorClass(pathname.startsWith("/portfolio"))}>
                 portfolio
               </p>
             </Link>
             <Link href="/articles" className="z-[1000px]">
-              <p className={getTextColorClass(pathname === "/articles")}>
+              <p className={getTextColorClass(pathname.startsWith("/articles"))}>
                 articles
               </p>
             </Link>
