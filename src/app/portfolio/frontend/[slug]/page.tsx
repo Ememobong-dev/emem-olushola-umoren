@@ -9,7 +9,6 @@ import { Navbar } from "@/src/components/Navbar";
 import Link from "next/link";
 import { Contact } from "@/src/components/Contact";
 import { Footer } from "@/src/components/Footer";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTheme } from "@/src/context/ThemeContext";
 import InfiniteScrollGallery from "@/src/components/infinite-scroll/infinite-gallery-scroll";
