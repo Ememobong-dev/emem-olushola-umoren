@@ -18,7 +18,7 @@ export default function NotFound() {
                         Page Not Found
                     </h2>
                     <p className={`${theme === "light" ? "text-gray-600" : "text-white"}  mb-8 max-w-md`}>
-                        Oops! The page you're looking for doesn't exist or has been moved.
+                        Oops! The page you&apos;re looking for doesn&apos;t exist or has been moved.
                     </p>
                     <Link
                         href="/"
