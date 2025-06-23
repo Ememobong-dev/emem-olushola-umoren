@@ -356,7 +356,7 @@ export default function Home() {
                 </h3>
                 <div className="flex gap-3 items-center">
                   <Link
-                    href="https://www.linkedin.com/in/ememobong-umoren-olushola/"
+                    href="https://www.linkedin.com/in/emem-olushola-umoren/"
                     target="_blank"
                   >
                     <Image

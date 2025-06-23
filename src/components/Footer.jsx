@@ -22,7 +22,7 @@ export const Footer = () => {
           <p>Skills</p>
         </Link>
         <div className="flex gap-5 items-center justify-center p-4">
-          <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/">
+          <Link href="https://www.linkedin.com/in/emem-olushola-umoren/">
             <LinkedinFilled />
           </Link>
           <Link href="https://github.com/Ememobong-dev">

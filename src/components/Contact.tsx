@@ -109,7 +109,7 @@ export const Contact = () => {
             <div className="mt-14">
               <p className="text-base font-azeret-mono">Follow</p>
               <div className="flex gap-3 items-start mt-8">
-                <Link href="https://www.linkedin.com/in/ememobong-umoren-olushola/">
+                <Link href="https://www.linkedin.com/in/emem-olushola-umoren/">
                   <Image
                     src={linkedin}
                     className={`cursor-pointer ${theme === "light" ? "filter invert" : ""}`}

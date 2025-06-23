@@ -19,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({ text, variant, link, target, dow
   const variantClasses =
     variant === "bordered"
       ? "border border-white bg-transparent text-white"
-      : "bg-white text-black hover:border hover:bg-transparent hover:border-white hover:text-progress-cyan";
+      : `${theme === "light" ? "!bg-black !text-white" : "!bg-white text-black"}   hover:border hover:bg-transparent hover:border-white hover:text-progress-cyan`;
 
   return (
     <button

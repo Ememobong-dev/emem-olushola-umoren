@@ -13,8 +13,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import cert1 from "@/public/images/cert1.png";
 import cert2 from "@/public/images/cert2.png";
+import { useTheme } from "@/src/context/ThemeContext";
+import InfiniteScrollGallery from "@/src/components/infinite-scroll/infinite-gallery-scroll";
 
 const DataSinglePage = () => {
+  const { theme } = useTheme();
+
   const params = useParams();
   const slug = params?.slug;
 
@@ -64,13 +68,13 @@ const DataSinglePage = () => {
         })}
 
         {/* Title */}
-        <h2 className="text-5xl w-full text-white text-center lg:text-[150px] font-azeret-mono z-10">
+        <h2 className={`text-5xl w-full ${theme === "light" ? "text-black" : "text-white"}  text-center lg:text-[150px] font-azeret-mono z-10`}>
           {project?.title}
         </h2>
       </div>
 
       {/* OTHER SECTIONS */}
-      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
+      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:pb-28 flex flex-col gap-36 lg:gap-56">
         {/* Second Section */}
         <div className="w-full">
           <Row
@@ -153,35 +157,16 @@ const DataSinglePage = () => {
         {/* Gallery Section */}
         {project.gallery.length > 0 ? (
           <div>
-            <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
+            <h3 className="font-alro-reg text-3xl font-bold mb-4">
               Gallery
             </h3>
-            <div className="flex overflow-x-auto space-x-4 snap-x snap-mandatory scroll-smooth scrollbar-hide">
-              {project.gallery.map((item, index) => (
-                <div
-                  key={index}
-                  className="snap-start flex-shrink-0 rounded-2xl bg-gray-300 h-[350px] 
-                    w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] 
-                    overflow-hidden"
-                >
-                  <Image
-                    src={item}
-                    width={800}
-                    height={300}
-                    alt={`project image ${index + 1}`}
-                    className="object-cover w-full h-full rounded-2xl"
-                    quality={90}
-                    priority
-                  />
-                </div>
-              ))}
-            </div>
+            <InfiniteScrollGallery images={project.gallery} />
           </div>
         ) : (
           ""
         )}
         <div>
-          <h3 className="font-alro-reg text-3xl text-white font-bold mb-4">
+          <h3 className="font-alro-reg text-3xl font-bold mb-4">
             Certifications
           </h3>
           <div className="flex items-end gap-4 w-full">
@@ -205,7 +190,7 @@ const DataSinglePage = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6, ease: "easeOut" }}
-          className="fixed bottom-6 right-6 z-[1000px] px-6 py-3 rounded-full bg-dark border border-white text-white font-azeret-mono text-sm hover:bg-white/20 transition-all duration-300"
+          className={`${theme === "light" ? "!text-white hover:bg-black/75 text-black" : " hover:bg-white/20"} fixed bottom-6 right-6 z-[1000px] px-6 py-3 rounded-full border border-white bg-dark text-white font-azeret-mono text-sm  transition-all duration-300`}
         >
           View Live Website
         </motion.a>
