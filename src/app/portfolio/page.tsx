@@ -98,16 +98,16 @@ const Portfolio = () => {
 
         {/* Name */}
         <div className="text-center">
-          <h2 className=" font-alro-reg text-5xl lg:text-8xl">Emem Olushola</h2>
-          <h2 className="font-bold font-alro-reg text-5xl lg:text-8xl">Umoren.</h2>
+          <h2 className=" font-alro-reg text-5xl text-center lg:text-8xl">Emem Olushola</h2>
+          <h2 className="font-bold font-alro-reg text-center text-5xl lg:text-8xl">Umoren.</h2>
         </div>
 
         {/* Scroll Button */}
-        <div className="absolute bottom-[10%]">
+        <div className="absolute flex justify-center  bottom-[10%]">
           <button
             onClick={handleScrollDown}
             // className="rounded-full cursor-pointer border border-white py-2 px-3"
-            className={` ${theme === "light" ? "border-black" : "border-white"} rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg py-2 px-3`}
+            className={` ${theme === "light" ? "border-black" : "border-white"} w-32 md:w-auto h-10 rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg  py-2 md:px-3`}
           >
             Scroll down
           </button>
@@ -157,10 +157,10 @@ const Portfolio = () => {
               ref={(el) => {
                 projectRefs.current[idx] = el;
               }}
-              className="snap-start min-h-[600px] md:min-h-[80vh] flex flex-col gap-3 md:gap-8 justify-center items-center"
+              className="snap-start  min-h-[600px] md:min-h-[80vh] flex flex-col gap-3 md:gap-8 justify-center items-center"
             >
               <Link
-                className=" w-full flex items-center justify-center"
+                className=" w-full flex items-center justify-center mt-28 lg:mt-0"
                 href={`/portfolio/${activeTab}/${proj.slug} `}
               >
                 <h3 className="font-azeret-mono lg:w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl">

@@ -169,7 +169,7 @@ const DataSinglePage = () => {
           <h3 className="font-alro-reg text-3xl font-bold mb-4">
             Certifications
           </h3>
-          <div className="flex items-end gap-4 w-full">
+          <div className="flex flex-col md:flex-row items-end gap-4 w-full">
             <span>
               <Image src={cert1} className="w-full" alt="" />
             </span>

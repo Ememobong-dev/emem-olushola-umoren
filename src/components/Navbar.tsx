@@ -54,8 +54,21 @@ export const Navbar = () => {
         {/* MOBILE */}
         <div className="lg:hidden flex items-center justify-between w-full">
           <Link href={"/"}>
-            <Image src={brandLogo} alt="brand-logo" />
+            <Image className="w-[20px] h-[18px]" src={theme === "dark" ? brandLogo : brandLogoDark} alt="brand-logo" />
           </Link>
+          <Switch
+            checked={theme === "light"}
+            onChange={toggleTheme}
+            checkedChildren="🌞"
+            unCheckedChildren="🌙"
+            className={`nav-switch ${showNavLinks
+              ? "opacity-100 translate-y-0 rounded-full z-[1000px]"
+              : "opacity-0 -translate-y-4 pointer-events-none"
+              } 
+              
+              ${theme === "light" ? "bg-gray-400" : "bg-gray-600"
+              }`}
+          />
           <button
             onClick={toggleDropdown}
             className={`lg:hidden cursor-pointer text-2xl ${theme === "dark" ? "text-white" : "text-black"
@@ -68,8 +81,8 @@ export const Navbar = () => {
         {/* DESKTOP NAV LINKS */}
         <div
           className={`lg:flex gap-14 hidden 3xl:gap-16 items-center transition-all duration-300 ease-in-out ${showNavLinks
-              ? "opacity-100 translate-y-0 rounded-full z-[1000px]"
-              : "opacity-0 -translate-y-4 pointer-events-none"
+            ? "opacity-100 translate-y-0 rounded-full z-[1000px]"
+            : "opacity-0 -translate-y-4 pointer-events-none"
             }`}
         >
           <Link href={"/"}>
@@ -109,15 +122,15 @@ export const Navbar = () => {
         </div>
 
         {/* TALK TO ME BUTTON && Toggle*/}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 lg:flex hidden">
           <Switch
             checked={theme === "light"}
             onChange={toggleTheme}
             checkedChildren="🌞"
             unCheckedChildren="🌙"
             className={`nav-switch ${showNavLinks
-                ? "opacity-100 translate-y-0 rounded-full z-[1000px]"
-                : "opacity-0 -translate-y-4 pointer-events-none"
+              ? "opacity-100 translate-y-0 rounded-full z-[1000px]"
+              : "opacity-0 -translate-y-4 pointer-events-none"
               } 
               ${isAtTop
                 ? "relative hidden lg:flex "
@@ -130,8 +143,8 @@ export const Navbar = () => {
           {/* TALK TO ME BUTTON */}
           <div
             className={`${isAtTop
-                ? "relative lg:flex hidden"
-                : "fixed right-14 top-6 z-50 lg:flex hidden px-4 py-2 rounded-full backdrop-blur-md border transition-colors"
+              ? "relative lg:flex hidden"
+              : "fixed right-14 top-6 z-50 lg:flex hidden px-4 py-2 rounded-full backdrop-blur-md border transition-colors"
               } items-center gap-2`}
           >
             <Link
@@ -154,8 +167,8 @@ export const Navbar = () => {
       {isOpen && (
         <div
           className={`lg:hidden mt-5 px-4 py-6 rounded-xl backdrop-blur-md border ${theme === "dark"
-              ? "bg-white/5 border-white/10 text-white"
-              : "bg-black/5 border-black/10 text-black"
+            ? "bg-white/5 border-white/10 text-white"
+            : "bg-black/5 border-black/10 text-black"
             } font-alro-reg space-y-4`}
         >
           <Link href="/">
