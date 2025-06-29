@@ -1,3 +1,5 @@
+"use client";
+
 import { useTheme } from "@/src/context/ThemeContext";
 import Link from "next/link";
 import React from "react";

@@ -1,8 +1,8 @@
 [
     {
-      "title": "React Hooks Explained: useEffect and useState",
-      "slug": "react-hooks-useeffect-usestate",
-      "description": "Infarena is a Canadian-based platform designed to facilitate seamless interactions among users. It serves as a hub for trading goods, sharing reviews, participating in discussions, and listing small businesses for free. Additionally, the platform supports job postings and property reviews, empowering users to make informed decisions.\n\nThe primary challenge was to develop a user-friendly platform that could handle multiple functionalities—such as trading, reviewing, and business listings—while maintaining an engaging and intuitive interface.",
+      "title": "React Hooks Series – Part 1: Building an Accordian using useState",
+      "slug": "react-hooks-series-usestate",
+      "description": "In React, useState is a Hook that lets you create and manage state in functional components. State refers to data that can change over time and affects how your component behaves or what it renders.",
       "header1": "Header 1",
       "header2": "Header 2",
       "author": "Umoren Emem Olushola",
@@ -30,38 +30,6 @@
       "/images/wow.png"
     ],
       "tags": ["Data Analysis", "Excel", "Python", "pandas"]
-    },
-    {
-      "title": "Responsive Design: Building for All Screens",
-      "slug": "responsive-design-all-screens",
-      "description": "Responsive web design ensures that your site looks and works well on all devices—from mobile phones to desktops. It involves fluid layouts, flexible images, and media queries to create a seamless experience.\n\nLearn the core principles of responsive design and how to implement them using modern CSS frameworks like Tailwind and media queries.",
-      "header1": "Getting Started with Responsiveness",
-      "header2": "Common Pitfalls to Avoid",
-      "author": "Umoren Emem Olushola",
-      "date": "2025-11-22",
-      "cardImage": "/icons/rectangle.svg",
-      "gallery": [
-      "/images/articleSP.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
-    ],
-      "tags": ["CSS", "Web Design", "Responsive", "Frontend"]
-    },
-    {
-      "title": "Exploratory Data Analysis with Pandas and Matplotlib",
-      "slug": "exploratory-data-analysis-pandas-matplotlib",
-      "description": "Exploratory Data Analysis (EDA) is a crucial step in understanding your dataset before applying any models. With Python libraries like pandas and matplotlib, you can quickly summarize, visualize, and find patterns in your data.\n\nThis article will walk you through how to perform EDA on a sample dataset, including descriptive stats, group analysis, and basic plotting.",
-      "header1": "Why EDA Matters",
-      "header2": "Visualizing Your Data",
-      "author": "Umoren Emem Olushola",
-      "date": "2025-03-10",
-      "cardImage": "/icons/rectangle.svg",
-      "gallery": [
-      "/images/articleSP.png",
-      "/images/ayocpa.png",
-      "/images/wow.png"
-    ],
-      "tags": ["Data Analysis", "EDA", "pandas", "matplotlib"]
     }
   ]
   
