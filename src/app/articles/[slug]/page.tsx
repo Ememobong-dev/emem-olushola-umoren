@@ -5,7 +5,7 @@ import { Footer } from '@/src/components/Footer';
 import { Contact } from '@/src/components/Contact';
 import { TagButton } from '@/src/components/buttons/TagButton';
 import ShareButton from '@/src/components/buttons/ShareButton';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { remark } from 'remark';
 import html from 'remark-html';
 
@@ -37,16 +37,18 @@ export default async function ArticlePage({ params }: Props) {
             className="mt-14 flex flex-col gap-10 text-justify font-azeret-mono prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
-          <div className="w-full mt-14">
+          {/* <div className="relative w-full mt-14 h-[550px]">
             <Image
               src={article.gallery[0]}
-              quality={90}
-              width={800}
-              height={300}
-              className="w-full object-contain h-auto"
-              alt="article image"
+
+              alt="article_img"
+              className="object-cover rounded-lg"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              quality={100}
             />
-          </div>
+          </div> */}
+
           <div className="mt-28 flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center">
             <div>
               <p className="font-azeret-mono text-lg">

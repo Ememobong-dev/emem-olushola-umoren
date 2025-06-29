@@ -1,6 +1,6 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 export interface ArticleMeta {
   title: string;
@@ -17,15 +17,26 @@ export interface ArticleData extends ArticleMeta {
   content: string;
 }
 
-const articlesDir = path.join(process.cwd(), 'articles');
+// Path to your articles folder (ensure it exists in root!)
+const articlesDir = path.join(process.cwd(), "articles");
 
+// Get all slugs (filenames without .md)
 export function getArticleSlugs(): string[] {
-  return fs.readdirSync(articlesDir).map(file => file.replace(/\.md$/, ''));
+  if (!fs.existsSync(articlesDir)) return [];
+  return fs
+    .readdirSync(articlesDir)
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => file.replace(/\.md$/, ""));
 }
 
+// Get data for a specific article
 export function getArticleBySlug(slug: string): ArticleData {
   const filePath = path.join(articlesDir, `${slug}.md`);
-  const rawContent = fs.readFileSync(filePath, 'utf8');
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`Article file not found: ${filePath}`);
+  }
+
+  const rawContent = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(rawContent);
 
   return {
@@ -35,10 +46,13 @@ export function getArticleBySlug(slug: string): ArticleData {
   };
 }
 
+// Get only metadata for all articles (e.g., for listing cards)
 export function getAllArticles(): ArticleMeta[] {
   const slugs = getArticleSlugs();
+
   return slugs.map((slug) => {
-    const { content, ...meta } = getArticleBySlug(slug);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { content: _content, ...meta } = getArticleBySlug(slug);
     return meta;
   });
 }

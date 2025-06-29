@@ -29,20 +29,23 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({
 
   return (
     <div
-      className={`w-full h-full border ${
-        theme === "light"
-          ? "border-black/50 bg-white/25 text-black"
-          : "border-white/50 bg-[#0A0A0C] text-white"
-      } p-5 rounded-lg flex flex-col gap-4 3xl:gap-8 justify-between`}
+      className={`w-full h-full border ${theme === "light"
+        ? "border-black/50 bg-white/25 text-black"
+        : "border-white/50 bg-[#0A0A0C] text-white"
+        } p-5 rounded-lg flex flex-col gap-4 3xl:gap-8 justify-between`}
     >
       {imageSrc && (
-        <Image
-          src={imageSrc}
-          className="object-cover w-full h-auto"
-          width={100}
-          height={100}
-          alt="article_img"
-        />
+  
+        <div className="relative w-full h-[223px]">
+          <Image
+            src={imageSrc}
+            alt="article_img"
+            className="object-cover rounded-lg"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            quality={100}
+          />
+        </div>
       )}
 
       <Link

@@ -168,3 +168,8 @@ a {
 .animate-infinite-scroll:hover {
   animation-play-state: paused;
 }
+
+.markdown-img-medium {
+  height: 300px;
+  object-fit: contain;
+}
