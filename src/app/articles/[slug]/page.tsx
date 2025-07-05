@@ -5,31 +5,24 @@ import { Footer } from '@/src/components/Footer';
 import { Contact } from '@/src/components/Contact';
 import { TagButton } from '@/src/components/buttons/TagButton';
 import ShareButton from '@/src/components/buttons/ShareButton';
-// import Image from 'next/image';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-interface Props {
-  params: { slug: string };
-}
+import type { Metadata } from 'next';
 
-export async function generateStaticParams() {
-  const slugs = getArticleSlugs();
-  return slugs.map(slug => ({ slug }));
-}
-
-export default async function ArticlePage({ params }: Props) {
+// ✅ Only use inline typing here
+export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug);
   if (!article) return notFound();
 
-  const processed = await remark().use(html).process(article.content);
+  const processed = remark().use(html).processSync(article.content);
   const contentHtml = processed.toString();
 
   return (
     <div>
       <Navbar />
       <div className="flex justify-center items-center py-16 lg:py-28 px-8 lg:px-14 3xl:px-28">
-        <div className="flex flex-col  max-w-[1350px] py-16 lg:py-28 ">
+        <div className="flex flex-col max-w-[1350px] py-16 lg:py-28">
           <h2 className="text-4xl lg:text-5xl lg:text-justify font-azeret-mono z-10">
             {article.title}
           </h2>
@@ -37,18 +30,6 @@ export default async function ArticlePage({ params }: Props) {
             className="mt-14 flex flex-col gap-10 text-justify font-azeret-mono prose prose-lg max-w-none"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
-          {/* <div className="relative w-full mt-14 h-[550px]">
-            <Image
-              src={article.gallery[0]}
-
-              alt="article_img"
-              className="object-cover rounded-lg"
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              quality={100}
-            />
-          </div> */}
-
           <div className="mt-28 flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center">
             <div>
               <p className="font-azeret-mono text-lg">
@@ -73,4 +54,12 @@ export default async function ArticlePage({ params }: Props) {
       <Footer />
     </div>
   );
+}
+
+// ✅ Correct return shape: [{ params: { slug } }]
+export function generateStaticParams() {
+  const slugs = getArticleSlugs();
+  return slugs.map((slug) => ({
+    params: { slug },
+  }));
 }
