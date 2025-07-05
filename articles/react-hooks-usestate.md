@@ -15,7 +15,7 @@ gallery:
 Welcome to Part 1 of my React Hooks Series.  
 We're kicking it off with something clean and super beginner-friendly: **an accordion using `useState`**.
 
-This article breaks down a live FAQ page I built recently using React and state management — and of course, in the Reacty way. Think of a group of FAQ items where you can click on a question to show/hide the answer. Only one answer should be open at a time.
+This article breaks down a live FAQ page I built recently using React and state management — and of course, in the Reacty way. Think of a group of FAQ items where you can click on a question to show/hide the answer. Only one answer should be open at a time and yeppp.
 
 
 
