@@ -8,6 +8,7 @@ import ShareButton from '@/src/components/buttons/ShareButton';
 import { remark } from 'remark';
 import html from 'remark-html';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { Metadata } from 'next';
 
 // ✅ Only use inline typing here
