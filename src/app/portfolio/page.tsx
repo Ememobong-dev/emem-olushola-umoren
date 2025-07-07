@@ -7,8 +7,8 @@ import { Col, Row } from "antd";
 import { getAllArticles } from "@/src/lib/articles";
 import { TopSection } from "@/src/components/portfolio-sections/top-section";
 
-const Portfolio = () => {
-  const articlesData = getAllArticles();
+export default async function Portfolio() {
+  const articlesData = await getAllArticles();
 
   return (
     <div>
@@ -50,4 +50,3 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;

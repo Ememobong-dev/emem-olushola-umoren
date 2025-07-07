@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 
@@ -17,42 +17,48 @@ export interface ArticleData extends ArticleMeta {
   content: string;
 }
 
-// Path to your articles folder (ensure it exists in root!)
 const articlesDir = path.join(process.cwd(), "articles");
 
-// Get all slugs (filenames without .md)
-export function getArticleSlugs(): string[] {
-  if (!fs.existsSync(articlesDir)) return [];
-  return fs
-    .readdirSync(articlesDir)
-    .filter((file) => file.endsWith(".md"))
-    .map((file) => file.replace(/\.md$/, ""));
+// ✅ Get all slugs (filenames without .md)
+export async function getArticleSlugs(): Promise<string[]> {
+  const files = await fs.readdir(articlesDir);
+  return files
+    .filter((file: string) => file.endsWith(".md"))
+    .map((file: string) => file.replace(/\.md$/, ""));
 }
 
-// Get data for a specific article
-export function getArticleBySlug(slug: string): ArticleData {
+// ✅ Get data for a specific article
+export async function getArticleBySlug(slug: string): Promise<ArticleData | null> {
   const filePath = path.join(articlesDir, `${slug}.md`);
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`Article file not found: ${filePath}`);
+  try {
+    await fs.access(filePath);
+    const rawContent = await fs.readFile(filePath, "utf8");
+    const { data, content } = matter(rawContent);
+
+    return {
+      ...(data as ArticleMeta),
+      content,
+      slug,
+    };
+  } catch (error) {
+    console.error(`Error loading article "${slug}":`, error);
+    return null;
   }
-
-  const rawContent = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(rawContent);
-
-  return {
-    ...(data as ArticleMeta),
-    content,
-    slug,
-  };
 }
 
-// Get only metadata for all articles (e.g., for listing cards)
-export function getAllArticles(): ArticleMeta[] {
-  const slugs = getArticleSlugs();
+// ✅ Get only metadata for all articles
+export async function getAllArticles(): Promise<ArticleMeta[]> {
+  const slugs = await getArticleSlugs();
 
-  return slugs.map((slug) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { content: _content, ...meta } = getArticleBySlug(slug);
-    return meta;
-  });
+  const articles = await Promise.all(
+    slugs.map(async (slug: string) => {
+      const article = await getArticleBySlug(slug);
+      if (!article) return null;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { content, ...meta } = article;
+      return meta;
+    })
+  );
+
+  return articles.filter(Boolean) as ArticleMeta[];
 }

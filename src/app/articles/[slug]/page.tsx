@@ -1,66 +1,107 @@
-import { getArticleBySlug, getArticleSlugs } from '@/src/lib/articles';
-import { notFound } from 'next/navigation';
-import { Navbar } from '@/src/components/Navbar';
-import { Footer } from '@/src/components/Footer';
-import { Contact } from '@/src/components/Contact';
-import { TagButton } from '@/src/components/buttons/TagButton';
-import ShareButton from '@/src/components/buttons/ShareButton';
-import { remark } from 'remark';
-import html from 'remark-html';
+// import { getArticleBySlug, getArticleSlugs, type ArticleData } from '@/src/lib/articles';
+// import { notFound } from 'next/navigation';
+// import { Navbar } from '@/src/components/Navbar';
+// import { Footer } from '@/src/components/Footer';
+// import { Contact } from '@/src/components/Contact';
+// import { TagButton } from '@/src/components/buttons/TagButton';
+// import ShareButton from '@/src/components/buttons/ShareButton';
+// import { remark } from 'remark';
+// import html from 'remark-html';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { Metadata } from 'next';
+// interface PageProps {
+//   params: {
+//     slug: string;
+//   };
+// }
 
-// ✅ Only use inline typing here
-export default function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug);
-  if (!article) return notFound();
+// interface ArticleContentProps {
+//   article: ArticleData;
+//   htmlContent: string;
+// }
 
-  const processed = remark().use(html).processSync(article.content);
-  const contentHtml = processed.toString();
+// interface ArticleFooterProps {
+//   article: ArticleData;
+// }
 
+// export async function generateMetadata({ params }: PageProps) {
+//   const article = await getArticleBySlug(params.slug);
+
+//   return {
+//     title: article?.title || 'Article',
+//     description: article?.description || 'Article description',
+//     ...(article?.cardImage && {
+//       openGraph: {
+//         images: [article.cardImage],
+//       },
+//     }),
+//   };
+// }
+
+// export default async function Page({ params }: PageProps) {
+//   const article = await getArticleBySlug(params.slug);
+//   if (!article) notFound();
+
+//   const processedContent = await remark().use(html).process(article.content);
+//   const htmlContent = processedContent.toString();
+
+//   return (
+//     <div className="min-h-screen flex flex-col">
+//       <Navbar />
+//       <ArticleContent article={article} htmlContent={htmlContent} />
+//       <Contact />
+//       <ShareButton title={article.title} />
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export async function generateStaticParams() {
+//   const slugs = await getArticleSlugs();
+//   return slugs.map((slug) => ({ slug }));
+// }
+
+// function ArticleContent({ article, htmlContent }: ArticleContentProps) {
+//   return (
+//     <div className="flex-1 flex justify-center items-center py-16 lg:py-28 px-8 lg:px-14 3xl:px-28">
+//       <div className="flex flex-col max-w-[1350px] py-16 lg:py-28 w-full">
+//         <h1 className="text-4xl lg:text-5xl font-azeret-mono">{article.title}</h1>
+//         <div
+//           className="mt-14 prose prose-lg max-w-none"
+//           dangerouslySetInnerHTML={{ __html: htmlContent }}
+//         />
+//         <ArticleFooter article={article} />
+//       </div>
+//     </div>
+//   );
+// }
+
+// function ArticleFooter({ article }: ArticleFooterProps) {
+//   return (
+//     <div className="mt-28 flex flex-col lg:flex-row justify-between items-center gap-5">
+//       <div>
+//         <p className="font-azeret-mono text-lg">
+//           <span className="font-bold font-alro-reg">Author:</span> {article.author}
+//         </p>
+//         <p className="font-azeret-mono text-lg">
+//           <span className="font-bold font-alro-reg">Date:</span> {article.date}
+//         </p>
+//       </div>
+//       <div className="flex flex-wrap gap-4">
+//         {article.tags.map((tag) => (
+//           <TagButton key={tag} text={tag} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+
+import React from 'react'
+
+const SingleArticlePage = () => {
   return (
-    <div>
-      <Navbar />
-      <div className="flex justify-center items-center py-16 lg:py-28 px-8 lg:px-14 3xl:px-28">
-        <div className="flex flex-col max-w-[1350px] py-16 lg:py-28">
-          <h2 className="text-4xl lg:text-5xl lg:text-justify font-azeret-mono z-10">
-            {article.title}
-          </h2>
-          <div
-            className="mt-14 flex flex-col gap-10 text-justify font-azeret-mono prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: contentHtml }}
-          />
-          <div className="mt-28 flex flex-col lg:flex-row gap-5 lg:gap-0 justify-between items-center">
-            <div>
-              <p className="font-azeret-mono text-lg">
-                <span className="font-bold font-alro-reg">Author:</span> {article.author}
-              </p>
-              <p className="font-azeret-mono text-lg">
-                <span className="font-bold font-alro-reg">Date:</span> {article.date}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              {article.tags.map((tag, index) => (
-                <TagButton key={index} text={tag} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
-        <Contact />
-      </div>
-      <ShareButton title={article.title} />
-      <Footer />
-    </div>
-  );
+    <div>HELLO WORLD</div>
+  )
 }
 
-// ✅ Correct return shape: [{ params: { slug } }]
-export function generateStaticParams() {
-  const slugs = getArticleSlugs();
-  return slugs.map((slug) => ({
-    params: { slug },
-  }));
-}
+export default SingleArticlePage

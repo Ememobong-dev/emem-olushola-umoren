@@ -7,8 +7,8 @@ import { Footer } from "@/src/components/Footer";
 import { getAllArticles } from "@/src/lib/articles";
 
 
-const Articles = () => {
-  const articlesData = getAllArticles();
+export default async function Articles(){
+  const articlesData = await getAllArticles();
 
   return (
     <div>
@@ -42,6 +42,4 @@ const Articles = () => {
     </div>
   );
 };
-
-export default Articles;
 
