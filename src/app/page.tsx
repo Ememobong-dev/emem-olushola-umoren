@@ -86,7 +86,7 @@ export default function Home() {
                 </div>
               </LeftRevealAnimatedText>
             </div>
-            <div className="flex justify-center lg:justify-normal">
+            <div className="flex justify-center lg:justify-normal lg:absolute lg:bottom-5 lg:right-14">
               <button
                 onClick={scrollDown}
                 className={` ${theme === "light" ? "border-black" : "border-white"} rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg py-2 px-3`}
@@ -131,7 +131,7 @@ export default function Home() {
                       and Data Analysis skills. My journey into tech has been
                       fueled by curiosity, continuous learning, and a passion
                       for problem-solving. With over{" "}
-                      <span className="font-bold text-progress-cyan">
+                      <span className={`font-bold ${theme === "light" ? "text-blue-800" : "text-progress-cyan"}`}>
                         {" "}
                         three years
                       </span>{" "}
@@ -165,7 +165,7 @@ export default function Home() {
                     </p>
                     <p className="sm:tracking-widest">
                       Driven by a passion for learning, I stay ahead of industry trends and continuously refine my skills. During my {" "}
-                      <span className="font-bold text-progress-cyan">
+                      <span className={`font-bold ${theme === "light" ? "text-blue-800" : "text-progress-cyan"}`}>
                         100DaysOfCode journey
                       </span>{" "}, I actively documented my progress on LinkedIn, sharing insights, challenges, and discoveries while exploring emerging technologies in frontend development.
                     </p>
@@ -381,16 +381,16 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              {/* Mobile view */}
+              {/* Desktop view */}
               <div className="hidden lg:flex w-[30%] 3xl:w-[20%]  mt-5">
                 <p className="text-[15px] font-azeret-mono ">
-                  Feel free to explore my portfolio and reach out ;-)
+                  Feel free to explore my portfolio and reach out😁😎
                 </p>
               </div>
-              {/* laptop view */}
+              {/* Mobile view */}
               <div className="lg:hidden mt-5">
                 <p className="text-[15px] font-azeret-mono ">
-                  Feel free to explore my portfolio and reach out ;-)
+                  Feel free to explore my portfolio and reach out😁😎
                 </p>
               </div>
             </div>
@@ -420,12 +420,11 @@ export default function Home() {
                     >
                       ShotByPortable Website
                     </Link>
-                    <Button
-                      link="/portfolio/frontend/shot-by-portable"
-                      target
-                      variant="bordered"
-                      text="View Case Study"
-                    />
+                    <Link href="/portfolio/frontend/shot-by-portable" target="_blank">
+                      <button className="text-xs md:text-sm flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8  border border-white bg-transparent text-white hover:text-cyan">
+                        View Case Study
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -456,12 +455,11 @@ export default function Home() {
                     >
                       AyoCPA Website
                     </Link>
-                    <Button
-                      link="/portfolio/frontend/ayocpa"
-                      target
-                      variant="bordered"
-                      text="View Case Study"
-                    />
+                    <Link href="/portfolio/frontend/ayocpa" target="_blank">
+                      <button className="text-xs md:text-sm flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8  border border-white bg-transparent text-white hover:text-cyan">
+                        View Case Study
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -492,21 +490,21 @@ export default function Home() {
                     >
                       Wow Website
                     </Link>
-                    <Button
-                      variant="bordered"
-                      link="/portfolio/frontend/wow"
-                      text="View Case Study"
-                    />
+                    <Link href="/portfolio/frontend/wow" target="_blank">
+                      <button className="text-xs md:text-sm flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8  border border-white bg-transparent text-white hover:text-cyan">
+                        View Case Study
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
             <div className=" mt-8 flex flex-col gap-2 items-center justify-center ">
               <span>
-                <Image 
-                src={line} 
-                alt="line" 
-                className={theme === "light" ? "filter invert" : ""} />
+                <Image
+                  src={line}
+                  alt="line"
+                  className={theme === "light" ? "filter invert" : ""} />
               </span>
               <Link
                 href={"/portfolio"}

@@ -19,7 +19,7 @@ export interface ArticleData extends ArticleMeta {
 
 const articlesDir = path.join(process.cwd(), "articles");
 
-// ✅ Get all slugs (filenames without .md)
+//  Get all slugs (filenames without .md)
 export async function getArticleSlugs(): Promise<string[]> {
   const files = await fs.readdir(articlesDir);
   return files
@@ -27,7 +27,7 @@ export async function getArticleSlugs(): Promise<string[]> {
     .map((file: string) => file.replace(/\.md$/, ""));
 }
 
-// ✅ Get data for a specific article
+//  Get data for a specific article
 export async function getArticleBySlug(slug: string): Promise<ArticleData | null> {
   const filePath = path.join(articlesDir, `${slug}.md`);
   try {
@@ -46,7 +46,7 @@ export async function getArticleBySlug(slug: string): Promise<ArticleData | null
   }
 }
 
-// ✅ Get only metadata for all articles
+//  Get only metadata for all articles
 export async function getAllArticles(): Promise<ArticleMeta[]> {
   const slugs = await getArticleSlugs();
 

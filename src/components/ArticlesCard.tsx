@@ -50,7 +50,7 @@ export const ArticlesCard: React.FC<ArticleCardProps> = ({
 
       <Link
         href={`/articles/${articleSlug}`}
-        className="underline cursor-pointer text-white font-azeret-mono font-semibold text-lg"
+        className={`underline ${theme === "light" ? "hover:!text-blue-800" : "hover:!text-cyan"}  cursor-pointer text-white font-azeret-mono font-semibold text-lg`}
       >
         <h3>{articleTitle}</h3>
       </Link>
