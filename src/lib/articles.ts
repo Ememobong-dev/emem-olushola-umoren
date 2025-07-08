@@ -1,6 +1,8 @@
-import fs from "fs/promises";
-import path from "path";
-import matter from "gray-matter";
+// lib/articles.ts
+import fs from 'fs/promises';
+import path from 'path';
+import matter from 'gray-matter';
+import { bundleMDX } from 'mdx-bundler';
 
 export interface ArticleMeta {
   title: string;
@@ -13,52 +15,42 @@ export interface ArticleMeta {
   gallery: string[];
 }
 
-export interface ArticleData extends ArticleMeta {
-  content: string;
-}
+const articlesDir = path.join(process.cwd(), 'articles');
 
-const articlesDir = path.join(process.cwd(), "articles");
-
-//  Get all slugs (filenames without .md)
 export async function getArticleSlugs(): Promise<string[]> {
   const files = await fs.readdir(articlesDir);
   return files
-    .filter((file: string) => file.endsWith(".md"))
-    .map((file: string) => file.replace(/\.md$/, ""));
+    .filter((file: string) => file.endsWith('.mdx'))
+    .map((file: string) => file.replace(/\.mdx$/, ''));
 }
 
-//  Get data for a specific article
-export async function getArticleBySlug(slug: string): Promise<ArticleData | null> {
-  const filePath = path.join(articlesDir, `${slug}.md`);
-  try {
-    await fs.access(filePath);
-    const rawContent = await fs.readFile(filePath, "utf8");
-    const { data, content } = matter(rawContent);
+export async function getCompiledArticleBySlug(slug: string) {
+  const filePath = path.join(articlesDir, `${slug}.mdx`);
+  const rawContent = await fs.readFile(filePath, 'utf8');
 
-    return {
-      ...(data as ArticleMeta),
-      content,
-      slug,
-    };
-  } catch (error) {
-    console.error(`Error loading article "${slug}":`, error);
-    return null;
-  }
+  const { content, data } = matter(rawContent);
+  const result = await bundleMDX({ source: content });
+
+  return {
+    frontmatter: data as ArticleMeta,
+    code: result.code,
+  };
 }
 
-//  Get only metadata for all articles
 export async function getAllArticles(): Promise<ArticleMeta[]> {
   const slugs = await getArticleSlugs();
 
   const articles = await Promise.all(
     slugs.map(async (slug: string) => {
-      const article = await getArticleBySlug(slug);
-      if (!article) return null;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { content, ...meta } = article;
-      return meta;
+      const filePath = path.join(articlesDir, `${slug}.mdx`);
+      const rawContent = await fs.readFile(filePath, 'utf8');
+      const { data } = matter(rawContent);
+      return {
+        ...(data as ArticleMeta),
+        slug,
+      };
     })
   );
 
-  return articles.filter(Boolean) as ArticleMeta[];
+  return articles;
 }
