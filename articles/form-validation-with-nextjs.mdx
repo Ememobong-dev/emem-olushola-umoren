@@ -44,6 +44,39 @@ Here’s what the code and form looks like so far:
   />
 </div>
 
-<div>
-<p>Next up, I set up state management for the form using React’s useState hook.</p>
+
+<div className="mt-5">
+  <h3 className="mb-5">
+    Next up, I set up state management for the form using React’s useState hook.
+  </h3>
+  <p>
+    Instead of creating a separate state for each input (which can quickly get
+    messy), I’m keeping everything neat in a single formData object. Each input
+    field is identified by a key (like "name", "email", etc.), and updated using
+    a generic handler — handleInputChange.
+  </p>
+</div>
+
+<div className="flex gap-4 mt-6">
+  <img
+    src="/images/articlesImages/form-validation/handleFunc.png"
+    className="w-1/2"
+  />
+  <img
+    src="/images/articlesImages/form-validation/inputComp.png"
+    className="w-1/2"
+  />
+</div>
+
+<div className="mt-5">
+  <p>So how does this work?</p>
+  <ul className="list-disc list-outside ml-6">
+    <li>
+      handleInputChange is the defining function; It receives the new value and
+      a string identifier for the field being updated.
+    </li>
+    <li>
+    In each input component, I pass onChangeHandler={(val) => handleInputChange(val, "fieldName")} — this is the calling function.
+    </li>
+  </ul>
 </div>
