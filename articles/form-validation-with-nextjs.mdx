@@ -44,7 +44,6 @@ Here’s what the code and form looks like so far:
   />
 </div>
 
-
 <div className="mt-5">
   <h3 className="mb-5">
     Next up, I set up state management for the form using React’s useState hook.
@@ -66,17 +65,35 @@ Here’s what the code and form looks like so far:
     src="/images/articlesImages/form-validation/inputComp.png"
     className="w-1/2"
   />
+
+</div>
+<div className="flex justify-center mt-5">
+   <img
+    src="/images/articlesImages/form-validation/inputName.png"
+    className="w-1/2"
+  />
 </div>
 
 <div className="mt-5">
   <p>So how does this work?</p>
   <ul className="list-disc list-outside ml-6">
     <li>
-      handleInputChange is the defining function; It receives the new value and
-      a string identifier for the field being updated.
+      <p>
+        <code>handleInputChange</code> is the defining function; it receives the
+        new value and a string identifier for the field being updated.
+      </p>
     </li>
     <li>
-    In each input component, I pass onChangeHandler={(val) => handleInputChange(val, "fieldName")} — this is the calling function.
+      <p>
+        In each input component, I pass{" "}
+        <code>
+          onChangeHandler=&#123;(val) =&gt; handleInputChange(val,
+          "formName")&#125;
+        </code>{" "}
+        &mdash; this is the calling function.
+      </p>
     </li>
   </ul>
 </div>
+
+

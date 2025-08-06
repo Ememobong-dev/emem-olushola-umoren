@@ -1,4 +1,3 @@
-// pages/articles/[slug]/page.tsx
 import { getCompiledArticleBySlug, getArticleSlugs } from '@/src/lib/articles';
 import { notFound } from 'next/navigation';
 import { Navbar } from '@/src/components/Navbar';
@@ -13,8 +12,14 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function SingleArticlePage({ params }: { params: { slug: string } }) {
+type PageProps = {
+  params: { slug: string };
+};
+
+export default async function SingleArticlePage(props: PageProps) {
+  const { params } = await props; // Fix: await the props before accessing `params`
   const article = await getCompiledArticleBySlug(params.slug);
+
   if (!article) notFound();
 
   const { frontmatter, code } = article;
