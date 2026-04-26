@@ -1,18 +1,8 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        destination: "https://emem-olushola-website.vercel.app",
-        permanent: true,
-      },
-    ];
-  },
-};
+	typescript: { 
+		ignoreBuildErrors: true, 
+	},
+	// you can add other config options here as needed
+	};
 
 export default nextConfig;
