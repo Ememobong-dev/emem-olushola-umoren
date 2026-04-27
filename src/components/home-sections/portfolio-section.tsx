@@ -67,6 +67,7 @@ export const PortfolioSection = () => {
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row lg:justify-between gap-8 mt-8">
+
                     <div className="relative cursor-pointer group overflow-hidden border-8 rounded-4xl w-full h-[400px] bg-[#212121] border-[#212121]">
                         <Image
                             className="object-cover rounded-4xl h-full w-full"
@@ -93,6 +94,39 @@ export const PortfolioSection = () => {
                                     ShotByPortable Website
                                 </Link>
                                 <Link href="/portfolio/frontend/shot-by-portable" target="_blank">
+                                    <button className="text-xs md:text-sm flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8  border border-white bg-transparent text-white hover:text-cyan">
+                                        View Case Study
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative cursor-pointer group overflow-hidden border-8 rounded-4xl w-full h-[400px] bg-[#212121] border-[#212121]">
+                        <Image
+                            className="object-cover rounded-4xl h-full w-full"
+                            src={sapphire}
+                            alt="sapphire"
+                        />
+                        {/* Overlay */}
+                        <div className="absolute inset-0 w-full bg-black bg-opacity-70 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-start p-6 text-white rounded-4xl">
+                            <h2 className="text-xl font-semibold font-alro-reg">
+                                Sapphire Virtual, Nigeria
+                            </h2>
+                            <p className="text-[12px] mt-2 font-azeret-mono leading-relaxed">
+                                Sapphire Virtual Network Limited is a fintech-driven organization focused on device financing and recovery operations. As part of its internal digital transformation, the company required scalable frontend systems to support field agents, operational teams, and administrators.
+                            </p>
+                            <p className="text-sm mt-2">
+                                <span className="font-semibold">Tools:</span> NextJS,
+                                TypeScript, TailwindCSS, Git
+                            </p>
+                            <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
+                                <Link
+                                    href="https://sapphirevirtual.com/"
+                                    className="text-blue-400 italic underline text-sm"
+                                >
+                                    Sapphire Virtual Website
+                                </Link>
+                                <Link href="/portfolio/frontend/sapphire-virtual" target="_blank">
                                     <button className="text-xs md:text-sm flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8  border border-white bg-transparent text-white hover:text-cyan">
                                         View Case Study
                                     </button>
@@ -135,39 +169,7 @@ export const PortfolioSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="relative cursor-pointer group overflow-hidden border-8 rounded-4xl w-full h-[400px] bg-[#212121] border-[#212121]">
-                        <Image
-                            className="object-cover rounded-4xl h-full w-full"
-                            src={sapphire}
-                            alt="sapphire"
-                        />
-                        {/* Overlay */}
-                        <div className="absolute inset-0 w-full bg-black bg-opacity-70 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex flex-col justify-center items-start p-6 text-white rounded-4xl">
-                            <h2 className="text-xl font-semibold font-alro-reg">
-                                Sapphire Virtual, Nigeria
-                            </h2>
-                            <p className="text-[12px] mt-2 font-azeret-mono leading-relaxed">
-                                Sapphire Virtual Network Limited is a fintech-driven organization focused on device financing and recovery operations. As part of its internal digital transformation, the company required scalable frontend systems to support field agents, operational teams, and administrators. I contributed to the development of key internal tools, including a Recovery Portal and a unified 3.0 dashboard, designed to streamline operations, improve visibility, and support multi-level user interactions across the platform.
-                            </p>
-                            <p className="text-sm mt-2">
-                                <span className="font-semibold">Tools:</span> NextJS,
-                                TypeScript, TailwindCSS, Git
-                            </p>
-                            <div className="flex flex-wrap justify-between w-full items-center gap-4 mt-10">
-                                <Link
-                                    href="https://sapphirevirtual.com/"
-                                    className="text-blue-400 italic underline text-sm"
-                                >
-                                    Wow Website
-                                </Link>
-                                <Link href="/portfolio/frontend/sapphire-virtual" target="_blank">
-                                    <button className="text-xs md:text-sm flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8  border border-white bg-transparent text-white hover:text-cyan">
-                                        View Case Study
-                                    </button>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div className=" mt-8 flex flex-col gap-2 items-center justify-center ">
                     <span>
