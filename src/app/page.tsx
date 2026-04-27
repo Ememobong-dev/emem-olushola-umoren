@@ -2,8 +2,6 @@
 
 import { Col, Row } from "antd";
 import { FloatingButton } from "../components/buttons/FloatingButton";
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
 import { Button } from "../components/buttons/Button";
 import Image from "next/image";
 import linkedin from "@/public/icons/linkedin-icon.svg";
@@ -12,7 +10,6 @@ import twitter from "@/public/icons/twitter.svg";
 import shotsByPortable from "@/public/images/photography/photography1.png";
 import ayocpa from "@/public/images/ayocpa.png";
 import wow from "@/public/images/wow.png";
-import { Contact } from "../components/Contact";
 import { SkillProgress } from "../components/SkillProgress";
 import AnimatedSection from "../components/AnimatedSection";
 import arrowIcon from "@/public/icons/arrow-line.svg";
@@ -23,6 +20,8 @@ import { TypingText } from "../components/animations/TypingTextAnimation";
 import LeftRevealAnimatedText from "../components/animations/LeftRevealAnimation";
 import RightRevealAnimatedText from "../components/animations/RightRevealAnimation";
 import { useTheme } from "../context/ThemeContext";
+import { ArrowDownOutlined } from "@ant-design/icons";
+import { Experience } from "../components/Experience";
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -44,44 +43,31 @@ export default function Home() {
     { skill: "JavaScript", percent: 88 },
   ];
 
-  const dataSkills = [
-    { skill: "Data Cleaning", percent: 90 },
-    { skill: "Data Creation", percent: 85 },
-    { skill: "Data Modelling", percent: 88 },
-    { skill: "Excel", percent: 80 },
-    { skill: "SPSS", percent: 70 },
-    { skill: "SQL", percent: 80 },
-    { skill: "Python", percent: 80 },
-    { skill: "PowerBI", percent: 75 },
-  ];
 
   return (
     <div>
-      <Navbar />
       <div className={`landing_bg ${theme}-theme relative`}>
         <div className="lg:absolute lg:bottom-20 py-28 lg:py-0 px-14 w-full">
           <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0 lg:justify-between lg:items-end w-full">
             <div>
               <TypingText
                 text="Emem Olushola"
-                className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg"
+                className="text-4xl w-full text-center lg:text-left lg:text-8xl font-alro-reg bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent"
               />
               <TypingText
                 text="Umoren."
-                className="text-4xl w-full font-bold text-center lg:text-left lg:text-8xl font-alro-reg"
+                className="text-4xl w-full font-bold text-center  lg:text-left lg:text-8xl font-alro-reg"
               />
               <LeftRevealAnimatedText>
                 <div className="flex justify-center lg:justify-normal">
-                  <p className=" w-full px-8 lg:px-0 absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-1/2 font-azeret-mono  text-center lg:text-left">
-                    A Frontend Developer and Data Analyst skilled in{" "}
+                  <p className=" w-full px-8 lg:px-0 absolute bottom-[20%] lg:relative  lg:mt-10 lg:w-[60%] font-azeret-mono  text-center lg:text-left">
+                    A Frontend Developer skilled in{" "}
                     <span className="text-pepper-red">React.js</span>,{" "}
                     <span className="text-cyan">Next.js</span>,{" "}
                     <span className="text-blue">TypeScript</span>,{" "}
                     <span className="text-sharp-yellow">TailwindCSS</span>,{" "}
-                    <span className="text-deep-blue">Excel</span>,{" "}
-                    <span className="text-sharp-yellow">SQL</span>,{" "}
-                    <span className="text-progress-cyan">Python</span>, and{" "}
-                    <span className="text-deep-blue">PowerBI</span>.
+                    <span className="text-sharp-yellow">SQL</span>,{" "} and
+                    <span className="text-sharp-yellow"> Python</span>.{" "}
                   </p>
                 </div>
               </LeftRevealAnimatedText>
@@ -92,6 +78,7 @@ export default function Home() {
                 className={` ${theme === "light" ? "border-black" : "border-white"} rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg py-2 px-3`}
               >
                 Scroll down
+                <ArrowDownOutlined className="w-4 h-4 ml-2 animate-bounce" />
               </button>
             </div>
           </div>
@@ -99,7 +86,7 @@ export default function Home() {
         <div className="absolute hidden lg:flex top-[30%] left-[30%]">
           <FloatingButton variant="cyan">
             <p className="italic">
-              Data <span className="font-bold not-italic ">Analyst</span>
+              Creative <span className="font-bold not-italic ">Thinker</span>
             </p>
           </FloatingButton>
         </div>
@@ -111,7 +98,7 @@ export default function Home() {
           </FloatingButton>
         </div>
       </div>
-      <div className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56">
+      <div className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56 ">
         {/* Second Section */}
         <div ref={aboutRef} id="about">
           <Row
@@ -122,58 +109,30 @@ export default function Home() {
               <LeftRevealAnimatedText>
                 <div className="h-full overflow-hidden">
                   <h3 className="font-alro-reg text-center sm:text-left text-2xl lg:text-3xl">
-                    Who is <span className="font-bold">Emem Olushola?</span>
+                    Who is <span className="font-bold bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent">Emem Olushola?</span>
                   </h3>
-                  <div className="flex flex-col text-center sm:text-justify gap-4 mt-6 font-azeret-mono">
-                    <p className="sm:tracking-widest">
-                      I am a Frontend Developer and a Data Analyst
-                      with expertise in React, Next.js, TypeScript, TailwindCSS
-                      and Data Analysis skills. My journey into tech has been
-                      fueled by curiosity, continuous learning, and a passion
-                      for problem-solving. With over{" "}
+                  <div className="flex flex-col sm:text-base text-center sm:text-justify gap-4 mt-6 font-alro-reg">
+                    <p className="sm:tracking-widest leading-relaxed">
+                      I am a Frontend Engineer with expertise in React, Next.js, TypeScript, and modern frontend tooling. With over{" "}
                       <span className={`font-bold ${theme === "light" ? "text-blue-800" : "text-progress-cyan"}`}>
-                        {" "}
-                        three years
+                        four years
                       </span>{" "}
-                      of experience, I have built user-friendly, scalable, and
-                      impactful digital solutions for global clients, including{" "}
-                      <span className="font-bold text-sharp-yellow">
-                        Infarena
-                      </span>
-                      , a trade and review platform;{" "}
-                      <span className="font-bold text-sharp-yellow">AyoCPA</span>,
-                      a personalized accounting solution; and
-                      <span className="font-bold text-sharp-yellow">
-                        {" "}
-                        WOW Gift Card
-                      </span>
-                      , a secure platform for global gift card trading.
+                      of experience, I build scalable, high-performance web applications with a strong focus on clean architecture, performance, and accessibility.
                     </p>
-                    <p className="sm:tracking-widest">
-                      Beyond development, I hold certifications from{" "}
-                      <span className="font-bold text-deep-blue">Google</span>{" "}
-                      and
-                      <span className="font-bold text-deep-blue">
-                        {" "}
-                        Women Techsters
-                      </span>
-                      , solidifying my expertise in data analytics and digital
-                      problem-solving. I previously served as the Data Analytics
-                      Team Lead at GDSC at the University of Ibadan, where I mentored peers, led data-driven
-                      projects, and contributed to fostering a community of
-                      aspiring analysts.
+
+                    <p className="sm:tracking-widest leading-relaxed">
+                      At <span className="font-bold text-sharp-yellow">Sapphire Virtual Network Limited</span>, I led frontend development of a Recovery Portal used by field agents to log visitations, manage customer interactions, and track recovery operations. I also built secure, role-based dashboards as part of the company’s unified platform, improving workflow efficiency across business units.
                     </p>
-                    <p className="sm:tracking-widest">
-                      Driven by a passion for learning, I stay ahead of industry trends and continuously refine my skills. During my {" "}
-                      <span className={`font-bold ${theme === "light" ? "text-blue-800" : "text-progress-cyan"}`}>
-                        100DaysOfCode journey
-                      </span>{" "}, I actively documented my progress on LinkedIn, sharing insights, challenges, and discoveries while exploring emerging technologies in frontend development.
+
+                    <p className="sm:tracking-widest leading-relaxed">
+                      I have delivered production-ready frontend solutions across multiple industries, including a photography platform with a custom admin dashboard for{" "}
+                      <span className="font-bold text-cyan">ShotByPortable</span>, a corporate website and client portal for{" "}
+                      <span className="font-bold text-pepper-red">AyoCPA</span>, and a scalable company platform at{" "}
+                      <span className="font-bold text-sharp-yellow">Siryoung Technologies</span>.
                     </p>
-                    <p className="sm:tracking-widest sm:leading-loose">
-                      With a deep appreciation for clean code, and data-driven
-                      decision-making, I am always eager to collaborate, build
-                      meaningful projects, and push the boundaries of
-                      technology.
+
+                    <p className="sm:tracking-widest leading-relaxed">
+                      I focus on building intuitive user experiences, writing maintainable code, and developing frontend systems that scale efficiently. I am always eager to collaborate and contribute to meaningful, high-impact products.
                     </p>
                   </div>
                   <div className="flex gap-8 items-center mt-8">
@@ -185,9 +144,10 @@ export default function Home() {
                     <Button
                       link="/Ememobong-Umoren-Resume.pdf"
                       target
-                      variant="fill"
+                      variant="coloured"
                       text="Download Resume"
                       download
+                      
                     />
                   </div>
                 </div>
@@ -234,11 +194,10 @@ export default function Home() {
                         </span>{" "}
                         {"\n"}
                         {"            "}
-                        &quot;Built user-friendly platforms like Infarena and
+                        &quot;Built user-friendly platforms like ShotByPortable and
                         Ayo CPA&quot;,{"\n"}
                         {"            "}
-                        &quot;Developed WOW Gift Card, a secure global
-                        platform&quot;,{"\n"}
+                        &quot;Developed Admin and User Portals, companies management tools&quot;,{"\n"}
                         {"            "}
                         &quot;Led frontend projects at Reed Tech&quot;{"\n"}
                         {"        "}
@@ -309,14 +268,14 @@ export default function Home() {
         {/* THIRD SECTION */}
         <AnimatedSection>
           <div id="skills">
-            <h2 className="font-alro-reg mb-8 text-center text-3xl">
+            <h2 className="font-alro-reg mb-8 text-center text-3xl bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent font-bold">
               {" "}
-              Notable <span className="font-bold">Skills</span>{" "}
+              Skills & Expertise
             </h2>
             <div className="flex flex-col gap-14">
               <div>
                 <p className="font-azeret-mono text-center text-xl">
-                  <span className="text-deep-blue">Frontend</span> Development
+                  Technologies and tools I use to bring ideas to life
                 </p>
                 <div className=" h-full flex justify-center gap-5 flex-wrap gap-y-2 mt-10">
                   {frontendSkills.map(({ skill, percent }) => (
@@ -329,29 +288,17 @@ export default function Home() {
                 </div>
               </div>
 
-              <div>
-                <p className="font-azeret-mono text-center text-xl">
-                  <span className="text-deep-blue">Data</span> Analysis
-                </p>
-                <div className=" h-full flex justify-between  lg:justify-center lg:gap-5 flex-wrap gap-y-2 mt-10">
-                  {dataSkills.map(({ skill, percent }) => (
-                    <SkillProgress
-                      key={skill}
-                      skill={skill}
-                      percent={percent}
-                    />
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </AnimatedSection>
+        {/* EXPERIENCE SECTION */}
+        <Experience />
         {/* FOURTH SECTION */}
         <AnimatedSection>
           <div>
             <div>
               <div className="flex gap-8 items-center justify-between lg:justify-normal">
-                <h3 className="text-3xl font-alro-reg">
+                <h3 className="text-3xl font-alro-reg bg-linear-to-r from-cyan-400 to-blue-400 dark:from-cyan-400 dark:to-blue-400 light:from-cyan-600 light:to-blue-600 bg-clip-text text-transparent">
                   My <span className="font-bold">Portfolio</span>
                 </h3>
                 <div className="flex gap-3 items-center">
@@ -521,11 +468,7 @@ export default function Home() {
             </div>
           </div>
         </AnimatedSection>
-        <AnimatedSection>
-          <Contact />
-        </AnimatedSection>
       </div>
-      <Footer />
     </div>
   );
 }

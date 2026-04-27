@@ -5,7 +5,6 @@ import React from "react";
 import dataProjects from "@/src/projectData/analysisData.json";
 import { Navbar } from "@/src/components/Navbar";
 import { FloatingButton } from "@/src/components/buttons/FloatingButton";
-import { Contact } from "@/src/components/Contact";
 import { Col, Row } from "antd";
 import { Footer } from "@/src/components/Footer";
 import Image from "next/image";
@@ -178,9 +177,6 @@ const DataSinglePage = () => {
             </span>
           </div>
         </div>
-
-        {/* Contact */}
-        <Contact />
       </div>
       {project.liveDemo && (
         <motion.a

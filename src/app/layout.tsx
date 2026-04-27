@@ -3,6 +3,9 @@ import { Geist, Geist_Mono, Azeret_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../context/ThemeContext";
 import '@ant-design/v5-patch-for-react-19';
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import { Contact } from "../components/Contact";
 
 
 const geistSans = Geist({
@@ -39,7 +42,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${azeretMono.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
-          {children}
+          <div className="min-h-screen body-gradient-bg  ">
+            {/* <div className="min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-slate-900 dark:via-black dark:to-slate-900 light:from-slate-50 light:via-purple-50 light:to-pink-50 transition-colors duration-500"> */}
+            <Navbar />
+            {children}
+            <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28">
+              {/* Contact */}
+              <Contact />
+            </div>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

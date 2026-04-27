@@ -1,8 +1,5 @@
 import { getCompiledArticleBySlug, getArticleSlugs } from '@/src/lib/articles';
 import { notFound } from 'next/navigation';
-import { Navbar } from '@/src/components/Navbar';
-import { Footer } from '@/src/components/Footer';
-import { Contact } from '@/src/components/Contact';
 import { TagButton } from '@/src/components/buttons/TagButton';
 import ShareButton from '@/src/components/buttons/ShareButton';
 import MdxRenderer from '@/src/components/MdxRenderer';
@@ -26,7 +23,6 @@ export default async function SingleArticlePage(props: PageProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <div className="flex-1 flex justify-center items-center py-16 lg:py-28 px-8 lg:px-14 3xl:px-28">
         <div className="flex flex-col max-w-[1350px] mt-10 w-full">
           <h1 className="text-4xl lg:text-5xl font-azeret-mono">{frontmatter.title}</h1>
@@ -50,11 +46,7 @@ export default async function SingleArticlePage(props: PageProps) {
           </div>
         </div>
       </div>
-      <div className="px-8 lg:px-14 3xl:px-28 py-28">
-        <Contact />
-      </div>
       <ShareButton title={frontmatter.title} />
-      <Footer />
     </div>
   );
 }

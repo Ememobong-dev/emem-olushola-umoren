@@ -8,6 +8,7 @@ import Link from "next/link";
 import frontendProjects from "@/src/projectData/frontendData.json";
 import dataProjects from "@/src/projectData/analysisData.json";
 import { useTheme } from "@/src/context/ThemeContext";
+import { ArrowDown } from "lucide-react";
 
 
 
@@ -73,118 +74,110 @@ export const TopSection = () => {
                 {/* Floating Tech Tags */}
                 <div className="absolute top-[15%] left-[10%]">
                     <FloatingButton variant="cyan">
-                        Frontend <span className="font-bold">Development</span>{" "}
+                        React <span className="font-bold">& Next.js</span>{" "}
                     </FloatingButton>
                 </div>
                 <div className="absolute top-[20%] right-[15%]">
                     <FloatingButton variant="blue">
-                        React <span className="font-bold">Developer</span>
+                        Type<span className="font-bold">Script</span>
                     </FloatingButton>
                 </div>
                 <div className="absolute bottom-[30%] left-[15%]">
                     <FloatingButton variant="red">
-                        Google <span className="font-bold">Bigquery</span>{" "}
+                        State <span className="font-bold">Management Tools</span>{" "}
                     </FloatingButton>
                 </div>
                 <div className="absolute bottom-[20%] right-[20%]">
                     <FloatingButton variant="yellow">
-                        Data <span className="font-bold">Analysis</span>{" "}
+                        Tailwind<span className="font-bold">CSS</span>{" "}
                     </FloatingButton>
                 </div>
 
                 {/* Name */}
                 <div className="text-center">
-                    <h2 className=" font-alro-reg text-5xl text-center lg:text-8xl">Emem Olushola</h2>
+                    <h2 className=" font-alro-reg text-5xl text-center lg:text-8xl bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent">Emem Olushola</h2>
                     <h2 className="font-bold font-alro-reg text-center text-5xl lg:text-8xl">Umoren.</h2>
                 </div>
 
                 {/* Scroll Button */}
-                <div className="absolute flex justify-center  bottom-[10%]">
+                <div className="absolute flex justify-center  bottom-[20%]">
                     <button
                         onClick={handleScrollDown}
                         // className="rounded-full cursor-pointer border border-white py-2 px-3"
-                        className={` ${theme === "light" ? "border-black" : "border-white"} w-32 md:w-auto h-10 rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg  py-2 md:px-3`}
+                        className={`flex gap-2 items-center ${theme === "light" ? "border-black" : "border-white"} w-32 md:w-auto h-10 rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg  py-2 md:px-3`}
                     >
                         Scroll down
+                        <ArrowDown className="animate-bounce w-4 h-4" />
                     </button>
                 </div>
             </div>
 
             {/* Portfolio Scroll */}
-            <div
-                ref={scrollRef}
-                className="max-h-[700px] relative md:max-h-[80vh] flex flex-col mx-4 lg:mx-14 3xl:mx-28 border overflow-y-scroll snap-y snap-mandatory custom-scrollbar scroll-smooth"
-            >
-                {/* Sticky Counter */}
-                <div className="sticky right-0 top-2 z-20 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm w-fit ml-auto md:mr-4">
-                    {currentIndex}/{totalProjects}
-                </div>
-                {/* Tabs */}
-                <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0  z-10">
-                    <p
-                        className={`cursor-pointer
+            <div className="p-[1px] rounded-xl bg-gradient-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400  mx-4 lg:mx-14 3xl:mx-28 ">
+                <div
+                    ref={scrollRef}
+                    className="max-h-[700px] relative md:max-h-[90vh] flex flex-col  bg-white dark:bg-black rounded-xl overflow-y-scroll snap-y snap-mandatory custom-scrollbar scroll-smooth"
+                >
+                    {/* Sticky Counter */}
+                    <div className="sticky right-0 top-2 z-20 bg-black bg-opacity-50 px-2 py-1 rounded text-white text-sm w-fit ml-auto md:mr-4">
+                        {currentIndex}/{totalProjects}
+                    </div>
+                    {/* Tabs */}
+                    <div className="flex gap-8 lg:gap-28 justify-center py-6 sticky top-0  z-10">
+                        <p
+                            className={`cursor-pointer
             ${theme === "light" ? "!text-black" : "text-white"}
              ${activeTab === "frontend"
-                                ? "border-b-4 border-cyan"
-                                : "lg:opacity-25 opacity-50"
-                            }`}
-                        onClick={() => setActiveTab("frontend")}
-                    >
-                        Frontend Developer
-                    </p>
-                    <p
-                        className={`cursor-pointer
-              ${theme === "light" ? "!text-black" : "text-white"}
-               ${activeTab === "data"
-                                ? "border-b-4 border-cyan"
-                                : "lg:opacity-25 opacity-50"
-                            }`}
-                        onClick={() => setActiveTab("data")}
-                    >
-                        Data Analyst
-                    </p>
-                </div>
-
-                {/* Scrollable Project Area */}
-                <div>
-                    {projectDynamicList.map((proj, idx) => (
-                        <div
-                            key={idx}
-                            ref={(el) => {
-                                projectRefs.current[idx] = el;
-                            }}
-                            className="snap-start  min-h-[600px] md:min-h-[80vh] flex flex-col gap-3 md:gap-8 justify-center items-center"
+                                    ? "border-b-4 border-cyan"
+                                    : "lg:opacity-25 opacity-50"
+                                }`}
+                            onClick={() => setActiveTab("frontend")}
                         >
-                            <Link
-                                className=" w-full flex items-center justify-center mt-28 lg:mt-0"
-                                href={`/portfolio/${activeTab}/${proj.slug} `}
+                            Frontend Projects
+                        </p>
+                    </div>
+
+                    {/* Scrollable Project Area */}
+                    <div>
+                        {projectDynamicList.map((proj, idx) => (
+                            <div
+                                key={idx}
+                                ref={(el) => {
+                                    projectRefs.current[idx] = el;
+                                }}
+                                className="snap-start  min-h-[600px] md:min-h-[80vh] flex flex-col gap-3 md:gap-8 justify-center items-center"
                             >
-                                <h3 className="font-azeret-mono lg:w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl">
-                                    {proj.title}
-                                </h3>
-                            </Link>
+                                <Link
+                                    className=" w-full flex items-center justify-center mt-28 lg:mt-0"
+                                    href={`/portfolio/${activeTab}/${proj.slug} `}
+                                >
+                                    <h3 className="font-azeret-mono lg:w-[80%]  cursor-pointer text-center text-4xl lg:text-8xl">
+                                        {proj.title}
+                                    </h3>
+                                </Link>
 
-                            {activeTab === "frontend" && (
-                                <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
-                                    {proj.location}
-                                </h5>
-                            )}
+                                {activeTab === "frontend" && (
+                                    <h5 className="font-azeret-mono text-3xl lg:text-6xl text-cyan">
+                                        {proj.location}
+                                    </h5>
+                                )}
 
-                            <div className="flex flex-col mx-5 sm:mx-0 lg:flex-row gap-8 md:gap-4 justify-center items-center ">
-                                <p className="lg:w-1/2 lg:text-left text-center">
-                                    {proj.overview}
-                                </p>
-                                <Button
-                                    variant="bordered"
-                                    target
-                                    link={`/portfolio/${activeTab}/${proj.slug} `}
-                                    text="Open Project"
-                                />
+                                <div className="flex flex-col mx-5 sm:mx-0 lg:flex-row gap-8 md:gap-4 justify-center items-center ">
+                                    <p className="lg:w-1/2 lg:text-left text-center">
+                                        {proj.overview}
+                                    </p>
+                                    <Button
+                                        variant="bordered"
+                                        target
+                                        link={`/portfolio/${activeTab}/${proj.slug} `}
+                                        text="Open Project"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
+                    {/*  */}
                 </div>
-                {/*  */}
             </div>
         </>
     )

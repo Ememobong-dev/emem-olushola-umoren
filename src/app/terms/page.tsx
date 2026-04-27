@@ -1,12 +1,8 @@
-import { Contact } from "@/src/components/Contact";
-import { Footer } from "@/src/components/Footer";
-import { Navbar } from "@/src/components/Navbar";
 import React from "react";
 
 const Terms = () => {
   return (
     <div>
-      <Navbar />
       <div className="flex justify-center items-center py-32">
         <div className="max-w-[1350px] flex flex-col gap-10">
           <h3 className="font-azeret-mono text-3xl text-center">
@@ -116,10 +112,6 @@ const Terms = () => {
           </div>
         </div>
       </div>
-      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
-        <Contact />
-      </div>
-      <Footer />
     </div>
   );
 };

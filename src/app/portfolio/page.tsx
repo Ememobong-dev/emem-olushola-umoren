@@ -1,22 +1,18 @@
-import { ArticlesCard } from "@/src/components/ArticlesCard";
-import { Button } from "@/src/components/buttons/Button";
+// import { ArticlesCard } from "@/src/components/ArticlesCard";
+// import { Button } from "@/src/components/buttons/Button";
+// import { Col, Row } from "antd";
+// import { getAllArticles } from "@/src/lib/articles";
 import { Contact } from "@/src/components/Contact";
-import { Footer } from "@/src/components/Footer";
-import { Navbar } from "@/src/components/Navbar";
-import { Col, Row } from "antd";
-import { getAllArticles } from "@/src/lib/articles";
 import { TopSection } from "@/src/components/portfolio-sections/top-section";
 
 export default async function Portfolio() {
-  const articlesData = await getAllArticles();
+  // const articlesData = await getAllArticles();
 
   return (
     <div>
-      <Navbar />
       <TopSection />
-
       {/* Latest Articles */}
-      <div className="px-8 lg:px-14 3xl:px-28 py-28">
+      {/* <div className="px-8 lg:px-14 3xl:px-28 py-28">
         <div className="flex items-center justify-between mb-8">
           <p className="font-alro-reg text-3xl">Latest Article</p>
           <Button variant="bordered" link="/articles" text="View All" />
@@ -38,14 +34,10 @@ export default async function Portfolio() {
 
           </Row>
         </div>
-      </div>
-
-      {/* Contact */}
-      <div className="px-8 lg:px-14 3xl:px-28 py-28">
+      </div> */}
+      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
         <Contact />
       </div>
-
-      <Footer />
     </div>
   );
 };

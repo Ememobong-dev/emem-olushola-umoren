@@ -5,10 +5,7 @@ import React from "react";
 import frontendProjects from "@/src/projectData/frontendData.json";
 import { FloatingButton } from "@/src/components/buttons/FloatingButton";
 import { Col, Row } from "antd";
-import { Navbar } from "@/src/components/Navbar";
 import Link from "next/link";
-import { Contact } from "@/src/components/Contact";
-import { Footer } from "@/src/components/Footer";
 import { motion } from "framer-motion";
 import { useTheme } from "@/src/context/ThemeContext";
 import InfiniteScrollGallery from "@/src/components/infinite-scroll/infinite-gallery-scroll";
@@ -24,7 +21,6 @@ const FrontendSinglePage = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="h-dvh relative flex flex-col gap-2 justify-center items-center">
         {/* Floating Buttons Inside This Container */}
         {project?.technologies?.map((tech, index) => {
@@ -145,10 +141,7 @@ const FrontendSinglePage = () => {
           <InfiniteScrollGallery images={project.gallery} />
         </div>
       </div>
-      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28">
-        {/* Contact */}
-        <Contact />
-      </div>
+    
 
       {project.liveDemo && (
         <motion.a
@@ -164,7 +157,6 @@ const FrontendSinglePage = () => {
         </motion.a>
       )}
 
-      <Footer />
     </div>
   );
 };

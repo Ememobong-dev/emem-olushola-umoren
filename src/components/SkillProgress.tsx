@@ -37,7 +37,7 @@ export const SkillProgress = ({
         <Progress
           type="circle"
           percent={currentPercent}
-          strokeColor={theme === "dark" ? "#0DF0D6" : "#0DF0D688"}
+          strokeColor={theme === "dark" ? "#5CC7E8" : "#0DF0D688"}
           trailColor="#505A5B"
           showInfo={false}
           strokeWidth={10}
