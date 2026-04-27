@@ -2,7 +2,6 @@
 // import { Button } from "@/src/components/buttons/Button";
 // import { Col, Row } from "antd";
 // import { getAllArticles } from "@/src/lib/articles";
-import { Contact } from "@/src/components/Contact";
 import { TopSection } from "@/src/components/portfolio-sections/top-section";
 
 export default async function Portfolio() {
@@ -35,9 +34,6 @@ export default async function Portfolio() {
           </Row>
         </div>
       </div> */}
-      <div className="mx-8 lg:px-14 3xl:px-28 py-16 lg:py-28 flex flex-col gap-36 lg:gap-56">
-        <Contact />
-      </div>
     </div>
   );
 };

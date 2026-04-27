@@ -10,7 +10,7 @@ import twitter from "@/public/icons/twitter.svg";
 import { Button } from "./buttons/Button";
 import { TagButton } from "./buttons/TagButton";
 import Link from "next/link";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "@/src/context/ThemeContext";
 
 export const Contact = () => {
     const { theme } = useTheme();

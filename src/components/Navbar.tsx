@@ -9,7 +9,7 @@ import Link from "next/link";
 import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import { usePathname } from "next/navigation";
 import { Switch } from "antd";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "@/src/context/ThemeContext";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

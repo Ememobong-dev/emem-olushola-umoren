@@ -6,7 +6,6 @@ import { Button } from "@/src/components/buttons/Button";
 import { FloatingButton } from "@/src/components/buttons/FloatingButton";
 import Link from "next/link";
 import frontendProjects from "@/src/projectData/frontendData.json";
-import dataProjects from "@/src/projectData/analysisData.json";
 import { useTheme } from "@/src/context/ThemeContext";
 import { ArrowDown } from "lucide-react";
 
@@ -26,10 +25,8 @@ export const TopSection = () => {
         }
     };
 
-    const projectDynamicList =
-        activeTab === "frontend" ? frontendProjects : dataProjects;
 
-    const totalProjects = projectDynamicList.length;
+    const totalProjects = frontendProjects.length;
 
     useEffect(() => {
         const observers: IntersectionObserver[] = [];
@@ -58,9 +55,9 @@ export const TopSection = () => {
         return () => {
             observers.forEach((observer) => observer.disconnect());
         };
-    }, [projectDynamicList]);
+    }, []);
 
-    // 🔁 Reset scroll position and index on tab change
+    // Reset scroll position and index on tab change
     useEffect(() => {
         const scrollContainer = scrollRef.current;
         if (scrollContainer) {
@@ -139,7 +136,7 @@ export const TopSection = () => {
 
                     {/* Scrollable Project Area */}
                     <div>
-                        {projectDynamicList.map((proj, idx) => (
+                        {frontendProjects.map((proj, idx) => (
                             <div
                                 key={idx}
                                 ref={(el) => {

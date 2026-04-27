@@ -1,5 +1,26 @@
 [
   {
+    "slug": "sapphire-virtual",
+    "title": "Sapphire Virtual",
+    "location": "Ikeja, Lagos",
+    "technologies": [
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "FramerMotion"
+    ],
+    "overview": "Sapphire Virtual Network Limited is a fintech-driven organization focused on device financing and recovery operations. As part of its internal digital transformation, the company required scalable frontend systems to support field agents, operational teams, and administrators. I contributed to the development of key internal tools, including a Recovery Portal and a unified 3.0 dashboard, designed to streamline operations, improve visibility, and support multi-level user interactions across the platform.",
+    "challenge": "The existing system lacked efficiency in tracking recovery activities and managing workflows across different user roles. Field agents had no structured way to log visitations or submit reports in real-time, while internal teams struggled with fragmented data and limited operational visibility. Additionally, the platform needed to support multiple user roles with varying levels of access, all within a secure and intuitive interface.",
+    "solution": "I led the frontend development of a Recovery Portal that enabled field agents to log visitations, submit structured recovery reports, and track customer interactions efficiently. I also contributed to the development of the company’s unified 3.0 dashboard, building role-based interfaces tailored to different user types, including agents, administrators, and operations teams. The system was designed with a focus on usability, scalability, and performance, ensuring seamless navigation, secure data handling, and optimized workflows across the platform.",
+    "outcome": "The implementation significantly improved operational efficiency by digitizing and structuring recovery workflows. Field agents were able to capture and submit data in real-time, while internal teams gained enhanced visibility into recovery activities through centralized dashboards. The role-based system improved access control and user experience across the platform, resulting in faster decision-making, reduced manual processes, and a more scalable foundation for the company’s ongoing digital growth.",
+    "liveDemo": "https://sapphirevirtual.com/",
+    "gallery": [
+      "/images/sapphire/sapphire1.png",
+      "/images/sapphire/sapphire2.png",
+      "/images/sapphire/sapphire3.png"
+    ]
+  },
+  {
     "slug": "shot-by-portable",
     "title": "ShotByPortable",
     "location": "Ontario,Canada",
@@ -77,7 +98,7 @@
     "outcome": "The final product is a highly functional user interface that enhances trust and encourages engagement. The result is a polished and user-focused experience that aligns perfectly with the client’s mission to simplify gift card exchange.",
     "liveDemo": "https://www.wowgiftcard.net/",
     "gallery": [
-      "/images/wowGiftcard/wowGiftcard1.png", 
+      "/images/wowGiftcard/wowGiftcard1.png",
       "/images/wowGiftcard/wowGiftcard2.png",
       "/images/wowGiftcard/wowGiftcard3.png"
     ]

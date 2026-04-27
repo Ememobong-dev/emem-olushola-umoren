@@ -4,7 +4,7 @@ import React from "react";
 import { Button } from "./buttons/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "@/src/context/ThemeContext";
 
 interface ArticleCardProps {
   articleTitle: string;

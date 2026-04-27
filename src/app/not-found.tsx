@@ -1,8 +1,8 @@
 // app/not-found.tsx
 "use client"
 import Link from 'next/link';
-import { Navbar } from '../components/Navbar';
-import { useTheme } from '../context/ThemeContext';
+import { Navbar } from '@/src/components/Navbar';
+import { useTheme } from '@/src/context/ThemeContext';
 import "./globals.css"; 
 
 export default function NotFound() {

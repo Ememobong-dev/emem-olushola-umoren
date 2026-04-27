@@ -3,7 +3,7 @@
 import { Progress } from "antd";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "@/src/context/ThemeContext";
 
 export const SkillProgress = ({
   skill,

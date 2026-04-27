@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Azeret_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "../context/ThemeContext";
+import { ThemeProvider } from "@/src/context/ThemeContext";
 import '@ant-design/v5-patch-for-react-19';
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
-import { Contact } from "../components/Contact";
+import { Navbar } from "@/src/components/Navbar";
+import { Footer } from "@/src/components/Footer";
+import { Contact } from "@/src/components/Contact";
 
 
 const geistSans = Geist({
