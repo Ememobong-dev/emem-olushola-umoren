@@ -33,7 +33,7 @@ export default function ArticleDetailPage() {
   }
 
   return (
-    <div className="min-h-screen px-6 py-32 transition-colors duration-500">
+    <div className="min-h-screen px-6 pt-32 pb-10 transition-colors duration-500">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function ArticleDetailPage() {
                 {article.category}
               </span>
 
-              <div className="flex items-center gap-4 text-sm text-white/40 light:text-slate-500">
+              <div className="flex flex-wrap items-center gap-4 text-sm text-white/40 light:text-slate-500">
                 <span className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
                   {new Date(article.date).toLocaleDateString("en-US", {
@@ -73,34 +73,16 @@ export default function ArticleDetailPage() {
               </div>
             </div>
 
-            <h1 className="text-5xl font-bold mb-6 bg-linear-to-r from-white to-white/70 light:from-slate-900 light:to-slate-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold mb-6 bg-linear-to-r from-white to-white/70 light:from-slate-900 light:to-slate-600 bg-clip-text text-transparent leading-tight">
               {article.title}
             </h1>
 
-            <p className="text-xl text-white/60 light:text-slate-600 leading-relaxed">
+            <p className=" text-sm md:text-xl text-white/60 light:text-slate-600 leading-relaxed">
               {article.excerpt}
             </p>
           </div>
 
-          <div className="flex items-center justify-between py-6 mb-12 border-y border-white/10 light:border-slate-200">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-linear-to-br from-cyan-400 to-purple-600 light:from-cyan-600 light:to-purple-600 rounded-full" />
 
-              <div>
-                <p className="text-white light:text-slate-900 font-medium">
-                  Frontend Developer
-                </p>
-                <p className="text-sm text-white/60 light:text-slate-600">
-                  Building the web, one component at a time
-                </p>
-              </div>
-            </div>
-
-            <button className="flex items-center gap-2 px-4 py-2 bg-white/5 light:bg-slate-100 border border-white/10 light:border-slate-300 rounded-lg text-white/70 light:text-slate-600 hover:text-white light:hover:text-slate-900 hover:bg-white/10 light:hover:bg-slate-200 transition-all">
-              <Share2 className="w-4 h-4" />
-              Share
-            </button>
-          </div>
 
           <article className="prose prose-invert light:prose-slate prose-lg max-w-none">
             <div className="text-white/80 light:text-slate-700 leading-relaxed space-y-6">
@@ -111,7 +93,7 @@ export default function ArticleDetailPage() {
                 decisions, and best practices.
               </p>
 
-              <h2 className="text-3xl font-bold text-white light:text-slate-900 mt-12 mb-6">
+              <h2 className="md:text-2xl font-bold text-white light:text-slate-900 mt-12 mb-6">
                 Understanding the Problem
               </h2>
 
@@ -132,7 +114,7 @@ export default function ArticleDetailPage() {
                 </p>
               </div>
 
-              <h2 className="text-3xl font-bold text-white light:text-slate-900 mt-12 mb-6">
+              <h2 className="md:text-2xl font-bold text-white light:text-slate-900 mt-12 mb-6">
                 Compound Components
               </h2>
 
@@ -143,7 +125,7 @@ export default function ArticleDetailPage() {
 
               <div className="bg-white/5 light:bg-slate-100 border border-white/10 light:border-slate-200 rounded-xl p-6 my-8 font-mono text-sm overflow-x-auto">
                 <pre className="text-cyan-400 light:text-cyan-700">
-                    {`<Tabs defaultValue="overview">
+                  {`<Tabs defaultValue="overview">
                     <TabsList>
                         <TabsTrigger value="overview">Overview</TabsTrigger>
                         <TabsTrigger value="details">Details</TabsTrigger>
@@ -155,7 +137,7 @@ export default function ArticleDetailPage() {
                 </pre>
               </div>
 
-              <h2 className="text-3xl font-bold text-white light:text-slate-900 mt-12 mb-6">
+              <h2 className="md:text-2xl font-bold text-white light:text-slate-900 mt-12 mb-6">
                 Custom Hooks
               </h2>
 
@@ -165,8 +147,14 @@ export default function ArticleDetailPage() {
               </p>
             </div>
           </article>
+          <div className="flex items-center justify-between py-6 mt-12 border-y border-white/10 light:border-slate-200">
 
-          <div className="mt-16 pt-8 border-t border-white/10 light:border-slate-200">
+            <button className="flex items-center gap-2 px-4 py-2 bg-white/5 light:bg-slate-100 border border-white/10 light:border-slate-300 rounded-lg text-white/70 light:text-slate-600 hover:text-white light:hover:text-slate-900 hover:bg-white/10 light:hover:bg-slate-200 transition-all">
+              <Share2 className="w-4 h-4" />
+              Share
+            </button>
+          </div>
+          <div className="mt-16 pt-8">
             <h3 className="text-2xl font-bold text-white light:text-slate-900 mb-6">
               Continue Reading
             </h3>
@@ -199,6 +187,7 @@ export default function ArticleDetailPage() {
                 ))}
             </div>
           </div>
+
         </motion.div>
       </div>
     </div>

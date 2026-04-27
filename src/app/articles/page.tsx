@@ -93,7 +93,7 @@ export default function Articles() {
   const regularArticles = articles.filter(a => !a.featured);
 
   return (
-    <div className="min-h-screen px-6 py-32 transition-colors duration-500">
+    <div className="min-h-screen px-6 pt-32 pb-10 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -106,10 +106,10 @@ export default function Articles() {
             <span className="text-sm text-purple-400">Technical Writing</span>
           </div>
 
-          <h1 className="text-6xl leading-relaxed font-bold mb-6 bg-linear-to-r from-white to-white/60 dark:from-white dark:to-white/60 light:from-slate-900 light:to-slate-600 bg-clip-text text-transparent">
+          <h1 className="md:text-6xl leading-relaxed font-bold mb-6 bg-linear-to-r from-white to-white/60 dark:from-white dark:to-white/60 light:from-slate-900 light:to-slate-600 bg-clip-text text-transparent">
             Articles & Insights
           </h1>
-          <p className="text-xl text-white/60 dark:text-white/60 light:text-slate-600 max-w-3xl">
+          <p className="md:text-xl text-white/60 dark:text-white/60 light:text-slate-600 max-w-3xl">
             Thoughts on frontend development, performance, architecture, and everything in between.
           </p>
         </motion.div>
@@ -133,7 +133,7 @@ export default function Articles() {
                       <div className={`absolute inset-0 bg-linear-to-br ${article.gradient} opacity-0 group-hover:opacity-10 dark:group-hover:opacity-10 light:group-hover:opacity-15 transition-opacity duration-300`} />
 
                       <div className="relative">
-                        <div className="flex items-center gap-3 mb-4">
+                        <div className="flex flex-wrap items-center gap-3 mb-4">
                           <span className={`px-3 py-1 bg-linear-to-r ${article.gradient} rounded-full text-xs text-white font-medium`}>
                             {article.category}
                           </span>
@@ -149,11 +149,11 @@ export default function Articles() {
                           </div>
                         </div>
 
-                        <h3 className="text-2xl font-bold text-white dark:text-white light:text-slate-900 mb-3 group-hover:text-cyan-400 dark:group-hover:text-cyan-400 light:group-hover:text-cyan-600 transition-colors">
+                        <h3 className="md:text-2xl font-bold text-white dark:text-white light:text-slate-900 mb-3 group-hover:text-cyan-400 dark:group-hover:text-cyan-400 light:group-hover:text-cyan-600 transition-colors">
                           {article.title}
                         </h3>
 
-                        <p className="text-white/60 dark:text-white/60 light:text-slate-600 mb-4 leading-relaxed">
+                        <p className="text-sm text-white/60 dark:text-white/60 light:text-slate-600 mb-4 leading-relaxed">
                           {article.excerpt}
                         </p>
 
@@ -187,7 +187,7 @@ export default function Articles() {
                   <article className="group relative bg-linear-to-r from-white/5 to-transparent dark:from-white/5 dark:to-transparent light:from-white light:to-transparent border border-white/10 dark:border-white/10 light:border-slate-200 rounded-xl p-6 hover:border-white/20 dark:hover:border-white/20 light:hover:border-slate-300 hover:bg-white/5 dark:hover:bg-white/5 light:hover:bg-slate-50 transition-all duration-300">
                     <div className="flex items-start justify-between gap-6">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
                           <span className={`px-3 py-1 bg-linear-to-r ${article.gradient} rounded-full text-xs text-white font-medium`}>
                             {article.category}
                           </span>
@@ -203,16 +203,19 @@ export default function Articles() {
                           </div>
                         </div>
 
-                        <h3 className="text-xl font-bold text-white dark:text-white light:text-slate-900 mb-2 group-hover:text-cyan-400 dark:group-hover:text-cyan-400 light:group-hover:text-cyan-600 transition-colors">
-                          {article.title}
-                        </h3>
 
-                        <p className="text-white/60 dark:text-white/60 light:text-slate-600 text-sm">
-                          {article.excerpt}
-                        </p>
                       </div>
 
                       <ArrowRight className="w-5 h-5 text-white/40 dark:text-white/40 light:text-slate-400 group-hover:text-cyan-400 dark:group-hover:text-cyan-400 light:group-hover:text-cyan-600 group-hover:translate-x-1 transition-all flex-shrink-0 mt-2" />
+                    </div>
+                    <div className="mt-3">
+                      <h3 className="md:text-xl font-bold text-white dark:text-white light:text-slate-900 mb-2 group-hover:text-cyan-400 dark:group-hover:text-cyan-400 light:group-hover:text-cyan-600 transition-colors">
+                        {article.title}
+                      </h3>
+
+                      <p className=" text-white/60 dark:text-white/60 light:text-slate-600 text-sm">
+                        {article.excerpt}
+                      </p>
                     </div>
                   </article>
                 </Link>

@@ -97,11 +97,11 @@ export const TopSection = () => {
                 </div>
 
                 {/* Scroll Button */}
-                <div className="absolute flex justify-center  bottom-[20%]">
+                <div className="absolute flex justify-center bottom-10 lg:bottom-[20%]">
                     <button
                         onClick={handleScrollDown}
                         // className="rounded-full cursor-pointer border border-white py-2 px-3"
-                        className={`flex gap-2 items-center ${theme === "light" ? "border-black" : "border-white"} w-32 md:w-auto h-10 rounded-full absolute bottom-[10%] lg:relative cursor-pointer border font-normal font-alro-reg  py-2 md:px-3`}
+                        className={`flex gap-2 items-center ${theme === "light" ? "border-black" : "border-white"} mx-auto w-auto h-10 rounded-full  relative cursor-pointer border font-normal font-alro-reg px-6  py-2 md:px-3`}
                     >
                         Scroll down
                         <ArrowDown className="animate-bounce w-4 h-4" />
@@ -161,7 +161,7 @@ export const TopSection = () => {
 
                                 <div className="flex flex-col mx-5 sm:mx-0 lg:flex-row gap-8 md:gap-4 justify-center items-center ">
                                     <p className="lg:w-1/2 lg:text-left text-center">
-                                        {proj.overview}
+                                        {proj.shortOverview}
                                     </p>
                                     <Button
                                         variant="bordered"

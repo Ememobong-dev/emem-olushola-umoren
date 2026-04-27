@@ -52,7 +52,7 @@ const FrontendSinglePage = () => {
         })}
 
         {/* Title */}
-        <h2 className={`text-5xl w-full ${theme === "light" ? "text-black" : "text-white"}  text-center lg:text-[100px] font-azeret-mono z-10`}>
+        <h2 className={`text-3xl lg:text-5xl w-full ${theme === "light" ? "text-black" : "text-white"}  text-center lg:text-[100px] font-azeret-mono z-10`}>
           {project?.title}
         </h2>
         <h2 className="text-cyan text-3xl text-center lg:text-5xl font-azeret-mono z-10">
@@ -76,7 +76,7 @@ const FrontendSinglePage = () => {
                 <h3 className="font-alro-reg text-2xl mb-8">Overview</h3>
                 <div>
                   <p className="text-justify font-azeret-mono font-light">
-                    {project.overview}
+                    {project.longOverview}
                   </p>
                 </div>
               </div>

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <div className="px-8 lg:px-14 3xl:px-28 py-28 flex flex-col gap-36 lg:gap-56 ">
+      <div className="px-8 lg:px-14 3xl:px-28 lg:py-28 flex flex-col gap-36 lg:gap-56 ">
         {/* Second Section */}
         <AboutSection />
         {/* THIRD SECTION */}

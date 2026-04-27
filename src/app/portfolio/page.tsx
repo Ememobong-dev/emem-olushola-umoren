@@ -1,39 +1,10 @@
-// import { ArticlesCard } from "@/src/components/ArticlesCard";
-// import { Button } from "@/src/components/buttons/Button";
-// import { Col, Row } from "antd";
-// import { getAllArticles } from "@/src/lib/articles";
 import { TopSection } from "@/src/components/portfolio-sections/top-section";
 
-export default async function Portfolio() {
-  // const articlesData = await getAllArticles();
+export default function Portfolio() {
 
   return (
     <div>
       <TopSection />
-      {/* Latest Articles */}
-      {/* <div className="px-8 lg:px-14 3xl:px-28 py-28">
-        <div className="flex items-center justify-between mb-8">
-          <p className="font-alro-reg text-3xl">Latest Article</p>
-          <Button variant="bordered" link="/articles" text="View All" />
-        </div>
-        <div>
-          <Row gutter={[56, 56]}>
-            {articlesData.map((article) => (
-              <Col key={article.slug} xs={24} lg={12}>
-                <ArticlesCard
-                  articleDate={article.date}
-                  articleDescription={article.description}
-                  articleTagOne={article.tags?.[0] || ""}
-                  articleTagTwo={article.tags?.[1] || ""}
-                  articleTitle={article.title}
-                  articleSlug={article.slug}
-                />
-              </Col>
-            ))}
-
-          </Row>
-        </div>
-      </div> */}
     </div>
   );
 };
