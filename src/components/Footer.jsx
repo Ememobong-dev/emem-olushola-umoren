@@ -1,5 +1,5 @@
 import React from "react";
-import footer_logo from "../../public/icons/footer-logo.svg";
+import footer_logo from "../../public/images/colouredLogo.png";
 import Image from "next/image";
 import {
   GithubFilled,
@@ -36,7 +36,7 @@ export const Footer = () => {
 
       <div>
         <Link href={'/'}>
-          <Image src={footer_logo} alt="logo" />
+          <Image src={footer_logo} width={52} height={52} alt="logo" />
         </Link>
       </div>
       <div>

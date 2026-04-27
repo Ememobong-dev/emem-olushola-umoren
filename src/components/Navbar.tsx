@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useState, useRef } from "react";
-import brandLogo from "@/public/icons/brand-logo.svg";
-import brandLogoDark from "@/public/icons/footer-logo.svg";
+import brandLogo from "@/public/images/colouredLogo.png";
 import arrowIcon from "@/public/icons/arrow-line.svg";
 import Link from "next/link";
 import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
@@ -54,7 +53,7 @@ export const Navbar = () => {
         {/* MOBILE */}
         <div className="lg:hidden flex items-center justify-between w-full">
           <Link href={"/"}>
-            <Image className="w-[20px] h-[18px]" src={theme === "dark" ? brandLogo : brandLogoDark} alt="brand-logo" />
+            <Image width={48} height={48} src={brandLogo} alt="brand-logo" />
           </Link>
           <Switch
             checked={theme === "light"}
@@ -86,7 +85,7 @@ export const Navbar = () => {
             }`}
         >
           <Link href={"/"}>
-            <Image className="w-[20px] h-[18px]" src={theme === "dark" ? brandLogo : brandLogoDark} alt="brand-logo" />
+            <Image  width={52} height={52} src={brandLogo} alt="brand-logo" />
           </Link>
           <div className="flex gap-8 3xl:gap-14 items-center font-alro-reg">
             <Link href="/" className="z-[1000px]">

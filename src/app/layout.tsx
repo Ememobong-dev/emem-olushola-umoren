@@ -24,10 +24,62 @@ const azeretMono = Azeret_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Emem Olushola Portfolio",
-  description: "A portfolio to showcase my skills",
+  metadataBase: new URL("https://emem-olushola.vercel.app"),
+
+  title: {
+    default: "Emem Olushola | Frontend Engineer",
+    template: "%s | Emem Olushola",
+  },
+
+  description:
+    "Frontend Engineer with 4+ years of experience building scalable, responsive, and high-performance web applications using React.js, Next.js, TypeScript, and modern frontend tooling.",
+
+  keywords: [
+    "Emem Olushola",
+    "Frontend Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript Developer",
+    "Frontend Developer Nigeria",
+    "Web Developer",
+  ],
+
+  authors: [{ name: "Emem Olushola" }],
+  creator: "Emem Olushola",
+
+  openGraph: {
+    title: "Emem Olushola | Frontend Engineer",
+    description:
+      "Frontend Engineer building scalable, responsive, and high-performance web applications with React, Next.js, and TypeScript.",
+    url: "https://emem-olushola.vercel.app",
+    siteName: "Emem Olushola Portfolio",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Emem Olushola Portfolio",
+      },
+    ],
+    locale: "en_NG",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Emem Olushola | Frontend Engineer",
+    description:
+      "Frontend Engineer building modern web applications with React, Next.js, and TypeScript.",
+    images: ["/twitter-image.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
 };
 
