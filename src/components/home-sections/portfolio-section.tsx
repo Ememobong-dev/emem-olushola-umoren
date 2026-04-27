@@ -113,7 +113,7 @@ export const PortfolioSection = () => {
                   `}
                 >
                   <Link
-                    href={`/frontend/${project.slug}`}
+                    href={`/portfolio/frontend/${project.slug}`}
                     className="lg:hidden  text-lg font-semibold font-alro-reg"
                   >
                     View Project
@@ -142,7 +142,7 @@ export const PortfolioSection = () => {
                         {project.title}
                       </Link>
 
-                      <Link href={`/frontend/${project.slug}`} target="_blank">
+                      <Link href={`/portfolio/frontend/${project.slug}`} target="_blank">
                         <button className="text-xs md:text-sm flex flex-wrap cursor-pointer items-center justify-center rounded-full py-2 px-8 border border-white bg-transparent text-white hover:text-cyan">
                           View Case Study
                         </button>
