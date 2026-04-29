@@ -1,0 +1,20 @@
+---
+title: "Typescript Advanced types"
+excerpt: "A technical breakdown of how I reduced bundle size, improved rendering, and made the dashboard faster."
+date: "2026-04-29"
+category: "Performance"
+readTime: "10 min read"
+featured: false
+gradient: "from-pink-500 to-purple-500"
+---
+
+## Introduction
+
+This article explains how I moved from a heavy rendering approach to an optimized one.
+
+## The Problem
+
+The previous page loaded expensive components immediately.
+
+```tsx
+const Chart = dynamic(() => import("@/components/Chart"));

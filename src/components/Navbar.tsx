@@ -51,7 +51,7 @@ export const Navbar = () => {
     }
 
     if (value === "articles") {
-      return pathname.startsWith("/articles");
+      return pathname.startsWith("/articles-content");
     }
 
     return false;
@@ -177,7 +177,7 @@ export const Navbar = () => {
               <p className={getTextColorClass(isActive("portfolio"))}>portfolio</p>
             </Link>
 
-            <Link href="/articles" className="z-[1000px]" onClick={closeMenu}>
+            <Link href="/articles-content" className="z-[1000px]" onClick={closeMenu}>
               <p className={getTextColorClass(isActive("articles"))}>articles</p>
             </Link>
           </div>
@@ -252,7 +252,7 @@ export const Navbar = () => {
             <p className={getTextColorClass(isActive("portfolio"))}>portfolio</p>
           </Link>
 
-          <Link href="/articles" onClick={closeMenu}>
+          <Link href="/articles-content" onClick={closeMenu}>
             <p className={getTextColorClass(isActive("articles"))}>articles</p>
           </Link>
 

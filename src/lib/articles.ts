@@ -1,56 +1,49 @@
-// lib/articles.ts
-import fs from 'fs/promises';
-import path from 'path';
-import matter from 'gray-matter';
-import { bundleMDX } from 'mdx-bundler';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
-export interface ArticleMeta {
-  title: string;
+const articlesDirectory = path.join(process.cwd(), "content/articles");
+
+export type Article = {
   slug: string;
-  description: string;
-  author: string;
+  title: string;
+  excerpt: string;
   date: string;
-  tags: string[];
-  cardImage: string;
-  gallery: string[];
-}
+  readTime: string;
+  category: string;
+  gradient: string;
+  featured: boolean;
+  content: string;
+};
 
-const articlesDir = path.join(process.cwd(), 'articles');
+export function getAllArticles(): Article[] {
+  const files = fs.readdirSync(articlesDirectory);
 
-export async function getArticleSlugs(): Promise<string[]> {
-  const files = await fs.readdir(articlesDir);
-  return files
-    .filter((file: string) => file.endsWith('.mdx'))
-    .map((file: string) => file.replace(/\.mdx$/, ''));
-}
+  const articles = files.map((fileName) => {
+    const slug = fileName.replace(/\.mdx$/, "");
+    const fullPath = path.join(articlesDirectory, fileName);
+    const fileContent = fs.readFileSync(fullPath, "utf8");
 
-export async function getCompiledArticleBySlug(slug: string) {
-  const filePath = path.join(articlesDir, `${slug}.mdx`);
-  const rawContent = await fs.readFile(filePath, 'utf8');
+    const { data, content } = matter(fileContent);
 
-  const { content, data } = matter(rawContent);
-  const result = await bundleMDX({ source: content });
+    return {
+      slug,
+      title: data.title,
+      excerpt: data.excerpt,
+      date: data.date,
+      readTime: data.readTime,
+      category: data.category,
+      gradient: data.gradient ?? "from-cyan-500 to-blue-500",
+      featured: data.featured ?? false,
+      content,
+    };
+  });
 
-  return {
-    frontmatter: data as ArticleMeta,
-    code: result.code,
-  };
-}
-
-export async function getAllArticles(): Promise<ArticleMeta[]> {
-  const slugs = await getArticleSlugs();
-
-  const articles = await Promise.all(
-    slugs.map(async (slug: string) => {
-      const filePath = path.join(articlesDir, `${slug}.mdx`);
-      const rawContent = await fs.readFile(filePath, 'utf8');
-      const { data } = matter(rawContent);
-      return {
-        ...(data as ArticleMeta),
-        slug,
-      };
-    })
+  return articles.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+}
 
-  return articles;
+export function getArticleBySlug(slug: string): Article | undefined {
+  return getAllArticles().find((article) => article.slug === slug);
 }

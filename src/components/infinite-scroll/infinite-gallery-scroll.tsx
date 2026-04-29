@@ -11,16 +11,16 @@ const InfiniteScrollGallery = ({ images }: { images: string[] }) => {
         {duplicatedImages.map((src, index) => (
           <div 
             key={index} 
-            className="flex-shrink-0 rounded-2xl bg-gray-300 h-[350px] w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] overflow-hidden mx-4"
+            className="shrink-0 rounded-2xl bg-gray-300 h-[350px] w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] overflow-hidden mx-4"
           >
             <Image
               src={src}
               width={800}
-              height={350}
+              height={800}
               alt={`Gallery image ${index + 1}`}
               className="object-cover w-full h-full rounded-2xl"
-              quality={90}
-              priority={index < 5} // Only prioritize first few images
+              quality={100}
+              priority
             />
           </div>
         ))}
