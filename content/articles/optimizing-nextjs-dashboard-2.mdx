@@ -19,7 +19,7 @@ The biggest improvement in bundle size came from changing when the dashboard loa
 
 > This article continues from Part 1, where I covered virtualization, expensive render calculations, and filtering optimization.
 >
-> If you have not read it yet, start here: [Part 1: Rendering, Virtualization, and Expensive Computations](/articles-content/react-performance-pattern-part-1)
+> If you have not read it yet, start here: [Part 1: Rendering, Virtualization, and Expensive Computations](/articles-content/optimizing-nextjs-dashboard)
 
 
 
@@ -27,7 +27,7 @@ The biggest improvement in bundle size came from changing when the dashboard loa
 
 The heavy page passed an inline function to the table.
 
-This is visible in the heavy main page image.
+This is visible in the heavy main page image, see reference: <a target="_blank" href="/articles-content/optimizing-nextjs-dashboard#heavy-main-page" className="ref-link">Heavy Main Page</a>.
 
 ```tsx
 <HeavyUsersTable
@@ -64,6 +64,7 @@ Then it passes the stable function to the table:
   onSelectUser={handleSelectUser}
 />
 ```
+see full code here: <a target="_blank" href="/articles-content/optimizing-nextjs-dashboard#optimized-main-page" className="ref-link">Optimized Main Page</a>.
 
 ### What this does
 
@@ -93,12 +94,13 @@ By using `useCallback`, the table receives the same function reference across re
 
 ### Callback impact
 
-| Before | After |
-| ------ | ----- |
-| New function on every render | Stable function reference |
-| Memoization becomes weaker | `React.memo` can work better |
+```
+| Before                            | After                              |
+| ----------------------------------| ---------------------------------- |
+| New function on every render      | Stable function reference          |
+| Memoization becomes weaker        | `React.memo` can work better       |
 | Child may re-render unnecessarily | Child can skip unnecessary renders |
-
+```
 This is not always the biggest optimization by itself, but it supports the rest of the performance strategy.
 
 ---
