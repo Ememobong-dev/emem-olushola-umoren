@@ -17,7 +17,7 @@ export const SkillSection = () => {
   return (
     <AnimatedSection>
     <div id="skills">
-      <h2 className="font-alro-reg mb-8 text-center text-xl md:text-3xl bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent font-bold">
+      <h2 className="font-alro-reg mb-4 md:mb-8 text-center text-xl md:text-3xl bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent font-bold">
         {" "}
         Skills & Expertise
       </h2>

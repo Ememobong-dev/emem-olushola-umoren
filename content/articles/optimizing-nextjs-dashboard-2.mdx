@@ -23,7 +23,7 @@ The biggest improvement in bundle size came from changing when the dashboard loa
 
 
 
-## Problem 4 . Stable Callback Problem
+## Problem 4. Stable Callback Problem
 
 The heavy page passed an inline function to the table.
 
@@ -141,6 +141,7 @@ const UserModal = dynamic(() => import("@/components/UserModal"), {
   ssr: false,
 });
 ```
+see code reference here: <a target="_blank" href="/articles-content/optimizing-nextjs-dashboard#optimized-main-page" className="ref-link">Optimized Main Page</a>.
 
 ### What this does
 
@@ -162,11 +163,13 @@ Since the modal depends on client-side interaction, it can safely load on the cl
 
 ### Modal impact
 
-| Before | After |
-| ------ | ----- |
-| Modal code included upfront | Modal code split out |
-| User pays for modal before using it | Modal loads when needed |
-| Larger initial bundle | Smaller initial route cost |
+```
+| Before                              | After                      |
+| ------------------------------------| ------------------------   |
+| Modal code included upfront         | Modal code split out       |
+| User pays for modal before using it | Modal loads when needed    |
+| Larger initial bundle               | Smaller initial route cost |
+```
 
 ---
 
@@ -174,7 +177,7 @@ Since the modal depends on client-side interaction, it can safely load on the cl
 
 The heavy chart used Recharts.
 
-![Heavy Chart Code](/images/articles/optimizing-nextjs/heavy/heavyChart.png)
+![Heavy Chart Code](/images/articles/optimizing-nextjs/heavy/heavyChartCode.png)
 
 The problem was not only that Recharts was heavy. There was also a layout issue with `ResponsiveContainer`.
 
@@ -213,7 +216,9 @@ This can happen during:
 
 The optimized chart gives the parent container a stable size.
 
-![Optimized Chart Code](/images/articles/optimizing-nextjs/optimized/OptimizedChart.png)
+![Optimized Chart Code](/images/articles/optimizing-nextjs/optimized/OptimizedChartCode.png)
+
+
 
 The important excerpt is:
 
@@ -243,11 +248,13 @@ The chart is instructed to fill the available space inside the wrapper.
 
 ### Layout impact
 
-| Before | After |
-| ------ | ----- |
-| Chart tries to measure unclear dimensions | Parent has stable dimensions |
-| Possible width/height warning | Chart can calculate size correctly |
-| Layout instability | More predictable rendering |
+```
+|         Before                            |      After                         |
+| ----------------------------------------- | -----------------------------------|
+| Chart tries to measure unclear dimensions | Parent has stable dimensions       |
+| Possible width/height warning             | Chart can calculate size correctly |
+| Layout instability                        | More predictable rendering         |
+```
 
 This was not the biggest bundle optimization, but it improved correctness and layout stability.
 
@@ -294,6 +301,8 @@ Even if the user does not care about analytics, they still pay the cost.
 
 The optimized page uses a dynamic import.
 
+see full code here: <a target="_blank" href="/articles-content/optimizing-nextjs-dashboard#optimized-main-page" className="ref-link">Optimized Main Page</a>.
+
 ```tsx
 const OptimizedChart = dynamic(() => import("@/components/OptimizedChart"), {
   ssr: false,
@@ -337,19 +346,20 @@ This ensures the chart is not loaded until the user intentionally asks for it.
 
 ### Bundle impact
 
-| Before | After |
-| ------ | ----- |
+```
+| Before                      | After                         |
+| -------------------------   | ----------------------------- |
 | Page load includes Recharts | Page load excludes chart code |
-| Chart loads even if unused | Chart loads on demand |
-| Larger initial bundle | Smaller initial bundle |
-
+| Chart loads even if unused  | Chart loads on demand         |
+| Larger initial bundle       | Smaller initial bundle        |
+```
 This is called:
 
 ```txt
 Code splitting + lazy loading
 ```
 
-This was the biggest reason the optimized route became much smaller.
+**This was the biggest reason the optimized route became much smaller.**
 
 ---
 
@@ -421,7 +431,7 @@ For a real production dashboard, this is not ideal.
 
 ---
 
-## What I Would Do in Production
+## What I Would Do in Production 🌚
 
 A production dashboard should avoid sending thousands of records to the browser upfront.
 
@@ -456,17 +466,18 @@ Client-side filtering over 5,000 users is fine for a demo, but it does not scale
 
 ## Heavy Page vs Optimized Page
 
-| Heavy Page | Optimized Page |
-| ---------- | -------------- |
-| Loads everything upfront | Loads only what is needed |
-| Renders every table row | Renders only visible rows |
+```
+| Heavy Page                    | Optimized Page                       |
+| ----------------------------- | ------------------------------------ |
+| Loads everything upfront      | Loads only what is needed            |
+| Renders every table row       | Renders only visible rows            |
 | Computes scores during render | Precomputes scores when users change |
-| Filters on every keystroke | Filters after typing pauses |
-| Imports charts immediately | Lazy-loads charts |
-| Imports modal immediately | Lazy-loads modal |
-| Creates unstable callbacks | Uses stable callbacks |
-| Larger initial bundle | Smaller initial bundle |
-
+| Filters on every keystroke    | Filters after typing pauses          |
+| Imports charts immediately    | Lazy-loads charts                    |
+| Imports modal immediately     | Lazy-loads modal                     |
+| Creates unstable callbacks    | Uses stable callbacks                |
+| Larger initial bundle         | Smaller initial bundle               |
+```
 ---
 
 ## Key Takeaways
@@ -525,4 +536,6 @@ Delay heavy work until user intent is clear
 ```
 
 That is the difference between a dashboard that only works in small demos and a dashboard that can scale better in real applications.
+
+## CIAO🖖🖖
 

@@ -34,7 +34,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div>
+      <div className="-mt-4 md:mt-auto">
         <Link href={'/'}>
           <Image src={footer_logo} width={52} height={52} alt="logo" />
         </Link>
