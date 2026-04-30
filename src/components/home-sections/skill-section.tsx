@@ -17,13 +17,13 @@ export const SkillSection = () => {
   return (
     <AnimatedSection>
     <div id="skills">
-      <h2 className="font-alro-reg mb-8 text-center text-3xl bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent font-bold">
+      <h2 className="font-alro-reg mb-8 text-center text-xl md:text-3xl bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent font-bold">
         {" "}
         Skills & Expertise
       </h2>
       <div className="flex flex-col gap-14">
         <div>
-          <p className="font-azeret-mono text-center text-xl">
+          <p className="font-azeret-mono text-center text-base md:text-xl">
             Technologies and tools I use to bring ideas to life
           </p>
           <div className=" h-full flex justify-center gap-5 flex-wrap gap-y-2 mt-10">
