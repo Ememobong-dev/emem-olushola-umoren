@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Emem Olushola Portfolio",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image.jpeg",
         width: 1200,
         height: 630,
         alt: "Emem Olushola Portfolio",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Emem Olushola | Frontend Engineer",
     description:
       "Frontend Engineer building modern web applications with React, Next.js, and TypeScript.",
-    images: ["/twitter-image.png"],
+    images: ["/opengraph-image.jpeg"],
   },
 
   robots: {
