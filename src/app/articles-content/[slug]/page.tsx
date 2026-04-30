@@ -86,12 +86,26 @@ export default async function ArticleDetailPage({ params }: Props) {
             {article.title}
           </h1>
 
-          <p className=" text-sm md:text-xl text-white/60 light:text-slate-600 leading-relaxed">
+          <p className=" text-sm md:text-lg text-white/60 light:text-slate-600 leading-relaxed">
             {article.excerpt}
           </p>
         </div>
 
-        <article className="prose prose-invert light:prose-slate prose-lg max-w-none">
+        <article
+          className="article-content
+          prose prose-invert light:prose-slate prose-lg max-w-none
+          [&_ol]:list-decimal
+          [&_ul]:list-disc
+          [&_ol]:pl-8
+          [&_ul]:pl-8
+          [&_li]:pl-2
+          [&_li]:my-2
+
+          [&_ol>li::marker]:text-white
+          [&_ul>li::marker]:text-white
+          light:[&_ol>li::marker]:text-slate-700
+          light:[&_ul>li::marker]:text-slate-700"
+        >
           <div className="text-white/80 light:text-slate-700 leading-relaxed space-y-6">
             <MDXRemote source={article.content} />
           </div>
@@ -102,13 +116,13 @@ export default async function ArticleDetailPage({ params }: Props) {
             Continue Reading
           </h3>
 
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col md:flex-row items-stretch gap-4">
             {relatedArticles.map((relatedArticle) => (
               <Link
                 key={relatedArticle.slug}
                 href={`/articles-content/${relatedArticle.slug}`}
               >
-                <div className="group bg-white/5 light:bg-slate-100 border border-white/10 light:border-slate-200 rounded-xl p-6 hover:border-white/20 light:hover:border-slate-300 hover:bg-white/10 light:hover:bg-slate-200 transition-all">
+                <div className="group bg-white/5 h-full light:bg-slate-100 border border-white/10 light:border-slate-200 rounded-xl p-6 hover:border-white/20 light:hover:border-slate-300 hover:bg-white/10 light:hover:bg-slate-200 transition-all">
                   <span className={`px-3 py-1 bg-linear-to-r ${relatedArticle.gradient} rounded-full text-xs text-white font-medium`}>
                     {relatedArticle.category}
                   </span>

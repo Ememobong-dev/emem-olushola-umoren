@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { calculateReadTime } from "./readTime";
 
 const articlesDirectory = path.join(process.cwd(), "content/articles");
 
@@ -16,8 +17,12 @@ export type Article = {
   content: string;
 };
 
+
+
 export function getAllArticles(): Article[] {
-  const files = fs.readdirSync(articlesDirectory);
+  const files = fs
+    .readdirSync(articlesDirectory)
+    .filter((fileName) => fileName.endsWith(".mdx"));
 
   const articles = files.map((fileName) => {
     const slug = fileName.replace(/\.mdx$/, "");
@@ -31,7 +36,7 @@ export function getAllArticles(): Article[] {
       title: data.title,
       excerpt: data.excerpt,
       date: data.date,
-      readTime: data.readTime,
+      readTime: calculateReadTime(content),
       category: data.category,
       gradient: data.gradient ?? "from-cyan-500 to-blue-500",
       featured: data.featured ?? false,
