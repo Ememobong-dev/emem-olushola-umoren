@@ -4,13 +4,13 @@ const Privacy = () => {
   return (
     <div>
       <div className="flex justify-center items-center py-32">
-        <div className="max-w-[1350px] flex flex-col gap-10">
-          <h3 className="font-azeret-mono text-3xl text-center">
+        <div className="max-w-[1350px] flex flex-col gap-10 px-10 md:px-0">
+          <h3 className="font-azeret-mono  text-lg md:text-3xl text-center">
             Privacy and Refund Policy
           </h3>
           <div>
-            <h3 className="text-3xl mb-5 font-alro-reg">1.  Data Collection</h3>
-            <ul className="list-disc text-justify pl-5 font-azeret-mono">
+            <h3 className=" text-lg md:text-3xl mb-5 font-alro-reg">1.  Data Collection</h3>
+            <ul className="list-disc text-sm md:text-base text-justify pl-5 font-azeret-mono">
               <li>
                 I collect only the information necessary to carry out your
                 project—such as names, emails, project briefs, design assets,
@@ -24,8 +24,8 @@ const Privacy = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-3xl mb-5 font-alro-reg">2.  Data Usage</h3>
-            <ul className="list-disc text-justify pl-5 font-azeret-mono">
+            <h3 className=" text-lg md:text-3xl mb-5 font-alro-reg">2.  Data Usage</h3>
+            <ul className="list-disc text-sm md:text-base text-justify pl-5 font-azeret-mono">
               <li>
                 Any design files, content, or access credentials shared are
                 strictly used for development purposes.
@@ -38,8 +38,8 @@ const Privacy = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-3xl mb-5 font-alro-reg">3.  Confidentiality</h3>
-            <ul className="list-disc text-justify pl-5 font-azeret-mono">
+            <h3 className=" text-lg md:text-3xl mb-5 font-alro-reg">3.  Confidentiality</h3>
+            <ul className="list-disc text-sm md:text-base text-justify pl-5 font-azeret-mono">
               <li>
                 I treat all client data and project content as confidential.
               </li>
@@ -50,10 +50,10 @@ const Privacy = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-3xl mb-5 font-alro-reg">
+            <h3 className=" text-lg md:text-3xl mb-5 font-alro-reg">
               4.  Refund Policy (Summary)
             </h3>
-            <ul className="list-disc text-justify pl-5 font-azeret-mono">
+            <ul className="list-disc text-sm md:text-base text-justify pl-5 font-azeret-mono">
               <li>Full refund if no work has started.</li>
               <li>
                 Partial refund if the project is canceled mid-development,

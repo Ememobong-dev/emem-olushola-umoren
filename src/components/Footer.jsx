@@ -41,7 +41,7 @@ export const Footer = () => {
       </div>
       <div>
         <p className="font-azeret-mono text-sm text-center lg:text-left">
-          © 2025 Ememobong. All rights Reserved
+          © 2025 Ememobong Olushola Umoren. All rights Reserved
         </p>
       </div>
     </div>

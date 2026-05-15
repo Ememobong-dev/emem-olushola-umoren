@@ -110,7 +110,7 @@ export const metadata: Metadata = {
 
     images: ["/opengraph-image.jpeg"],
 
-    creator: "@yourtwitterhandle",
+    creator: "@FTechbro",
   },
 
   robots: {
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "ADD_YOUR_GOOGLE_SEARCH_CONSOLE_CODE",
+    google: "5EmNQyuRvCWeHlb3Fv4WBqXU7O0P9Ho9nCpWmThWeTk",
   },
 
   icons: {

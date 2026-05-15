@@ -26,7 +26,7 @@ export const AboutSection = () => {
                   </h1>
                   <div className="flex flex-col sm:text-base text-center sm:text-justify gap-4 mt-6 font-alro-reg">
                     <p className="sm:tracking-widest leading-relaxed">
-                      I am a Frontend Engineer with expertise in React, Next.js, TypeScript, and modern frontend tooling. With over{" "}
+                      Ememobong Olushola Umoren is a Frontend Engineer with expertise in React, Next.js, TypeScript, and modern frontend tooling. With over{" "}
                       <span className={`font-bold ${theme === "light" ? "text-blue-800" : "text-progress-cyan"}`}>
                         four years
                       </span>{" "}
