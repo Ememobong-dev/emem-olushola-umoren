@@ -1,0 +1,391 @@
+---
+title: "The JavaScript Event Loop — Microtasks vs Macrotasks"
+excerpt: "Event loop (microtasks vs macrotasks)"
+date: "2026-05-01"
+category: "Performance"
+featured: false
+gradient: "from-pink-500 to-purple-500"
+---
+
+## Introduction
+JavaScript’s concurrency model is often misunderstood because it looks synchronous but behaves asynchronously under the hood.
+At the center of this illusion is the event loop; a mechanism that coordinates execution between: The call stack, The task queues, and The browser (or Node.js) APIs.
+
+
+
+There’s a point every JavaScript developer gets to where things stop making sense.
+
+```JavaScript
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+console.log("D");
+```
+
+And the output comes out as:
+```txt
+A
+D
+C
+B
+```
+
+Now you're staring at your screen thinking wondering "why is the Promise running before the timeout? Isn't setTimeout supposed to run immediately?"
+
+This is the exact moment you've run into the event loop—and more specifically: the difference between microtasks and macrotasks.
+
+If you do understand it, things suddenly become predictable.
+
+People often say "JavaScript is single-threaded.", and YES JavaScript itself runs on a single thread, But the environment around it (browser or Node.js) is doing a lot of work in the background—timers, network requests, event listeners.
+
+So instead of thinking "single-threaded", think "JavaScript executes one thing at a time, but it coordinates a lot of things". And the coordinator? That's the **event loop**.
+
+**What the Event Loop is really doing?**
+1. Run all the synchronous code (the normal stuff)
+2. Then handle microtasks
+3. Then handle one macrotask
+4. Then go back and repeat
+
+Important Note: `Microtasks always run before macrotasks. Always.`
+
+Let’s build this mentally (step by step)
+
+Step 1 — The Call Stack (your normal code)
+Anything synchronous goes straight onto the stack and runs immediately:
+
+```JavaScript
+console.log("Start");
+console.log("End");
+```
+Nothing fancy. Just top → bottom execution.
+
+Step 2 — Macrotasks (the “later” queue)
+
+When you use something like setTimeout, you’re not saying “run this immediately.”
+
+You’re saying:
+```
+“Hey, run this… later… when you get the chance.”
+```
+
+```JavaScript
+setTimeout(() => {
+  console.log("Macrotask");
+}, 0);
+```
+Even with 0, it doesn’t mean “now.” It means:
+
+“Put this in the macrotask queue.”
+
+Step 3 — Microtasks (the priority queue)
+
+This is where Promises live.
+
+```JavaScript
+Promise.resolve().then(() => {
+  console.log("Microtask");
+});
+```
+Microtasks are like VIPs.
+
+They don’t wait their turn behind macrotasks. They cut the line.
+
+Now let’s replay the earlier example properly
+
+```JavaScript
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+console.log("D");
+```
+
+Here’s what actually happens:
+
+1. "A" logs immediately
+2. setTimeout schedules a macrotask
+3. Promise.then schedules a microtask
+4. "D" logs immediately
+
+So at this point, synchronous work is done.
+
+Now the event loop steps in.
+
+First, it checks:
+
+“Any microtasks?”
+
+Yes → run them all.
+
+So "C" runs.
+
+Then it checks:
+
+“Any macrotasks?”
+
+Yes → run one.
+
+So "B" runs.
+
+Final output:
+```
+A
+D
+C
+B
+```
+Not random. Not magic. Just priority.
+
+---
+
+Where things get interesting (and dangerous)
+
+Let’s push this a bit.
+
+```JavaScript
+setTimeout(() => {
+  console.log("Timeout 1");
+
+  Promise.resolve().then(() => {
+    console.log("Inner Promise");
+  });
+}, 0);
+
+setTimeout(() => {
+  console.log("Timeout 2");
+}, 0);
+```
+At first glance, you might expect:
+```
+Timeout 1
+Timeout 2
+Inner Promise
+```
+But that’s not what happens.
+
+Actual output:
+```
+Timeout 1
+Inner Promise
+Timeout 2
+```
+Why?
+
+Because after every macrotask, the engine says:
+
+“Before I touch the next macrotask… let me clear all microtasks first.”
+
+So:
+
+-- Run Timeout 1
+-- Then immediately run its microtasks (Inner Promise)
+-- THEN move to Timeout 2
+
+That “pause” between macrotasks is critical.
+
+---
+
+Microtask starvation (yes, you can break things)
+
+Now let’s do something slightly evil:
+
+```JavaScript
+function loop() {
+  Promise.resolve().then(loop);
+}
+
+loop();
+
+setTimeout(() => {
+  console.log("You'll never see this");
+}, 0);
+```
+
+What’s happening here?
+
+Every microtask schedules another microtask.
+
+So the event loop keeps thinking:
+
+`“Oh, there are still microtasks… let me finish them first.”`
+
+But they never finish.
+
+So the macrotask (setTimeout) never runs.
+
+This is called:
+
+`Microtask starvation`
+
+And yes—you can freeze the UI this way without writing an infinite `while` loop.
+
+
+## sync/await is not magic (it’s just microtasks)
+
+This one trips people up a lot.
+
+```JavaScript
+async function run() {
+  console.log("Start");
+
+  await Promise.resolve();
+
+  console.log("End");
+}
+
+console.log("Before");
+run();
+console.log("After");
+```
+
+Output:
+
+```
+Before
+Start
+After
+End
+```
+
+That `await` doesn’t “pause the world.”
+
+What it actually does is:
+
+`“Pause this function, and resume it later as a microtask.”`
+
+So `"End"` gets scheduled as a microtask.
+
+Which is why it runs after synchronous code, but before macrotasks.
+
+---
+
+## Now let’s talk about the browser (this part matters more than people think)
+
+Browsers don’t just run JavaScript—they also render UI.
+
+Here’s the part most people miss:
+
+`The browser does NOT render while JavaScript is running`
+
+The flow is more like:
+
+1. Run JS
+2. Run microtasks
+3. Render (paint UI)
+4. Move to next macrotask
+
+Now imagine this:
+
+```JavaScript
+for (let i = 0; i < 10000; i++) {
+  Promise.resolve().then(() => {});
+}
+```
+You just created 10,000 microtasks.
+The browser will process all of them before it renders anything.
+Result?
+
+Your UI feels frozen.
+
+---
+
+So when should you use what?
+
+This is where it becomes practical.
+
+If you use microtasks (`Promise.then`, `queueMicrotask`), you’re saying:
+
+`“Run this as soon as possible, before anything else—even before rendering.”`
+
+That’s powerful, but also risky.
+
+If you use macrotasks (`setTimeout`), you’re saying:
+
+`“Let the browser breathe first. Then do this.”`
+
+That’s often what you want for:
+
+-- Heavy computations
+-- UI updates
+-- Avoiding jank
+
+Example:
+
+```JavaScript
+setTimeout(() => {
+  heavyWork();
+}, 0);
+```
+This gives the browser a chance to render before your work runs.
+
+---
+One subtle but important tool: `queueMicrotask`
+
+You’ll often see this:
+
+``` JavaScript
+queueMicrotask(() => {
+  console.log("Runs as a microtask");
+});
+```
+It’s basically a more explicit version of:
+
+```JavaScript
+Promise.resolve().then(...)
+```
+Same queue. Less overhead. Cleaner intent.
+
+Use it when you want control without introducing a Promise chain.
+
+---
+
+The mental model you should walk away with
+
+If everything above felt like a lot, reduce it to this:
+
+```
+1. Run all synchronous code
+2. Run ALL microtasks
+3. Run ONE macrotask
+4. Repeat forever
+```
+And the most important rule:
+
+`Microtasks always run before the next macrotask`
+
+If you remember just that, you’ll already be ahead of most developers.
+
+---
+Understanding the event loop isn’t just “nice to have.”
+
+It explains:
+
+Why some bugs feel random
+Why UI freezes happen
+Why async code doesn’t behave how you expect
+Why performance optimizations sometimes fail
+
+Once this clicks, you stop guessing.
+
+You start predicting.
+
+And that’s the shift from:
+
+“I think this will run next…”
+
+to:
+
+“I know exactly when this runs.”
