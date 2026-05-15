@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Azeret_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/src/context/ThemeContext";
-import '@ant-design/v5-patch-for-react-19';
+import "@ant-design/v5-patch-for-react-19";
 import { Navbar } from "@/src/components/Navbar";
 import { Footer } from "@/src/components/Footer";
 import { Contact } from "@/src/components/Contact";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,61 +26,116 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://emem-olushola.vercel.app"),
 
   title: {
-    default: "Emem Olushola | Frontend Engineer",
-    template: "%s | Emem Olushola",
+    default:
+      "Ememobong Olushola Umoren | Frontend Engineer & React Developer",
+    template: "%s | Ememobong Olushola Umoren",
   },
 
   description:
-    "Frontend Engineer with 4+ years of experience building scalable, responsive, and high-performance web applications using React.js, Next.js, TypeScript, and modern frontend tooling.",
+    "Ememobong Olushola Umoren is a Frontend Engineer and React Developer based in Nigeria, specializing in React.js, Next.js, TypeScript, and modern web applications. Explore projects, experience, and frontend engineering work.",
+
+  applicationName: "Ememobong Olushola Portfolio",
 
   keywords: [
+    "Ememobong Olushola Umoren",
+    "Ememobong Umoren",
     "Emem Olushola",
+    "Olushola Umoren",
+    "Emem Umoren",
+    "Ememobong Olushola",
     "Frontend Engineer",
+    "Frontend Developer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
+    "Frontend Engineer Nigeria",
     "Frontend Developer Nigeria",
-    "Web Developer",
+    "React Engineer",
+    "Web Developer Nigeria",
+    "Software Engineer",
+    "JavaScript Developer",
+    "Portfolio Website",
+    "Frontend Portfolio",
+    "React Portfolio",
   ],
 
-  authors: [{ name: "Emem Olushola" }],
-  creator: "Emem Olushola",
+  authors: [
+    {
+      name: "Ememobong Olushola Umoren",
+      url: "https://emem-olushola.vercel.app",
+    },
+  ],
+
+  creator: "Ememobong Olushola Umoren",
+  publisher: "Ememobong Olushola Umoren",
+
+  alternates: {
+    canonical: "https://emem-olushola.vercel.app",
+  },
+
+  category: "technology",
 
   openGraph: {
-    title: "Emem Olushola | Frontend Engineer",
+    title:
+      "Ememobong Olushola Umoren | Frontend Engineer & React Developer",
+
     description:
-      "Frontend Engineer building scalable, responsive, and high-performance web applications with React, Next.js, and TypeScript.",
+      "Frontend Engineer building scalable, responsive, and high-performance web applications with React.js, Next.js, and TypeScript.",
+
     url: "https://emem-olushola.vercel.app",
-    siteName: "Emem Olushola Portfolio",
+
+    siteName: "Ememobong Olushola Portfolio",
+
     images: [
       {
         url: "/opengraph-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "Emem Olushola Portfolio",
+        alt: "Ememobong Olushola Umoren Portfolio Website",
       },
     ],
+
     locale: "en_NG",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Emem Olushola | Frontend Engineer",
+
+    title:
+      "Ememobong Olushola Umoren | Frontend Engineer & React Developer",
+
     description:
-      "Frontend Engineer building modern web applications with React, Next.js, and TypeScript.",
+      "Frontend Engineer specializing in React.js, Next.js, TypeScript, and scalable frontend systems.",
+
     images: ["/opengraph-image.jpeg"],
+
+    creator: "@yourtwitterhandle",
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  verification: {
+    google: "ADD_YOUR_GOOGLE_SEARCH_CONSOLE_CODE",
   },
 
   icons: {
     icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -105,6 +159,42 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Ememobong Olushola Umoren",
+              alternateName: [
+                "Ememobong Umoren",
+                "Emem Olushola",
+                "Emem Umoren",
+                "Emem Olushola Umoren",
+                "Olushola Umoren",
+              ],
+              url: "https://emem-olushola.vercel.app",
+              image: "https://emem-olushola.vercel.app/opengraph-image.jpeg",
+              jobTitle: "Frontend Engineer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Freelance",
+              },
+              sameAs: [
+                "https://github.com/Ememobong-dev",
+                "https://www.linkedin.com/in/ememobong-olushola-umoren/",
+              ],
+              knowsAbout: [
+                "React.js",
+                "Next.js",
+                "TypeScript",
+                "Frontend Engineering",
+                "JavaScript",
+                "UI Engineering",
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

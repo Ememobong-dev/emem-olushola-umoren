@@ -21,9 +21,9 @@ export const AboutSection = () => {
             <Col xs={24} lg={14} className="">
               <LeftRevealAnimatedText>
                 <div className="h-full overflow-hidden">
-                  <h3 className="font-alro-reg text-center sm:text-left text-2xl lg:text-3xl">
-                    Who is <span className="font-bold bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent">Emem Olushola?</span>
-                  </h3>
+                  <h1 className="font-alro-reg text-center sm:text-left text-2xl lg:text-3xl">
+                    Who is <span className="font-bold bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent">Ememobong Olushola?</span>
+                  </h1>
                   <div className="flex flex-col sm:text-base text-center sm:text-justify gap-4 mt-6 font-alro-reg">
                     <p className="sm:tracking-widest leading-relaxed">
                       I am a Frontend Engineer with expertise in React, Next.js, TypeScript, and modern frontend tooling. With over{" "}
