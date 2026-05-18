@@ -69,13 +69,13 @@ export const TypingText = ({
   }, [text, delay]);
 
   return (
-    <motion.h2
+    <motion.h1
       className={className}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
       {displayedText}
       {!isTypingDone && <span className="blinking-cursor">|</span>}
-    </motion.h2>
+    </motion.h1>
   );
 };
