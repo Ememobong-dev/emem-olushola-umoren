@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://emem-olushola.vercel.app/sitemap.xml",
+    sitemap: "https://www.ememolushola.com.ng/sitemap.xml",
   };
 }

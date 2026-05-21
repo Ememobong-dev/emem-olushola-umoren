@@ -23,7 +23,7 @@ const azeretMono = Azeret_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://emem-olushola.vercel.app"),
+  metadataBase: new URL("https://www.ememolushola.com.ng"),
 
   title: {
     default:
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Ememobong Olushola Umoren",
-      url: "https://emem-olushola.vercel.app",
+      url: "https://www.ememolushola.com.ng",
     },
   ],
 
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   publisher: "Ememobong Olushola Umoren",
 
   alternates: {
-    canonical: "https://emem-olushola.vercel.app",
+    canonical: "https://www.ememolushola.com.ng",
   },
 
   category: "technology",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     description:
       "Frontend Engineer building scalable, responsive, and high-performance web applications with React.js, Next.js, and TypeScript.",
 
-    url: "https://emem-olushola.vercel.app",
+    url: "https://www.ememolushola.com.ng",
 
     siteName: "Ememobong Olushola Portfolio",
 
@@ -132,7 +132,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "favicon.ico",
   },
 };
 
@@ -173,8 +173,8 @@ export default function RootLayout({
                 "Emem Olushola Umoren",
                 "Olushola Umoren",
               ],
-              url: "https://emem-olushola.vercel.app",
-              image: "https://emem-olushola.vercel.app/opengraph-image.jpeg",
+              url: "https://www.ememolushola.com.ng",
+              image: "https://www.ememolushola.com.ng/opengraph-image.jpeg",
               jobTitle: "Frontend Engineer",
               worksFor: {
                 "@type": "Organization",
