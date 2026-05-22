@@ -5,6 +5,7 @@ const nextConfig = {
   
 	async redirects() {
 	  return [
+		// Redirect Vercel domain
 		{
 		  source: "/:path*",
 		  has: [
@@ -13,7 +14,20 @@ const nextConfig = {
 			  value: "emem-olushola.vercel.app",
 			},
 		  ],
-		  destination: "https://ememolushola.com.ng/:path*",
+		  destination: "https://www.ememolushola.com.ng/:path*",
+		  permanent: true,
+		},
+  
+		// Redirect non-www to www
+		{
+		  source: "/:path*",
+		  has: [
+			{
+			  type: "host",
+			  value: "ememolushola.com.ng",
+			},
+		  ],
+		  destination: "https://www.ememolushola.com.ng/:path*",
 		  permanent: true,
 		},
 	  ];
