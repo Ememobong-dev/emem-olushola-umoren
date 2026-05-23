@@ -27,21 +27,21 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "Ememobong Olushola Umoren | Frontend Engineer & React Developer",
-    template: "%s | Ememobong Olushola Umoren",
+      "Emem Olushola Umoren | Frontend Engineer & React Developer",
+    template: "%s | Emem Olushola Umoren",
   },
 
   description:
-    "Ememobong Olushola Umoren is a Frontend Engineer and React Developer based in Nigeria, specializing in React.js, Next.js, TypeScript, and modern web applications. Explore projects, experience, and frontend engineering work.",
+    "Emem Olushola Umoren is a Frontend Engineer and React Developer based in Nigeria, specializing in React.js, Next.js, TypeScript, and modern web applications. Explore projects, experience, and frontend engineering work.",
 
-  applicationName: "Ememobong Olushola Portfolio",
+  applicationName: "Emem Olushola Portfolio",
 
   keywords: [
+    "Emem Umoren",
     "Ememobong Olushola Umoren",
     "Ememobong Umoren",
     "Emem Olushola",
     "Olushola Umoren",
-    "Emem Umoren",
     "Ememobong Olushola",
     "Frontend Engineer",
     "Frontend Developer",
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "Ememobong Olushola Umoren",
+      name: "Emem Olushola Umoren",
       url: "https://www.ememolushola.com.ng",
     },
   ],
 
-  creator: "Ememobong Olushola Umoren",
-  publisher: "Ememobong Olushola Umoren",
+  creator: "Emem Olushola Umoren",
+  publisher: "Emem Olushola Umoren",
 
   alternates: {
     canonical: "https://www.ememolushola.com.ng",
@@ -77,21 +77,21 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Ememobong Olushola Umoren | Frontend Engineer & React Developer",
+      "Emem Olushola Umoren | Frontend Engineer & React Developer",
 
     description:
       "Frontend Engineer building scalable, responsive, and high-performance web applications with React.js, Next.js, and TypeScript.",
 
     url: "https://www.ememolushola.com.ng",
 
-    siteName: "Ememobong Olushola Portfolio",
+    siteName: "Emem Olushola Portfolio",
 
     images: [
       {
         url: "/opengraph-image.jpeg",
         width: 1200,
         height: 630,
-        alt: "Ememobong Olushola Umoren Portfolio Website",
+        alt: "Emem Olushola Umoren Portfolio Website",
       },
     ],
 
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Ememobong Olushola Umoren | Frontend Engineer & React Developer",
+      "Emem Olushola Umoren | Frontend Engineer & React Developer",
 
     description:
       "Frontend Engineer specializing in React.js, Next.js, TypeScript, and scalable frontend systems.",
@@ -165,7 +165,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Ememobong Olushola Umoren",
+              name: "Emem Olushola Umoren",
               alternateName: [
                 "Ememobong Umoren",
                 "Emem Olushola",
