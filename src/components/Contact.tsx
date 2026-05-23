@@ -154,7 +154,7 @@ export const Contact = () => {
         <Col xs={24} lg={16}>
           <div>
             <h2 className="font-alro-reg font-bold text-3xl">
-              A Project with <span className="bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent">Ememobong Olushola?</span> 
+              A Project with <span className="bg-linear-to-r from-cyan-400 to-purple-400 dark:from-cyan-400 dark:to-purple-400 light:from-cyan-600 light:to-purple-600 bg-clip-text text-transparent">Emem Olushola?</span> 
             </h2>
             <div className="flex flex-col gap-8 mt-5">
               <div>
